@@ -1,2 +1,2 @@
 # OLS
-OLS
+Online Learning System
