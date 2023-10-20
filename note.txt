@@ -1,3 +1,4 @@
+------------------------------------------------------------------------------
 + Update OLS DB: ok
 + Fix API: ok
 + Test Api: ok
@@ -5,3 +6,11 @@
 + Defect: 
 - register
 - login
+
+------------------------------------------------------------------------------
+- dotnet ef dbcontext scaffold "server=localhost; port=3306; database=f8db;user=root;password=02122002;" Pomelo.EntityFrameworkCore.MySql --output-dir Models
+- OR
+- dotnet ef dbcontext scaffold "server=localhost; port=3306; database=f8db;uid=root;pwd=02122002;" Pomelo.EntityFrameworkCore.MySql --output-dir Models --project project_path
+- Example:
+- dotnet ef dbcontext scaffold "server=localhost; port=3306; database=f8db;uid=root;pwd=02122002;" Pomelo.EntityFrameworkCore.MySql --output-dir Models --project D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\DEMO\DemoWebAPI\DemoWebAPI_01
+------------------------------------------------------------------------------
