@@ -15,11 +15,11 @@ namespace OLS.Models
         public string? BlogImage { get; set; }
         public string? BlogDetail { get; set; }
         public DateTime? PostDate { get; set; }
-        public int UserUserId { get; set; }
         public int? BlogStatus { get; set; }
         public int? TimeToRead { get; set; }
         public int BlogTopicBlogTopicId { get; set; }
         public int BlogTagBlogTagId { get; set; }
+        public int UserUserId { get; set; }
 
         public virtual Blogtag BlogTagBlogTag { get; set; } = null!;
         public virtual Blogtopic BlogTopicBlogTopic { get; set; } = null!;

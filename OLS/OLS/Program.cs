@@ -2,8 +2,9 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using OLS.Models;
-using OLS.Repositories.Interface;
-using OLS.Repositories.Object;
+//using OLS.Models;
+//using OLS.Repositories.Interface;
+//using OLS.Repositories.Object;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,9 +17,21 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddCors(options => options.AddDefaultPolicy(policy => policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod()));
 
+/*
+ * cũ
 builder.Services.AddDbContext<f8dbContext>(options =>
 {
     IConfiguration configuration = builder.Configuration.GetSection("ConnectionStrings");
+    string connectionString = configuration.GetConnectionString("DefaultConnection");
+    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
+});
+*/
+
+
+// Configure the DbContext - mới
+builder.Services.AddDbContext<f8dbContext>(options =>
+{
+    IConfiguration configuration = builder.Configuration;
     string connectionString = configuration.GetConnectionString("DefaultConnection");
     options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
 });

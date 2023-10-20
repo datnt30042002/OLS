@@ -16,18 +16,23 @@ namespace OLS.Models
         {
         }
 
+        public virtual DbSet<Answer> Answers { get; set; } = null!;
         public virtual DbSet<Ask> Asks { get; set; } = null!;
         public virtual DbSet<Blog> Blogs { get; set; } = null!;
         public virtual DbSet<Blogcomment> Blogcomments { get; set; } = null!;
         public virtual DbSet<Blogtag> Blogtags { get; set; } = null!;
         public virtual DbSet<Blogtopic> Blogtopics { get; set; } = null!;
         public virtual DbSet<Category> Categories { get; set; } = null!;
+        public virtual DbSet<Chapter> Chapters { get; set; } = null!;
         public virtual DbSet<Course> Courses { get; set; } = null!;
         public virtual DbSet<Courseenroll> Courseenrolls { get; set; } = null!;
         public virtual DbSet<Dicuss> Dicusses { get; set; } = null!;
+        public virtual DbSet<Feedback> Feedbacks { get; set; } = null!;
         public virtual DbSet<Lesson> Lessons { get; set; } = null!;
-        public virtual DbSet<Lessondetail> Lessondetails { get; set; } = null!;
         public virtual DbSet<Likecomment> Likecomments { get; set; } = null!;
+        public virtual DbSet<Note> Notes { get; set; } = null!;
+        public virtual DbSet<Question> Questions { get; set; } = null!;
+        public virtual DbSet<Quiz> Quizzes { get; set; } = null!;
         public virtual DbSet<Reply> Replies { get; set; } = null!;
         public virtual DbSet<Saveblog> Saveblogs { get; set; } = null!;
         public virtual DbSet<Savelike> Savelikes { get; set; } = null!;
@@ -36,17 +41,13 @@ namespace OLS.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            /*
             if (!optionsBuilder.IsConfigured)
             {
-                var configuration = new ConfigurationBuilder()
-                    .SetBasePath(Directory.GetCurrentDirectory())
-                    .AddJsonFile("appsettings.json")
-                    .Build();
-
-                var connectionString = configuration.GetConnectionString("DefaultConnection");
-
-                optionsBuilder.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+                optionsBuilder.UseMySql("server=localhost;port=3306;database=f8db;user=root;password=02122002", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.34-mysql"));
             }
+            */
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -54,17 +55,38 @@ namespace OLS.Models
             modelBuilder.UseCollation("utf8mb4_0900_ai_ci")
                 .HasCharSet("utf8mb4");
 
+            modelBuilder.Entity<Answer>(entity =>
+            {
+                entity.ToTable("answer");
+
+                entity.HasIndex(e => e.QuestionQuestionId, "fk_Answer_Question1_idx");
+
+                entity.Property(e => e.AnswerId).HasColumnName("AnswerID");
+
+                entity.Property(e => e.Answer1)
+                    .HasMaxLength(200)
+                    .HasColumnName("Answer")
+                    .UseCollation("utf8mb3_general_ci")
+                    .HasCharSet("utf8mb3");
+
+                entity.Property(e => e.QuestionQuestionId).HasColumnName("Question_QuestionID");
+
+                entity.HasOne(d => d.QuestionQuestion)
+                    .WithMany(p => p.Answers)
+                    .HasForeignKey(d => d.QuestionQuestionId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("fk_Answer_Question1");
+            });
+
             modelBuilder.Entity<Ask>(entity =>
             {
                 entity.ToTable("ask");
 
                 entity.HasIndex(e => e.DicussDicussId, "fk_Ask_Dicuss1_idx");
 
-                entity.Property(e => e.AskId)
-                    .ValueGeneratedNever()
-                    .HasColumnName("AskID");
+                entity.Property(e => e.AskId).HasColumnName("AskID");
 
-                entity.Property(e => e.AskDetail)
+                entity.Property(e => e.Content)
                     .HasMaxLength(2000)
                     .UseCollation("utf8mb3_general_ci")
                     .HasCharSet("utf8mb3");
@@ -74,7 +96,6 @@ namespace OLS.Models
                 entity.HasOne(d => d.DicussDicuss)
                     .WithMany(p => p.Asks)
                     .HasForeignKey(d => d.DicussDicussId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("fk_Ask_Dicuss1");
             });
 
@@ -141,17 +162,11 @@ namespace OLS.Models
 
                 entity.Property(e => e.BlogId).HasColumnName("BlogID");
 
-                entity.Property(e => e.Content).HasColumnName("content");
+                entity.Property(e => e.OriginCommentId).HasColumnName("Origin_Comment_ID");
 
-                entity.Property(e => e.Level).HasColumnName("level");
+                entity.Property(e => e.Publish).HasColumnType("datetime");
 
-                entity.Property(e => e.OriginCommentId).HasColumnName("origin_comment_id");
-
-                entity.Property(e => e.Publish)
-                    .HasColumnType("datetime")
-                    .HasColumnName("publish");
-
-                entity.Property(e => e.ReplyToUser).HasColumnName("reply_to_user");
+                entity.Property(e => e.ReplyToUser).HasColumnName("Reply_To_User");
 
                 entity.Property(e => e.UserId).HasColumnName("UserID");
 
@@ -195,20 +210,39 @@ namespace OLS.Models
 
                 entity.Property(e => e.CategoryId).HasColumnName("CategoryID");
 
-                entity.Property(e => e.CategoryImage)
-                    .HasMaxLength(250)
-                    .UseCollation("utf8mb3_general_ci")
-                    .HasCharSet("utf8mb3");
-
                 entity.Property(e => e.Description)
                     .HasMaxLength(250)
                     .UseCollation("utf8mb3_general_ci")
                     .HasCharSet("utf8mb3");
 
-                entity.Property(e => e.Name)
-                    .HasMaxLength(50)
+                entity.Property(e => e.Image)
+                    .HasMaxLength(150)
                     .UseCollation("utf8mb3_general_ci")
                     .HasCharSet("utf8mb3");
+
+                entity.Property(e => e.Name).HasMaxLength(20);
+            });
+
+            modelBuilder.Entity<Chapter>(entity =>
+            {
+                entity.ToTable("chapter");
+
+                entity.HasIndex(e => e.CourseCourseId, "fk_Lesson_Course1_idx");
+
+                entity.Property(e => e.ChapterId).HasColumnName("ChapterID");
+
+                entity.Property(e => e.CourseCourseId).HasColumnName("Course_CourseID");
+
+                entity.Property(e => e.Name)
+                    .HasMaxLength(100)
+                    .UseCollation("utf8mb3_general_ci")
+                    .HasCharSet("utf8mb3");
+
+                entity.HasOne(d => d.CourseCourse)
+                    .WithMany(p => p.Chapters)
+                    .HasForeignKey(d => d.CourseCourseId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("fk_Lesson_Course1");
             });
 
             modelBuilder.Entity<Course>(entity =>
@@ -219,20 +253,27 @@ namespace OLS.Models
 
                 entity.HasIndex(e => e.UserUserId, "fk_Course_User1_idx");
 
-                entity.Property(e => e.CourseId)
-                    .ValueGeneratedNever()
-                    .HasColumnName("CourseID");
+                entity.Property(e => e.CourseId).HasColumnName("CourseID");
 
                 entity.Property(e => e.CategoryCategoryId).HasColumnName("Category_CategoryID");
 
-                entity.Property(e => e.CourseInfo).HasMaxLength(300);
+                entity.Property(e => e.CourseInfo)
+                    .HasMaxLength(200)
+                    .UseCollation("utf8mb3_general_ci")
+                    .HasCharSet("utf8mb3");
 
-                entity.Property(e => e.Description).HasMaxLength(500);
+                entity.Property(e => e.CourseName)
+                    .HasMaxLength(50)
+                    .UseCollation("utf8mb3_general_ci")
+                    .HasCharSet("utf8mb3");
 
-                entity.Property(e => e.Image).HasMaxLength(9000);
+                entity.Property(e => e.Description)
+                    .HasMaxLength(200)
+                    .UseCollation("utf8mb3_general_ci")
+                    .HasCharSet("utf8mb3");
 
-                entity.Property(e => e.Name)
-                    .HasMaxLength(45)
+                entity.Property(e => e.Image)
+                    .HasMaxLength(150)
                     .UseCollation("utf8mb3_general_ci")
                     .HasCharSet("utf8mb3");
 
@@ -260,20 +301,15 @@ namespace OLS.Models
             {
                 entity.ToTable("courseenroll");
 
-                entity.HasIndex(e => e.CourseCourseId, "fk_courseenroll_course1_idx");
+                entity.HasIndex(e => e.CourseCourseId, "fk_CourseEnroll_Course1_idx");
 
-                entity.HasIndex(e => e.UserUserId, "fk_courseenroll_user1_idx");
+                entity.HasIndex(e => e.UserUserId, "fk_CourseEnroll_User1_idx");
 
-                entity.Property(e => e.CourseEnrollId)
-                    .ValueGeneratedNever()
-                    .HasColumnName("CourseEnrollID");
+                entity.Property(e => e.CourseEnrollId).HasColumnName("CourseEnrollID");
 
                 entity.Property(e => e.CourseCourseId).HasColumnName("Course_CourseID");
 
-                entity.Property(e => e.LessonCurrent)
-                    .HasMaxLength(250)
-                    .UseCollation("utf8mb3_general_ci")
-                    .HasCharSet("utf8mb3");
+                entity.Property(e => e.EnrollDate).HasColumnType("datetime");
 
                 entity.Property(e => e.UserUserId).HasColumnName("User_UserID");
 
@@ -281,94 +317,94 @@ namespace OLS.Models
                     .WithMany(p => p.Courseenrolls)
                     .HasForeignKey(d => d.CourseCourseId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("fk_courseenroll_course1");
+                    .HasConstraintName("fk_CourseEnroll_Course1");
 
                 entity.HasOne(d => d.UserUser)
                     .WithMany(p => p.Courseenrolls)
                     .HasForeignKey(d => d.UserUserId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("fk_courseenroll_user1");
+                    .HasConstraintName("fk_CourseEnroll_User1");
             });
 
             modelBuilder.Entity<Dicuss>(entity =>
             {
                 entity.ToTable("dicuss");
 
-                entity.Property(e => e.DicussId)
-                    .ValueGeneratedNever()
-                    .HasColumnName("DicussID");
+                entity.HasIndex(e => e.LessonLessonId, "fk_Dicuss_Lesson1_idx");
 
-                entity.Property(e => e.LessonDetailLessonDetailId).HasColumnName("LessonDetail_LessonDetailID");
+                entity.Property(e => e.DicussId).HasColumnName("DicussID");
+
+                entity.Property(e => e.LessonLessonId).HasColumnName("Lesson_LessonID");
+
+                entity.HasOne(d => d.LessonLesson)
+                    .WithMany(p => p.Dicusses)
+                    .HasForeignKey(d => d.LessonLessonId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("fk_Dicuss_Lesson1");
+            });
+
+            modelBuilder.Entity<Feedback>(entity =>
+            {
+                entity.ToTable("feedback");
+
+                entity.HasIndex(e => e.CourseCourseId, "fk_Feedback_Course1_idx");
+
+                entity.HasIndex(e => e.UserUserId, "fk_Feedback_User1_idx");
+
+                entity.Property(e => e.FeedbackId)
+                    .ValueGeneratedNever()
+                    .HasColumnName("FeedbackID");
+
+                entity.Property(e => e.CourseCourseId).HasColumnName("Course_CourseID");
+
+                entity.Property(e => e.Feedback1)
+                    .HasMaxLength(300)
+                    .HasColumnName("Feedback")
+                    .UseCollation("utf8mb3_general_ci")
+                    .HasCharSet("utf8mb3");
+
+                entity.Property(e => e.UserUserId).HasColumnName("User_UserID");
+
+                entity.HasOne(d => d.CourseCourse)
+                    .WithMany(p => p.Feedbacks)
+                    .HasForeignKey(d => d.CourseCourseId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("fk_Feedback_Course1");
+
+                entity.HasOne(d => d.UserUser)
+                    .WithMany(p => p.Feedbacks)
+                    .HasForeignKey(d => d.UserUserId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("fk_Feedback_User1");
             });
 
             modelBuilder.Entity<Lesson>(entity =>
             {
                 entity.ToTable("lesson");
 
-                entity.HasIndex(e => e.CourseCourseId, "fk_Lesson_Course1_idx");
+                entity.HasIndex(e => e.ChapterChapterId, "fk_Lesson_Chapter1_idx");
 
-                entity.Property(e => e.LessonId)
-                    .ValueGeneratedNever()
-                    .HasColumnName("LessonID");
+                entity.Property(e => e.LessonId).HasColumnName("LessonID");
 
-                entity.Property(e => e.CourseCourseId).HasColumnName("Course_CourseID");
-
-                entity.Property(e => e.Name)
-                    .HasMaxLength(100)
-                    .UseCollation("utf8mb3_general_ci")
-                    .HasCharSet("utf8mb3");
-
-                entity.HasOne(d => d.CourseCourse)
-                    .WithMany(p => p.Lessons)
-                    .HasForeignKey(d => d.CourseCourseId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("fk_Lesson_Course1");
-            });
-
-            modelBuilder.Entity<Lessondetail>(entity =>
-            {
-                entity.ToTable("lessondetail");
-
-                entity.HasIndex(e => e.DicussDicussId, "fk_LessonDetail_Dicuss1_idx");
-
-                entity.HasIndex(e => e.LessonLessonId, "fk_LessonDetail_Lesson1_idx");
-
-                entity.Property(e => e.LessonDetailId)
-                    .ValueGeneratedNever()
-                    .HasColumnName("LessonDetailID");
-
-                entity.Property(e => e.DicussDicussId).HasColumnName("Dicuss_DicussID");
-
-                entity.Property(e => e.LessonLessonId).HasColumnName("Lesson_LessonID");
-
-                entity.Property(e => e.Note)
-                    .HasMaxLength(200)
-                    .UseCollation("utf8mb3_general_ci")
-                    .HasCharSet("utf8mb3");
+                entity.Property(e => e.ChapterChapterId).HasColumnName("Chapter_ChapterID");
 
                 entity.Property(e => e.Time).HasColumnType("time");
 
                 entity.Property(e => e.Title)
-                    .HasMaxLength(100)
+                    .HasMaxLength(50)
                     .UseCollation("utf8mb3_general_ci")
                     .HasCharSet("utf8mb3");
 
                 entity.Property(e => e.Video)
-                    .HasMaxLength(45)
+                    .HasMaxLength(150)
                     .UseCollation("utf8mb3_general_ci")
                     .HasCharSet("utf8mb3");
 
-                entity.HasOne(d => d.DicussDicuss)
-                    .WithMany(p => p.Lessondetails)
-                    .HasForeignKey(d => d.DicussDicussId)
+                entity.HasOne(d => d.ChapterChapter)
+                    .WithMany(p => p.Lessons)
+                    .HasForeignKey(d => d.ChapterChapterId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("fk_LessonDetail_Dicuss1");
-
-                entity.HasOne(d => d.LessonLesson)
-                    .WithMany(p => p.Lessondetails)
-                    .HasForeignKey(d => d.LessonLessonId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("fk_LessonDetail_Lesson1");
+                    .HasConstraintName("fk_Lesson_Chapter1");
             });
 
             modelBuilder.Entity<Likecomment>(entity =>
@@ -398,19 +434,88 @@ namespace OLS.Models
                     .HasConstraintName("fk_LikeComment_User1");
             });
 
+            modelBuilder.Entity<Note>(entity =>
+            {
+                entity.ToTable("note");
+
+                entity.HasIndex(e => e.ChapterChapterId, "fk_Note_Chapter1_idx");
+
+                entity.HasIndex(e => e.UserUserId, "fk_Note_User1_idx");
+
+                entity.Property(e => e.NoteId).HasColumnName("NoteID");
+
+                entity.Property(e => e.ChapterChapterId).HasColumnName("Chapter_ChapterID");
+
+                entity.Property(e => e.Content)
+                    .HasMaxLength(300)
+                    .UseCollation("utf8mb3_general_ci")
+                    .HasCharSet("utf8mb3");
+
+                entity.Property(e => e.UserUserId).HasColumnName("User_UserID");
+
+                entity.HasOne(d => d.ChapterChapter)
+                    .WithMany(p => p.Notes)
+                    .HasForeignKey(d => d.ChapterChapterId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("fk_Note_Chapter1");
+
+                entity.HasOne(d => d.UserUser)
+                    .WithMany(p => p.Notes)
+                    .HasForeignKey(d => d.UserUserId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("fk_Note_User1");
+            });
+
+            modelBuilder.Entity<Question>(entity =>
+            {
+                entity.ToTable("question");
+
+                entity.HasIndex(e => e.QuizQuizId, "fk_Question_Quiz1_idx");
+
+                entity.Property(e => e.QuestionId).HasColumnName("QuestionID");
+
+                entity.Property(e => e.CorrectAnswer)
+                    .HasMaxLength(2000)
+                    .UseCollation("utf8mb3_general_ci")
+                    .HasCharSet("utf8mb3");
+
+                entity.Property(e => e.QuizQuizId).HasColumnName("Quiz_QuizID");
+
+                entity.HasOne(d => d.QuizQuiz)
+                    .WithMany(p => p.Questions)
+                    .HasForeignKey(d => d.QuizQuizId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("fk_Question_Quiz1");
+            });
+
+            modelBuilder.Entity<Quiz>(entity =>
+            {
+                entity.ToTable("quiz");
+
+                entity.HasIndex(e => e.ChapterChapterId, "fk_Quiz_Chapter1_idx");
+
+                entity.Property(e => e.QuizId).HasColumnName("QuizID");
+
+                entity.Property(e => e.ChapterChapterId).HasColumnName("Chapter_ChapterID");
+
+                entity.HasOne(d => d.ChapterChapter)
+                    .WithMany(p => p.Quizzes)
+                    .HasForeignKey(d => d.ChapterChapterId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("fk_Quiz_Chapter1");
+            });
+
             modelBuilder.Entity<Reply>(entity =>
             {
                 entity.ToTable("reply");
 
                 entity.HasIndex(e => e.AskAskId, "fk_Reply_Ask1_idx");
 
-                entity.Property(e => e.ReplyId)
-                    .ValueGeneratedNever()
-                    .HasColumnName("ReplyID");
+                entity.Property(e => e.ReplyId).HasColumnName("ReplyID");
 
                 entity.Property(e => e.AskAskId).HasColumnName("Ask_AskID");
 
-                entity.Property(e => e.ReplyDetail)
+                entity.Property(e => e.Content)
                     .HasMaxLength(2000)
                     .UseCollation("utf8mb3_general_ci")
                     .HasCharSet("utf8mb3");
@@ -418,7 +523,6 @@ namespace OLS.Models
                 entity.HasOne(d => d.AskAsk)
                     .WithMany(p => p.Replies)
                     .HasForeignKey(d => d.AskAskId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("fk_Reply_Ask1");
             });
 
@@ -489,7 +593,7 @@ namespace OLS.Models
                 entity.Property(e => e.UserId).HasColumnName("UserID");
 
                 entity.Property(e => e.Address)
-                    .HasMaxLength(80)
+                    .HasMaxLength(50)
                     .UseCollation("utf8mb3_general_ci")
                     .HasCharSet("utf8mb3");
 
@@ -505,6 +609,8 @@ namespace OLS.Models
 
                 entity.Property(e => e.CodeVerify).HasMaxLength(15);
 
+                entity.Property(e => e.Dob).HasColumnType("datetime");
+
                 entity.Property(e => e.Email)
                     .HasMaxLength(50)
                     .UseCollation("utf8mb3_general_ci")
@@ -516,7 +622,7 @@ namespace OLS.Models
                     .HasCharSet("utf8mb3");
 
                 entity.Property(e => e.FacebookId)
-                    .HasMaxLength(80)
+                    .HasMaxLength(50)
                     .HasColumnName("FacebookID")
                     .UseCollation("utf8mb3_general_ci")
                     .HasCharSet("utf8mb3");
@@ -532,13 +638,13 @@ namespace OLS.Models
                     .HasCharSet("utf8mb3");
 
                 entity.Property(e => e.GithubId)
-                    .HasMaxLength(80)
+                    .HasMaxLength(50)
                     .HasColumnName("GithubID")
                     .UseCollation("utf8mb3_general_ci")
                     .HasCharSet("utf8mb3");
 
                 entity.Property(e => e.GmailId)
-                    .HasMaxLength(80)
+                    .HasMaxLength(50)
                     .HasColumnName("GmailID")
                     .UseCollation("utf8mb3_general_ci")
                     .HasCharSet("utf8mb3");
@@ -549,12 +655,12 @@ namespace OLS.Models
                     .HasCharSet("utf8mb3");
 
                 entity.Property(e => e.Password)
-                    .HasMaxLength(150)
+                    .HasMaxLength(50)
                     .UseCollation("utf8mb3_general_ci")
                     .HasCharSet("utf8mb3");
 
                 entity.Property(e => e.Phone)
-                    .HasMaxLength(30)
+                    .HasMaxLength(11)
                     .UseCollation("utf8mb3_general_ci")
                     .HasCharSet("utf8mb3");
 
@@ -576,8 +682,8 @@ namespace OLS.Models
 
                 entity.Property(e => e.RoleId).HasColumnName("RoleID");
 
-                entity.Property(e => e.Name)
-                    .HasMaxLength(150)
+                entity.Property(e => e.RoleName)
+                    .HasMaxLength(50)
                     .UseCollation("utf8mb3_general_ci")
                     .HasCharSet("utf8mb3");
             });

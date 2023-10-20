@@ -12,8 +12,8 @@ namespace OLS.Models
 
         public int CategoryId { get; set; }
         public string? Name { get; set; }
-        public string? CategoryImage { get; set; }
         public string? Description { get; set; }
+        public string? Image { get; set; }
         public int? Status { get; set; }
 
         public virtual ICollection<Course> Courses { get; set; }

@@ -8,13 +8,12 @@ namespace OLS.Models
         public Dicuss()
         {
             Asks = new HashSet<Ask>();
-            Lessondetails = new HashSet<Lessondetail>();
         }
 
         public int DicussId { get; set; }
-        public int LessonDetailLessonDetailId { get; set; }
+        public int LessonLessonId { get; set; }
 
+        public virtual Lesson LessonLesson { get; set; } = null!;
         public virtual ICollection<Ask> Asks { get; set; }
-        public virtual ICollection<Lessondetail> Lessondetails { get; set; }
     }
 }

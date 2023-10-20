@@ -1,0 +1,7 @@
++ Update OLS DB: ok
++ Fix API: ok
++ Test Api: ok
+
++ Defect: 
+- register
+- login
