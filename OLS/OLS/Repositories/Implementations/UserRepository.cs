@@ -16,11 +16,11 @@ namespace OLS.Repositories.Object
     {
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
-        private readonly RoleManager<Userrole> _roleManager;
+        private readonly RoleManager<UserRole> _roleManager;
         private readonly IConfiguration _configuration;
         private readonly IMapper _mapper;
         public UserRepository(UserManager<User> userManager, SignInManager<User> signInManager,
-            RoleManager<Userrole> roleManager, IConfiguration configuration, IMapper mapper)
+            RoleManager<UserRole> roleManager, IConfiguration configuration, IMapper mapper)
         {
             _userManager = userManager;
             _signInManager = signInManager;

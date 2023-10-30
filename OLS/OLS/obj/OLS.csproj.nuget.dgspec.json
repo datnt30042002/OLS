@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Ky_6_OJT_Fall_2023\\WorkSpace_ojt\\.NET\\Project_OJT\\Online_Learning_System\\OLS_Project\\OLS\\OLS\\OLS.csproj": {}
+    "D:\\Ky_6_OJT_Fall_2023\\WorkSpace_ojt\\.NET\\Project_OJT\\Online_Learning_System\\OLS_Project\\OLS\\OLS\\OLS\\OLS.csproj": {}
   },
   "projects": {
-    "D:\\Ky_6_OJT_Fall_2023\\WorkSpace_ojt\\.NET\\Project_OJT\\Online_Learning_System\\OLS_Project\\OLS\\OLS\\OLS.csproj": {
+    "D:\\Ky_6_OJT_Fall_2023\\WorkSpace_ojt\\.NET\\Project_OJT\\Online_Learning_System\\OLS_Project\\OLS\\OLS\\OLS\\OLS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Ky_6_OJT_Fall_2023\\WorkSpace_ojt\\.NET\\Project_OJT\\Online_Learning_System\\OLS_Project\\OLS\\OLS\\OLS.csproj",
+        "projectUniqueName": "D:\\Ky_6_OJT_Fall_2023\\WorkSpace_ojt\\.NET\\Project_OJT\\Online_Learning_System\\OLS_Project\\OLS\\OLS\\OLS\\OLS.csproj",
         "projectName": "OLS",
-        "projectPath": "D:\\Ky_6_OJT_Fall_2023\\WorkSpace_ojt\\.NET\\Project_OJT\\Online_Learning_System\\OLS_Project\\OLS\\OLS\\OLS.csproj",
+        "projectPath": "D:\\Ky_6_OJT_Fall_2023\\WorkSpace_ojt\\.NET\\Project_OJT\\Online_Learning_System\\OLS_Project\\OLS\\OLS\\OLS\\OLS.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\Ky_6_OJT_Fall_2023\\WorkSpace_ojt\\.NET\\Project_OJT\\Online_Learning_System\\OLS_Project\\OLS\\OLS\\obj\\",
+        "outputPath": "D:\\Ky_6_OJT_Fall_2023\\WorkSpace_ojt\\.NET\\Project_OJT\\Online_Learning_System\\OLS_Project\\OLS\\OLS\\OLS\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -54,6 +54,10 @@
               "target": "Package",
               "version": "[6.0.21, )"
             },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.21, )"
+            },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -64,13 +68,9 @@
               "target": "Package",
               "version": "[6.21.0, )"
             },
-            "Pomelo.EntityFrameworkCore.MySql": {
-              "target": "Package",
-              "version": "[6.0.2, )"
-            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.2.3, )"
+              "version": "[6.5.0, )"
             },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",

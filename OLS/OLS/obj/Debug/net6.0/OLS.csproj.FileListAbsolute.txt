@@ -1,93 +1,66 @@
-E:\Part 6 FPT SE\OJT202\Real\Online Learning System\OLS\OLS\bin\Debug\net6.0\appsettings.Development.json
-E:\Part 6 FPT SE\OJT202\Real\Online Learning System\OLS\OLS\bin\Debug\net6.0\appsettings.json
-E:\Part 6 FPT SE\OJT202\Real\Online Learning System\OLS\OLS\bin\Debug\net6.0\OLS.exe
-E:\Part 6 FPT SE\OJT202\Real\Online Learning System\OLS\OLS\bin\Debug\net6.0\OLS.deps.json
-E:\Part 6 FPT SE\OJT202\Real\Online Learning System\OLS\OLS\bin\Debug\net6.0\OLS.runtimeconfig.json
-E:\Part 6 FPT SE\OJT202\Real\Online Learning System\OLS\OLS\bin\Debug\net6.0\OLS.dll
-E:\Part 6 FPT SE\OJT202\Real\Online Learning System\OLS\OLS\bin\Debug\net6.0\OLS.pdb
-E:\Part 6 FPT SE\OJT202\Real\Online Learning System\OLS\OLS\bin\Debug\net6.0\AutoMapper.dll
-E:\Part 6 FPT SE\OJT202\Real\Online Learning System\OLS\OLS\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
-E:\Part 6 FPT SE\OJT202\Real\Online Learning System\OLS\OLS\bin\Debug\net6.0\Humanizer.dll
-E:\Part 6 FPT SE\OJT202\Real\Online Learning System\OLS\OLS\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
-E:\Part 6 FPT SE\OJT202\Real\Online Learning System\OLS\OLS\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
-E:\Part 6 FPT SE\OJT202\Real\Online Learning System\OLS\OLS\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
-E:\Part 6 FPT SE\OJT202\Real\Online Learning System\OLS\OLS\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
-E:\Part 6 FPT SE\OJT202\Real\Online Learning System\OLS\OLS\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
-E:\Part 6 FPT SE\OJT202\Real\Online Learning System\OLS\OLS\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
-E:\Part 6 FPT SE\OJT202\Real\Online Learning System\OLS\OLS\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
-E:\Part 6 FPT SE\OJT202\Real\Online Learning System\OLS\OLS\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
-E:\Part 6 FPT SE\OJT202\Real\Online Learning System\OLS\OLS\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
-E:\Part 6 FPT SE\OJT202\Real\Online Learning System\OLS\OLS\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
-E:\Part 6 FPT SE\OJT202\Real\Online Learning System\OLS\OLS\bin\Debug\net6.0\Microsoft.OpenApi.dll
-E:\Part 6 FPT SE\OJT202\Real\Online Learning System\OLS\OLS\bin\Debug\net6.0\MySqlConnector.dll
-E:\Part 6 FPT SE\OJT202\Real\Online Learning System\OLS\OLS\bin\Debug\net6.0\Pomelo.EntityFrameworkCore.MySql.dll
-E:\Part 6 FPT SE\OJT202\Real\Online Learning System\OLS\OLS\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
-E:\Part 6 FPT SE\OJT202\Real\Online Learning System\OLS\OLS\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
-E:\Part 6 FPT SE\OJT202\Real\Online Learning System\OLS\OLS\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-E:\Part 6 FPT SE\OJT202\Real\Online Learning System\OLS\OLS\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll
-E:\Part 6 FPT SE\OJT202\Real\Online Learning System\OLS\OLS\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
-E:\Part 6 FPT SE\OJT202\Real\Online Learning System\OLS\OLS\obj\Debug\net6.0\OLS.csproj.AssemblyReference.cache
-E:\Part 6 FPT SE\OJT202\Real\Online Learning System\OLS\OLS\obj\Debug\net6.0\OLS.GeneratedMSBuildEditorConfig.editorconfig
-E:\Part 6 FPT SE\OJT202\Real\Online Learning System\OLS\OLS\obj\Debug\net6.0\OLS.AssemblyInfoInputs.cache
-E:\Part 6 FPT SE\OJT202\Real\Online Learning System\OLS\OLS\obj\Debug\net6.0\OLS.AssemblyInfo.cs
-E:\Part 6 FPT SE\OJT202\Real\Online Learning System\OLS\OLS\obj\Debug\net6.0\OLS.csproj.CoreCompileInputs.cache
-E:\Part 6 FPT SE\OJT202\Real\Online Learning System\OLS\OLS\obj\Debug\net6.0\OLS.MvcApplicationPartsAssemblyInfo.cs
-E:\Part 6 FPT SE\OJT202\Real\Online Learning System\OLS\OLS\obj\Debug\net6.0\OLS.MvcApplicationPartsAssemblyInfo.cache
-E:\Part 6 FPT SE\OJT202\Real\Online Learning System\OLS\OLS\obj\Debug\net6.0\staticwebassets\msbuild.OLS.Microsoft.AspNetCore.StaticWebAssets.props
-E:\Part 6 FPT SE\OJT202\Real\Online Learning System\OLS\OLS\obj\Debug\net6.0\staticwebassets\msbuild.build.OLS.props
-E:\Part 6 FPT SE\OJT202\Real\Online Learning System\OLS\OLS\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.OLS.props
-E:\Part 6 FPT SE\OJT202\Real\Online Learning System\OLS\OLS\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.OLS.props
-E:\Part 6 FPT SE\OJT202\Real\Online Learning System\OLS\OLS\obj\Debug\net6.0\staticwebassets.pack.json
-E:\Part 6 FPT SE\OJT202\Real\Online Learning System\OLS\OLS\obj\Debug\net6.0\staticwebassets.build.json
-E:\Part 6 FPT SE\OJT202\Real\Online Learning System\OLS\OLS\obj\Debug\net6.0\staticwebassets.development.json
-E:\Part 6 FPT SE\OJT202\Real\Online Learning System\OLS\OLS\obj\Debug\net6.0\scopedcss\bundle\OLS.styles.css
-E:\Part 6 FPT SE\OJT202\Real\Online Learning System\OLS\OLS\obj\Debug\net6.0\OLS.csproj.CopyComplete
-E:\Part 6 FPT SE\OJT202\Real\Online Learning System\OLS\OLS\obj\Debug\net6.0\OLS.dll
-E:\Part 6 FPT SE\OJT202\Real\Online Learning System\OLS\OLS\obj\Debug\net6.0\refint\OLS.dll
-E:\Part 6 FPT SE\OJT202\Real\Online Learning System\OLS\OLS\obj\Debug\net6.0\OLS.pdb
-E:\Part 6 FPT SE\OJT202\Real\Online Learning System\OLS\OLS\obj\Debug\net6.0\OLS.genruntimeconfig.cache
-E:\Part 6 FPT SE\OJT202\Real\Online Learning System\OLS\OLS\obj\Debug\net6.0\ref\OLS.dll
-D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\obj\Debug\net6.0\OLS.csproj.AssemblyReference.cache
-D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\obj\Debug\net6.0\OLS.GeneratedMSBuildEditorConfig.editorconfig
-D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\obj\Debug\net6.0\OLS.AssemblyInfoInputs.cache
-D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\obj\Debug\net6.0\OLS.AssemblyInfo.cs
-D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\obj\Debug\net6.0\OLS.csproj.CoreCompileInputs.cache
-D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\obj\Debug\net6.0\OLS.MvcApplicationPartsAssemblyInfo.cs
-D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\obj\Debug\net6.0\OLS.MvcApplicationPartsAssemblyInfo.cache
-D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\obj\Debug\net6.0\OLS.dll
-D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\obj\Debug\net6.0\refint\OLS.dll
-D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\obj\Debug\net6.0\OLS.pdb
-D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\bin\Debug\net6.0\appsettings.Development.json
-D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\bin\Debug\net6.0\appsettings.json
-D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\bin\Debug\net6.0\OLS.exe
-D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\bin\Debug\net6.0\OLS.deps.json
-D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\bin\Debug\net6.0\OLS.runtimeconfig.json
-D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\bin\Debug\net6.0\OLS.dll
-D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\bin\Debug\net6.0\OLS.pdb
-D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\bin\Debug\net6.0\AutoMapper.dll
-D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
-D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\bin\Debug\net6.0\Humanizer.dll
-D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
-D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
-D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
-D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
-D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
-D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
-D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
-D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
-D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
-D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
-D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\bin\Debug\net6.0\Microsoft.OpenApi.dll
-D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\bin\Debug\net6.0\MySqlConnector.dll
-D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\bin\Debug\net6.0\Pomelo.EntityFrameworkCore.MySql.dll
-D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
-D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
-D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll
-D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
-D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\obj\Debug\net6.0\staticwebassets.build.json
-D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\obj\Debug\net6.0\staticwebassets.development.json
-D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\obj\Debug\net6.0\scopedcss\bundle\OLS.styles.css
-D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\obj\Debug\net6.0\OLS.csproj.CopyComplete
-D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\obj\Debug\net6.0\OLS.genruntimeconfig.cache
-D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\obj\Debug\net6.0\ref\OLS.dll
+D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\OLS\bin\Debug\net6.0\appsettings.Development.json
+D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\OLS\bin\Debug\net6.0\appsettings.json
+D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\OLS\bin\Debug\net6.0\OLS.exe
+D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\OLS\bin\Debug\net6.0\OLS.deps.json
+D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\OLS\bin\Debug\net6.0\OLS.runtimeconfig.json
+D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\OLS\bin\Debug\net6.0\OLS.dll
+D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\OLS\bin\Debug\net6.0\OLS.pdb
+D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\OLS\bin\Debug\net6.0\AutoMapper.dll
+D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\OLS\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\OLS\bin\Debug\net6.0\Humanizer.dll
+D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\OLS\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\OLS\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\OLS\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\OLS\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\OLS\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\OLS\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\OLS\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\OLS\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\OLS\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\OLS\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\OLS\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\OLS\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\OLS\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\OLS\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\OLS\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\OLS\bin\Debug\net6.0\Microsoft.OpenApi.dll
+D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\OLS\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\OLS\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\OLS\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\OLS\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\OLS\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\OLS\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll
+D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\OLS\bin\Debug\net6.0\System.Drawing.Common.dll
+D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\OLS\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\OLS\bin\Debug\net6.0\System.Runtime.Caching.dll
+D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\OLS\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\OLS\bin\Debug\net6.0\System.Security.Permissions.dll
+D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\OLS\bin\Debug\net6.0\System.Windows.Extensions.dll
+D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\OLS\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\OLS\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\OLS\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\OLS\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\OLS\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\OLS\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\OLS\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\OLS\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\OLS\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\OLS\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\OLS\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\OLS\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\OLS\obj\Debug\net6.0\OLS.csproj.AssemblyReference.cache
+D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\OLS\obj\Debug\net6.0\OLS.GeneratedMSBuildEditorConfig.editorconfig
+D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\OLS\obj\Debug\net6.0\OLS.AssemblyInfoInputs.cache
+D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\OLS\obj\Debug\net6.0\OLS.AssemblyInfo.cs
+D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\OLS\obj\Debug\net6.0\OLS.csproj.CoreCompileInputs.cache
+D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\OLS\obj\Debug\net6.0\OLS.MvcApplicationPartsAssemblyInfo.cs
+D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\OLS\obj\Debug\net6.0\OLS.MvcApplicationPartsAssemblyInfo.cache
+D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\OLS\obj\Debug\net6.0\staticwebassets.build.json
+D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\OLS\obj\Debug\net6.0\staticwebassets.development.json
+D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\OLS\obj\Debug\net6.0\scopedcss\bundle\OLS.styles.css
+D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\OLS\obj\Debug\net6.0\OLS.csproj.CopyComplete
+D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\OLS\obj\Debug\net6.0\OLS.dll
+D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\OLS\obj\Debug\net6.0\refint\OLS.dll
+D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\OLS\obj\Debug\net6.0\OLS.pdb
+D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\OLS\obj\Debug\net6.0\OLS.genruntimeconfig.cache
+D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\Project_OJT\Online_Learning_System\OLS_Project\OLS\OLS\OLS\obj\Debug\net6.0\ref\OLS.dll

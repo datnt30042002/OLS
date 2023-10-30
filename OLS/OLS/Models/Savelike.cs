@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace OLS.Models
 {
-    public partial class Savelike
+    public partial class SaveLike
     {
         public int BlogBlogId { get; set; }
         public int UserUserId { get; set; }

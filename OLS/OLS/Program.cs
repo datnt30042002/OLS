@@ -1,8 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 using OLS.Models;
-//using OLS.Models;
 //using OLS.Repositories.Interface;
 //using OLS.Repositories.Object;
 
@@ -10,32 +7,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-
-builder.Services.AddCors(options => options.AddDefaultPolicy(policy => policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod()));
-
-/*
- * cũ
-builder.Services.AddDbContext<f8dbContext>(options =>
-{
-    IConfiguration configuration = builder.Configuration.GetSection("ConnectionStrings");
-    string connectionString = configuration.GetConnectionString("DefaultConnection");
-    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
-});
-*/
-
-
-// Configure the DbContext - mới
-builder.Services.AddDbContext<f8dbContext>(options =>
-{
-    IConfiguration configuration = builder.Configuration;
-    string connectionString = configuration.GetConnectionString("DefaultConnection");
-    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
-});
-
+// config dbcontext - ms sql server
+builder.Services.AddDbContext<F8DBContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddAutoMapper(typeof(Program));
 
@@ -46,6 +20,11 @@ builder.Services.AddAutoMapper(typeof(Program));
 //builder.Services.AddTransient<SignInManager<User>, SignInManager<User>>();
 //builder.Services.AddTransient<RoleManager<Userrole>, RoleManager<Userrole>>();
 //builder.Services.AddTransient<IUserRepository, UserRepository>();
+
+builder.Services.AddControllers();
+// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 

@@ -7,13 +7,7 @@ namespace OLS.Models
     {
         public User()
         {
-            BlogcommentReplyToUserNavigations = new HashSet<Blogcomment>();
-            BlogcommentUsers = new HashSet<Blogcomment>();
-            Blogs = new HashSet<Blog>();
-            Courseenrolls = new HashSet<Courseenroll>();
             Courses = new HashSet<Course>();
-            Feedbacks = new HashSet<Feedback>();
-            Notes = new HashSet<Note>();
         }
 
         public int UserId { get; set; }
@@ -35,13 +29,7 @@ namespace OLS.Models
         public string? CodeVerify { get; set; }
         public int UserRoleRoleId { get; set; }
 
-        public virtual Userrole UserRoleRole { get; set; } = null!;
-        public virtual ICollection<Blogcomment> BlogcommentReplyToUserNavigations { get; set; }
-        public virtual ICollection<Blogcomment> BlogcommentUsers { get; set; }
-        public virtual ICollection<Blog> Blogs { get; set; }
-        public virtual ICollection<Courseenroll> Courseenrolls { get; set; }
+        public virtual UserRole UserRoleRole { get; set; } = null!;
         public virtual ICollection<Course> Courses { get; set; }
-        public virtual ICollection<Feedback> Feedbacks { get; set; }
-        public virtual ICollection<Note> Notes { get; set; }
     }
 }
