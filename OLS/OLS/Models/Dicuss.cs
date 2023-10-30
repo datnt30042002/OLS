@@ -11,9 +11,9 @@ namespace OLS.Models
         }
 
         public int DicussId { get; set; }
-        public int LessonLessonId { get; set; }
+        public int? LessonDetailLessonDetailId { get; set; }
 
-        public virtual Lesson LessonLesson { get; set; } = null!;
+        public virtual LessonDetail? LessonDetailLessonDetail { get; set; }
         public virtual ICollection<Ask> Asks { get; set; }
     }
 }

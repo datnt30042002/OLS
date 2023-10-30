@@ -1,16 +1,8 @@
-------------------------------------------------------------------------------
-+ Update OLS DB: ok
-+ Fix API: ok
-+ Test Api: ok
-
-+ Defect: 
-- register
-- login
-
-------------------------------------------------------------------------------
-- dotnet ef dbcontext scaffold "server=localhost; port=3306; database=f8db;user=root;password=02122002;" Pomelo.EntityFrameworkCore.MySql --output-dir Models
-- OR
-- dotnet ef dbcontext scaffold "server=localhost; port=3306; database=f8db;uid=root;pwd=02122002;" Pomelo.EntityFrameworkCore.MySql --output-dir Models --project project_path
-- Example:
-- dotnet ef dbcontext scaffold "server=localhost; port=3306; database=f8db;uid=root;pwd=02122002;" Pomelo.EntityFrameworkCore.MySql --output-dir Models --project D:\Ky_6_OJT_Fall_2023\WorkSpace_ojt\.NET\DEMO\DemoWebAPI\DemoWebAPI_01
-------------------------------------------------------------------------------
++ xóa project cũ
++ đã làm lại tất cả với ms sql server
++ test date trong bảng user và datetime trong bảng blogcomment là ok ko có lỗi gì
++ chia folder Controllers cho ADMIN và HOME
++ DTO không chia cho việc sử dụng chung
++ Repositories không chia
+- đổi tên Object thành Implementations
++ Helper giữ nguyên
