@@ -5,13 +5,13 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace OLS.Models
 {
-    public partial class F8DBContext : DbContext
+    public partial class OLSContext : DbContext
     {
-        public F8DBContext()
+        public OLSContext()
         {
         }
 
-        public F8DBContext(DbContextOptions<F8DBContext> options)
+        public OLSContext(DbContextOptions<OLSContext> options)
             : base(options)
         {
         }
@@ -22,19 +22,22 @@ namespace OLS.Models
         public virtual DbSet<BlogComment> BlogComments { get; set; } = null!;
         public virtual DbSet<BlogTag> BlogTags { get; set; } = null!;
         public virtual DbSet<BlogTopic> BlogTopics { get; set; } = null!;
-        public virtual DbSet<Category> Categories { get; set; } = null!;
+        public virtual DbSet<Chapter> Chapters { get; set; } = null!;
         public virtual DbSet<Course> Courses { get; set; } = null!;
-        public virtual DbSet<CourseEnroll> CourseEnrolls { get; set; } = null!;
+        public virtual DbSet<CourseEnrolled> CourseEnrolleds { get; set; } = null!;
         public virtual DbSet<Dicuss> Dicusses { get; set; } = null!;
         public virtual DbSet<Feedback> Feedbacks { get; set; } = null!;
+        public virtual DbSet<LearningPath> LearningPaths { get; set; } = null!;
         public virtual DbSet<Lesson> Lessons { get; set; } = null!;
-        public virtual DbSet<LessonDetail> LessonDetails { get; set; } = null!;
         public virtual DbSet<LikeComment> LikeComments { get; set; } = null!;
+        public virtual DbSet<Note> Notes { get; set; } = null!;
         public virtual DbSet<Question> Questions { get; set; } = null!;
         public virtual DbSet<Quiz> Quizzes { get; set; } = null!;
+        public virtual DbSet<ReceiveNotification> ReceiveNotifications { get; set; } = null!;
         public virtual DbSet<Reply> Replies { get; set; } = null!;
         public virtual DbSet<SaveBlog> SaveBlogs { get; set; } = null!;
         public virtual DbSet<SaveLike> SaveLikes { get; set; } = null!;
+        public virtual DbSet<SendNotification> SendNotifications { get; set; } = null!;
         public virtual DbSet<User> Users { get; set; } = null!;
         public virtual DbSet<UserRole> UserRoles { get; set; } = null!;
 
@@ -43,7 +46,7 @@ namespace OLS.Models
 //            if (!optionsBuilder.IsConfigured)
 //            {
 //#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-//                optionsBuilder.UseSqlServer("server =ADMIN\\SQLEXPRESS; database = F8DB;uid=sa;pwd=0212;");
+//                optionsBuilder.UseSqlServer("server =ADMIN\\SQLEXPRESS; database = OLS;uid=sa;pwd=0212;");
 //            }
         }
 
@@ -51,20 +54,16 @@ namespace OLS.Models
         {
             modelBuilder.Entity<Answer>(entity =>
             {
-                entity.HasNoKey();
-
                 entity.ToTable("Answer");
 
-                entity.Property(e => e.Answer1)
-                    .HasMaxLength(50)
-                    .HasColumnName("Answer");
-
                 entity.Property(e => e.AnswerId).HasColumnName("AnswerID");
+
+                entity.Property(e => e.AnswerContent).HasMaxLength(1500);
 
                 entity.Property(e => e.QuestionQuestionId).HasColumnName("Question_QuestionID");
 
                 entity.HasOne(d => d.QuestionQuestion)
-                    .WithMany()
+                    .WithMany(p => p.Answers)
                     .HasForeignKey(d => d.QuestionQuestionId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Answer_Question");
@@ -76,7 +75,7 @@ namespace OLS.Models
 
                 entity.Property(e => e.AskId).HasColumnName("AskID");
 
-                entity.Property(e => e.AskDetail).HasMaxLength(500);
+                entity.Property(e => e.AskContent).HasMaxLength(500);
 
                 entity.Property(e => e.DicussDicussId).HasColumnName("Dicuss_DicussID");
 
@@ -93,13 +92,13 @@ namespace OLS.Models
 
                 entity.Property(e => e.BlogId).HasColumnName("BlogID");
 
-                entity.Property(e => e.BlogDetail).HasMaxLength(2000);
+                entity.Property(e => e.BlogContent).HasColumnType("text");
 
                 entity.Property(e => e.BlogImage).HasMaxLength(150);
 
                 entity.Property(e => e.BlogTagBlogTagId).HasColumnName("BlogTag_BlogTagID");
 
-                entity.Property(e => e.BlogTitle).HasMaxLength(100);
+                entity.Property(e => e.BlogTitle).HasMaxLength(150);
 
                 entity.Property(e => e.BlogTopicBlogTopicId).HasColumnName("BlogTopic_BlogTopicID");
 
@@ -118,6 +117,12 @@ namespace OLS.Models
                     .HasForeignKey(d => d.BlogTopicBlogTopicId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Blog_BlogTopic");
+
+                entity.HasOne(d => d.UserUser)
+                    .WithMany(p => p.Blogs)
+                    .HasForeignKey(d => d.UserUserId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Blog_User");
             });
 
             modelBuilder.Entity<BlogComment>(entity =>
@@ -126,21 +131,32 @@ namespace OLS.Models
 
                 entity.Property(e => e.BlogCommentId).HasColumnName("BlogCommentID");
 
-                entity.Property(e => e.BlogContent)
-                    .HasMaxLength(2000)
-                    .HasColumnName("Blog_Content");
+                entity.Property(e => e.BlogBlogId).HasColumnName("Blog_BlogID");
 
-                entity.Property(e => e.BlogId).HasColumnName("BlogID");
+                entity.Property(e => e.CommentContent).HasColumnType("text");
 
-                entity.Property(e => e.BlogLevel).HasColumnName("Blog_Level");
+                entity.Property(e => e.OriginCommentId).HasColumnName("OriginCommentID");
 
-                entity.Property(e => e.OriginCommentId).HasColumnName("Origin_Comment_ID");
-
-                entity.Property(e => e.Publish).HasColumnType("datetime");
+                entity.Property(e => e.PublishDate).HasColumnType("datetime");
 
                 entity.Property(e => e.ReplyToUser).HasColumnName("Reply_To_User");
 
-                entity.Property(e => e.UserId).HasColumnName("UserID");
+                entity.Property(e => e.UserUserId).HasColumnName("User_UserID");
+
+                entity.HasOne(d => d.BlogBlog)
+                    .WithMany(p => p.BlogComments)
+                    .HasForeignKey(d => d.BlogBlogId)
+                    .HasConstraintName("FK_BlogComment_Blog");
+
+                entity.HasOne(d => d.ReplyToUserNavigation)
+                    .WithMany(p => p.BlogCommentReplyToUserNavigations)
+                    .HasForeignKey(d => d.ReplyToUser)
+                    .HasConstraintName("FK_BlogComment_User1");
+
+                entity.HasOne(d => d.UserUser)
+                    .WithMany(p => p.BlogCommentUserUsers)
+                    .HasForeignKey(d => d.UserUserId)
+                    .HasConstraintName("FK_BlogComment_User");
             });
 
             modelBuilder.Entity<BlogTag>(entity =>
@@ -149,7 +165,7 @@ namespace OLS.Models
 
                 entity.Property(e => e.BlogTagId).HasColumnName("BlogTagID");
 
-                entity.Property(e => e.Name).HasMaxLength(100);
+                entity.Property(e => e.BlogTagName).HasMaxLength(150);
             });
 
             modelBuilder.Entity<BlogTopic>(entity =>
@@ -158,20 +174,24 @@ namespace OLS.Models
 
                 entity.Property(e => e.BlogTopicId).HasColumnName("BlogTopicID");
 
-                entity.Property(e => e.Name).HasMaxLength(100);
+                entity.Property(e => e.BlogTopicName).HasMaxLength(150);
             });
 
-            modelBuilder.Entity<Category>(entity =>
+            modelBuilder.Entity<Chapter>(entity =>
             {
-                entity.ToTable("Category");
+                entity.ToTable("Chapter");
 
-                entity.Property(e => e.CategoryId).HasColumnName("CategoryID");
+                entity.Property(e => e.ChapterId).HasColumnName("ChapterID");
 
-                entity.Property(e => e.CategoryImage).HasMaxLength(150);
+                entity.Property(e => e.ChapterName).HasMaxLength(150);
 
-                entity.Property(e => e.Description).HasMaxLength(200);
+                entity.Property(e => e.CourseCourseId).HasColumnName("Course_CourseID");
 
-                entity.Property(e => e.Name).HasMaxLength(50);
+                entity.HasOne(d => d.CourseCourse)
+                    .WithMany(p => p.Chapters)
+                    .HasForeignKey(d => d.CourseCourseId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Chapter_Course");
             });
 
             modelBuilder.Entity<Course>(entity =>
@@ -180,25 +200,25 @@ namespace OLS.Models
 
                 entity.Property(e => e.CourseId).HasColumnName("CourseID");
 
-                entity.Property(e => e.CategoryCategoryId).HasColumnName("Category_CategoryID");
+                entity.Property(e => e.CourseInfomation).HasMaxLength(500);
 
-                entity.Property(e => e.CourseInfo).HasMaxLength(200);
+                entity.Property(e => e.CourseName).HasMaxLength(50);
 
-                entity.Property(e => e.Description).HasMaxLength(200);
+                entity.Property(e => e.Description).HasMaxLength(500);
 
                 entity.Property(e => e.Image).HasMaxLength(150);
 
-                entity.Property(e => e.Name).HasMaxLength(50);
+                entity.Property(e => e.LearningPathLearningPathId).HasColumnName("LearningPath_LearningPathID");
 
                 entity.Property(e => e.UserUserId).HasColumnName("User_UserID");
 
-                entity.Property(e => e.VideoIntro).HasMaxLength(200);
+                entity.Property(e => e.VideoIntro).HasMaxLength(150);
 
-                entity.HasOne(d => d.CategoryCategory)
+                entity.HasOne(d => d.LearningPathLearningPath)
                     .WithMany(p => p.Courses)
-                    .HasForeignKey(d => d.CategoryCategoryId)
+                    .HasForeignKey(d => d.LearningPathLearningPathId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Course_Category");
+                    .HasConstraintName("FK_Course_LearningPath");
 
                 entity.HasOne(d => d.UserUser)
                     .WithMany(p => p.Courses)
@@ -207,33 +227,29 @@ namespace OLS.Models
                     .HasConstraintName("FK_Course_User");
             });
 
-            modelBuilder.Entity<CourseEnroll>(entity =>
+            modelBuilder.Entity<CourseEnrolled>(entity =>
             {
-                entity.HasNoKey();
+                entity.ToTable("CourseEnrolled");
 
-                entity.ToTable("CourseEnroll");
+                entity.Property(e => e.CourseEnrolledId).HasColumnName("CourseEnrolledID");
 
                 entity.Property(e => e.CourseCourseId).HasColumnName("Course_CourseID");
 
-                entity.Property(e => e.CourseEnrollId).HasColumnName("CourseEnrollID");
-
-                entity.Property(e => e.EnrollDate).HasColumnType("date");
-
-                entity.Property(e => e.LessonCurrent).HasMaxLength(150);
+                entity.Property(e => e.EnrolledDate).HasColumnType("datetime");
 
                 entity.Property(e => e.UserUserId).HasColumnName("User_UserID");
 
                 entity.HasOne(d => d.CourseCourse)
-                    .WithMany()
+                    .WithMany(p => p.CourseEnrolleds)
                     .HasForeignKey(d => d.CourseCourseId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_CourseEnroll_Course");
+                    .HasConstraintName("FK_CourseEnrolled_Course");
 
                 entity.HasOne(d => d.UserUser)
-                    .WithMany()
+                    .WithMany(p => p.CourseEnrolleds)
                     .HasForeignKey(d => d.UserUserId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_CourseEnroll_User");
+                    .HasConstraintName("FK_CourseEnrolled_User");
             });
 
             modelBuilder.Entity<Dicuss>(entity =>
@@ -242,12 +258,13 @@ namespace OLS.Models
 
                 entity.Property(e => e.DicussId).HasColumnName("DicussID");
 
-                entity.Property(e => e.LessonDetailLessonDetailId).HasColumnName("LessonDetail_LessonDetailID");
+                entity.Property(e => e.LessonLessonId).HasColumnName("Lesson_LessonID");
 
-                entity.HasOne(d => d.LessonDetailLessonDetail)
+                entity.HasOne(d => d.LessonLesson)
                     .WithMany(p => p.Dicusses)
-                    .HasForeignKey(d => d.LessonDetailLessonDetailId)
-                    .HasConstraintName("FK_Dicuss_LessonDetail");
+                    .HasForeignKey(d => d.LessonLessonId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Dicuss_Lesson");
             });
 
             modelBuilder.Entity<Feedback>(entity =>
@@ -258,15 +275,34 @@ namespace OLS.Models
 
                 entity.Property(e => e.CourseCourseId).HasColumnName("Course_CourseID");
 
-                entity.Property(e => e.Feedback1)
-                    .HasMaxLength(500)
-                    .HasColumnName("Feedback");
+                entity.Property(e => e.FeedbackContent).HasMaxLength(1000);
+
+                entity.Property(e => e.UserUserId).HasColumnName("User_UserID");
 
                 entity.HasOne(d => d.CourseCourse)
                     .WithMany(p => p.Feedbacks)
                     .HasForeignKey(d => d.CourseCourseId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Feedback_Course");
+
+                entity.HasOne(d => d.UserUser)
+                    .WithMany(p => p.Feedbacks)
+                    .HasForeignKey(d => d.UserUserId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Feedback_User");
+            });
+
+            modelBuilder.Entity<LearningPath>(entity =>
+            {
+                entity.ToTable("LearningPath");
+
+                entity.Property(e => e.LearningPathId).HasColumnName("LearningPathID");
+
+                entity.Property(e => e.Description).HasMaxLength(500);
+
+                entity.Property(e => e.Image).HasMaxLength(150);
+
+                entity.Property(e => e.LearningPathName).HasMaxLength(100);
             });
 
             modelBuilder.Entity<Lesson>(entity =>
@@ -275,36 +311,17 @@ namespace OLS.Models
 
                 entity.Property(e => e.LessonId).HasColumnName("LessonID");
 
-                entity.Property(e => e.CourseCourseId).HasColumnName("Course_CourseID");
+                entity.Property(e => e.ChapterChapterId).HasColumnName("Chapter_ChapterID");
 
-                entity.Property(e => e.Name).HasMaxLength(100);
+                entity.Property(e => e.Title).HasMaxLength(150);
 
-                entity.HasOne(d => d.CourseCourse)
+                entity.Property(e => e.Video).HasMaxLength(150);
+
+                entity.HasOne(d => d.ChapterChapter)
                     .WithMany(p => p.Lessons)
-                    .HasForeignKey(d => d.CourseCourseId)
+                    .HasForeignKey(d => d.ChapterChapterId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Lesson_Course");
-            });
-
-            modelBuilder.Entity<LessonDetail>(entity =>
-            {
-                entity.ToTable("LessonDetail");
-
-                entity.Property(e => e.LessonDetailId).HasColumnName("LessonDetailID");
-
-                entity.Property(e => e.LessonLessonId).HasColumnName("Lesson_LessonID");
-
-                entity.Property(e => e.Note).HasMaxLength(100);
-
-                entity.Property(e => e.Title).HasMaxLength(100);
-
-                entity.Property(e => e.Video).HasMaxLength(100);
-
-                entity.HasOne(d => d.LessonLesson)
-                    .WithMany(p => p.LessonDetails)
-                    .HasForeignKey(d => d.LessonLessonId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_LessonDetail_Lesson");
+                    .HasConstraintName("FK_Lesson_Chapter");
             });
 
             modelBuilder.Entity<LikeComment>(entity =>
@@ -330,6 +347,31 @@ namespace OLS.Models
                     .HasConstraintName("FK_LikeComment_User");
             });
 
+            modelBuilder.Entity<Note>(entity =>
+            {
+                entity.ToTable("Note");
+
+                entity.Property(e => e.NoteId).HasColumnName("NoteID");
+
+                entity.Property(e => e.ChapterChapterId).HasColumnName("Chapter_ChapterID");
+
+                entity.Property(e => e.NoteContent).HasMaxLength(500);
+
+                entity.Property(e => e.UserUserId).HasColumnName("User_UserID");
+
+                entity.HasOne(d => d.ChapterChapter)
+                    .WithMany(p => p.Notes)
+                    .HasForeignKey(d => d.ChapterChapterId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Note_Chapter");
+
+                entity.HasOne(d => d.UserUser)
+                    .WithMany(p => p.Notes)
+                    .HasForeignKey(d => d.UserUserId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Note_User");
+            });
+
             modelBuilder.Entity<Question>(entity =>
             {
                 entity.ToTable("Question");
@@ -353,12 +395,44 @@ namespace OLS.Models
 
                 entity.Property(e => e.QuizId).HasColumnName("QuizID");
 
-                entity.Property(e => e.LessonLessonId).HasColumnName("Lesson_LessonID");
+                entity.Property(e => e.ChapterChapterId).HasColumnName("Chapter_ChapterID");
 
-                entity.HasOne(d => d.LessonLesson)
+                entity.HasOne(d => d.ChapterChapter)
                     .WithMany(p => p.Quizzes)
-                    .HasForeignKey(d => d.LessonLessonId)
-                    .HasConstraintName("FK_Quiz_Lesson");
+                    .HasForeignKey(d => d.ChapterChapterId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Quiz_Chapter");
+            });
+
+            modelBuilder.Entity<ReceiveNotification>(entity =>
+            {
+                entity.ToTable("ReceiveNotification");
+
+                entity.Property(e => e.ReceiveNotificationId).HasColumnName("ReceiveNotificationID");
+
+                entity.Property(e => e.CourseCourseId).HasColumnName("Course_CourseID");
+
+                entity.Property(e => e.SendNotificationSendNotificationId).HasColumnName("SendNotification_SendNotificationID");
+
+                entity.Property(e => e.UserUserId).HasColumnName("User_UserID");
+
+                entity.HasOne(d => d.CourseCourse)
+                    .WithMany(p => p.ReceiveNotifications)
+                    .HasForeignKey(d => d.CourseCourseId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_ReceiveNotification_Course");
+
+                entity.HasOne(d => d.SendNotificationSendNotification)
+                    .WithMany(p => p.ReceiveNotifications)
+                    .HasForeignKey(d => d.SendNotificationSendNotificationId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_ReceiveNotification_SendNotification");
+
+                entity.HasOne(d => d.UserUser)
+                    .WithMany(p => p.ReceiveNotifications)
+                    .HasForeignKey(d => d.UserUserId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_ReceiveNotification_User");
             });
 
             modelBuilder.Entity<Reply>(entity =>
@@ -369,12 +443,11 @@ namespace OLS.Models
 
                 entity.Property(e => e.AskAskId).HasColumnName("Ask_AskID");
 
-                entity.Property(e => e.ReplyDetail).HasMaxLength(500);
+                entity.Property(e => e.ReplyContent).HasMaxLength(2000);
 
                 entity.HasOne(d => d.AskAsk)
                     .WithMany(p => p.Replies)
                     .HasForeignKey(d => d.AskAskId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Reply_Ask");
             });
 
@@ -386,9 +459,7 @@ namespace OLS.Models
 
                 entity.Property(e => e.BlogBlogId).HasColumnName("Blog_BlogID");
 
-                entity.Property(e => e.SaveDay)
-                    .HasColumnType("datetime")
-                    .HasColumnName("Save_Day");
+                entity.Property(e => e.SavedDay).HasColumnType("datetime");
 
                 entity.Property(e => e.UserUserId).HasColumnName("User_UserID");
 
@@ -428,6 +499,29 @@ namespace OLS.Models
                     .HasConstraintName("FK_SaveLike_User");
             });
 
+            modelBuilder.Entity<SendNotification>(entity =>
+            {
+                entity.ToTable("SendNotification");
+
+                entity.Property(e => e.SendNotificationId).HasColumnName("SendNotificationID");
+
+                entity.Property(e => e.CourseCourseId).HasColumnName("Course_CourseID");
+
+                entity.Property(e => e.NotificationContent).HasMaxLength(1500);
+
+                entity.Property(e => e.UserUserId).HasColumnName("User_UserID");
+
+                entity.HasOne(d => d.CourseCourse)
+                    .WithMany(p => p.SendNotifications)
+                    .HasForeignKey(d => d.CourseCourseId)
+                    .HasConstraintName("FK_SendNotification_Course");
+
+                entity.HasOne(d => d.UserUser)
+                    .WithMany(p => p.SendNotifications)
+                    .HasForeignKey(d => d.UserUserId)
+                    .HasConstraintName("FK_SendNotification_User");
+            });
+
             modelBuilder.Entity<User>(entity =>
             {
                 entity.ToTable("User");
@@ -436,41 +530,39 @@ namespace OLS.Models
 
                 entity.Property(e => e.Address).HasMaxLength(100);
 
-                entity.Property(e => e.BackgroundImage).HasMaxLength(200);
+                entity.Property(e => e.BackgroundImage).HasMaxLength(150);
 
-                entity.Property(e => e.Bio).HasMaxLength(200);
+                entity.Property(e => e.Bio).HasMaxLength(2500);
 
-                entity.Property(e => e.CodeVerify).HasMaxLength(150);
+                entity.Property(e => e.CodeVerify).HasMaxLength(50);
 
-                entity.Property(e => e.Dob).HasColumnType("date");
+                entity.Property(e => e.Dob).HasColumnType("datetime");
 
-                entity.Property(e => e.Email).HasMaxLength(200);
+                entity.Property(e => e.Email).HasMaxLength(50);
 
-                entity.Property(e => e.Facebook).HasMaxLength(200);
+                entity.Property(e => e.Facebook).HasMaxLength(50);
 
                 entity.Property(e => e.FacebookId)
-                    .HasMaxLength(200)
+                    .HasMaxLength(50)
                     .HasColumnName("FacebookID");
 
                 entity.Property(e => e.FullName).HasMaxLength(50);
 
-                entity.Property(e => e.Github).HasMaxLength(200);
+                entity.Property(e => e.Github).HasMaxLength(50);
 
                 entity.Property(e => e.GithubId)
-                    .HasMaxLength(200)
+                    .HasMaxLength(50)
                     .HasColumnName("GithubID");
 
                 entity.Property(e => e.GmailId)
-                    .HasMaxLength(200)
+                    .HasMaxLength(50)
                     .HasColumnName("GmailID");
 
-                entity.Property(e => e.Image).HasMaxLength(200);
+                entity.Property(e => e.Image).HasMaxLength(150);
 
                 entity.Property(e => e.Password).HasMaxLength(50);
 
-                entity.Property(e => e.Phone)
-                    .HasMaxLength(11)
-                    .IsFixedLength();
+                entity.Property(e => e.Phone).HasMaxLength(11);
 
                 entity.Property(e => e.UserRoleRoleId).HasColumnName("UserRole_RoleID");
 
@@ -489,7 +581,7 @@ namespace OLS.Models
 
                 entity.Property(e => e.RoleId).HasColumnName("RoleID");
 
-                entity.Property(e => e.Name).HasMaxLength(50);
+                entity.Property(e => e.RoleName).HasMaxLength(50);
             });
 
             OnModelCreatingPartial(modelBuilder);

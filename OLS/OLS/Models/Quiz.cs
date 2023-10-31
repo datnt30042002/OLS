@@ -11,9 +11,9 @@ namespace OLS.Models
         }
 
         public int QuizId { get; set; }
-        public int? LessonLessonId { get; set; }
+        public int ChapterChapterId { get; set; }
 
-        public virtual Lesson? LessonLesson { get; set; }
+        public virtual Chapter ChapterChapter { get; set; } = null!;
         public virtual ICollection<Question> Questions { get; set; }
     }
 }

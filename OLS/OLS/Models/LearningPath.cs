@@ -3,17 +3,17 @@ using System.Collections.Generic;
 
 namespace OLS.Models
 {
-    public partial class Category
+    public partial class LearningPath
     {
-        public Category()
+        public LearningPath()
         {
             Courses = new HashSet<Course>();
         }
 
-        public int CategoryId { get; set; }
-        public string? Name { get; set; }
-        public string? CategoryImage { get; set; }
+        public int LearningPathId { get; set; }
+        public string? LearningPathName { get; set; }
         public string? Description { get; set; }
+        public string? Image { get; set; }
         public int? Status { get; set; }
 
         public virtual ICollection<Course> Courses { get; set; }

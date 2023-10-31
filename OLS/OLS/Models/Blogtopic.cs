@@ -11,7 +11,7 @@ namespace OLS.Models
         }
 
         public int BlogTopicId { get; set; }
-        public string? Name { get; set; }
+        public string? BlogTopicName { get; set; }
 
         public virtual ICollection<Blog> Blogs { get; set; }
     }
