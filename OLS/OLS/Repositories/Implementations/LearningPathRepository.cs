@@ -7,16 +7,16 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace OLS.Repositories.Implementations
 {
-    public class CategoryRepository : ICategoryRepository
+    public class LearningPathRepository : ILearningPathRepository
     {
         private readonly OLSContext db;
-        public CategoryRepository(OLSContext db)
+        public LearningPathRepository(OLSContext db)
         {
             this.db = db;
         }
 
         // Homepage
-        // Get all learning paths(here is category table)
+        // get all learning paths - Homepage, LearningPaths
         public IEnumerable<LearningPathDTO> GetAllLearningPaths()
         {
             var learningPaths = db.LearningPaths
@@ -31,5 +31,6 @@ namespace OLS.Repositories.Implementations
 
             return learningPaths;
         }
+
     }
 }

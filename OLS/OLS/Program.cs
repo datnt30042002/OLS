@@ -25,7 +25,7 @@ builder.Services.AddAutoMapper(typeof(Program));
 
 // Config Repositories
 builder.Services.AddScoped<ICourseRepository, CourseRepository>();
-builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddScoped<ILearningPathRepository, LearningPathRepository>();
 builder.Services.AddScoped<IBlogRepository, BlogRepository>();
 
 builder.Services.AddControllers();

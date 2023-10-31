@@ -1,47 +1,47 @@
-====================================
-+ Database: OLS
-====================================
-
 ===== Viết API Home ================
 + HomePage
--- Api cho HomePage cần 
-- Search 
+-- Api cho HomePage cần
+- Search courses và blogs
 - list 10 khóa học mất phí
-- list 15 khóa học miễn phí 
+- list 15 khóa học miễn phí
 - list gthieu các lộ trình
 - list 10 blogs mới nhất
 
-===============================
++ LearningPaths
+- list ra tất cả LearningPaths cho chức năng show và filter
+- list ra các khóa học đi theo LearningPaths theo LearningPathID
+
+====================================
 
 ======= Viết API Admin =============
 +
 -
 
-===============================
+====================================
 
-
-========= Giao diện ===========
+========= Giao diện ================
 --- Note ---
-- (Bản demo trong file Interfaces.doc)
+- Bản demo giao diện trong file Interfaces.doc
 - màu chủ đạo: trắng, xanh(blue)
 
 --- Home ---
 + HomePage
--- Giao diện cho Home
 - 1 NavBar cùng thanh header
 - sẽ không làm SideBar
 
++ LearningPaths
+- như trong hình phần LearningPaths trong Interfaces.doc
 
 --- Admin ---
 +
 -
 
 
-===============================
+====================================
 
 ========= Công nghệ ===========
 - .Net core 6.0
 - React
-- MS SQLServer
+- MS SQLServer: database OLS
 
 ===============================

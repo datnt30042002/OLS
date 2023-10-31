@@ -7,5 +7,6 @@ namespace OLS.Repositories.Interface
     {
         // Homepage
         IEnumerable<BlogDTO> Get10NewestBlogs();
+        IEnumerable<BlogDTO> SearchBlogsByBlogTitle(string keyword);
     }
 }
