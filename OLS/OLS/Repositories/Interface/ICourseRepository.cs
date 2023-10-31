@@ -8,5 +8,6 @@ namespace OLS.Repositories.Interface
         // Homepage
         IEnumerable<CourseDTO> Get10CoursesWithFee();
         IEnumerable<CourseDTO> Get15CoursesFree();
+        IEnumerable<CourseDTO> SearchCoursesByCourseName(string keyword);
     }
 }

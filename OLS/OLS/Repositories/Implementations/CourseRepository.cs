@@ -63,5 +63,27 @@ namespace OLS.Repositories.Implementations
             return courses;
         }
 
+        // search course by course name
+        public IEnumerable<CourseDTO> SearchCoursesByCourseName(string keyword)
+        {
+            var courses = db.Courses
+                .Where(c => c.CourseName.Contains(keyword))
+                .Select(c => new CourseDTO
+                {
+                    CourseId = c.CourseId,
+                    CourseName = c.CourseName,
+                    Description = c.Description,
+                    CourseInfomation = c.CourseInfomation,
+                    Image = c.Image,
+                    VideoIntro = c.VideoIntro,
+                    Fee = c.Fee,
+                    Status = c.Status,
+                    LearningPathLearningPathId = c.LearningPathLearningPathId,
+                    UserUserId = c.UserUserId
+                }).ToList();
+
+            return courses;
+        }
+
     }
 }

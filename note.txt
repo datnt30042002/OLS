@@ -13,3 +13,9 @@
 - đã thêm Interface.doc: mục đích hình dung được giao diện cần xây, thống nhất tránh sai sót về sau
 - hủy bỏ F8DB
 - sử dụng database mới OLS
+
++ 01/11/2023
+- xem chi tiết và học khóa học
+- sử dụng session như chức năng giỏ hàng?
+- nếu chưa đky -> đến trang đky khóa học + trả tiền(qr pay) -> nếu xong ok -> insert CourseEnrolled
+- course -> chapter -> lesson

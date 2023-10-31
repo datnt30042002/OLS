@@ -33,7 +33,29 @@ namespace OLS.Repositories.Implementations
                     ReadTime = blog.ReadTime,
                     BlogTopicBlogTopicId = blog.BlogTopicBlogTopicId,
                     BlogTagBlogTagId = blog.BlogTagBlogTagId,
-                    UserUserId = blog.UserUserId,
+                    UserUserId = blog.UserUserId
+                }).ToList();
+
+            return blogs;
+        }
+
+        // search blogs by blog title
+        public IEnumerable<BlogDTO> SearchBlogsByBlogTitle(string keyword)
+        {
+            var blogs = db.Blogs
+                .Where(blog => blog.BlogTitle == keyword)
+                .Select(blog => new BlogDTO
+                {
+                    BlogId = blog.BlogId,
+                    BlogTitle = blog.BlogTitle,
+                    BlogImage = blog.BlogImage,
+                    BlogContent = blog.BlogContent,
+                    PostDate = blog.PostDate,
+                    Status = blog.Status,
+                    ReadTime = blog.ReadTime,
+                    BlogTopicBlogTopicId = blog.BlogTopicBlogTopicId,
+                    BlogTagBlogTagId = blog.BlogTagBlogTagId,
+                    UserUserId = blog.UserUserId
                 }).ToList();
 
             return blogs;
