@@ -8,8 +8,8 @@ namespace OLS._2.Home.Controllers
     [ApiController]
     public class TestHomeController : ControllerBase
     {
-        public readonly F8DBContext db;
-        public TestHomeController(F8DBContext db)
+        public readonly OLSContext db;
+        public TestHomeController(OLSContext db)
         {
             this.db = db;
         }

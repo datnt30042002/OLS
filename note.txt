@@ -1,8 +1,15 @@
-+ xóa project cũ
-+ đã làm lại tất cả với ms sql server
-+ test date trong bảng user và datetime trong bảng blogcomment là ok ko có lỗi gì
-+ chia folder Controllers cho ADMIN và HOME
-+ DTO không chia cho việc sử dụng chung
-+ Repositories không chia
-- đổi tên Object thành Implementations
-+ Helper giữ nguyên
++ 30/10/2023
+- xóa project cũ
+- đã làm lại tất cả với ms sql server
+- test date trong bảng user và datetime trong bảng blogcomment là ok ko có lỗi gì
+- chia folder Controllers cho ADMIN và HOME
+- DTO không chia cho việc sử dụng chung
+-- Repositories không chia
+ - đổi tên Object thành Implementations
+- Helper giữ nguyên
+
++ 31/10/2023
+- đã thêm Plan.txt: mục đích xây plan dần dần và bám theo(gồm viết API và giao diện)
+- đã thêm Interface.doc: mục đích hình dung được giao diện cần xây, thống nhất tránh sai sót về sau
+- hủy bỏ F8DB
+- sử dụng database mới OLS

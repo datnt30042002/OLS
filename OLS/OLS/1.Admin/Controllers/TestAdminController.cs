@@ -8,8 +8,8 @@ namespace OLS._1.Admin.Controllers
     [ApiController]
     public class TestAdminController : ControllerBase
     {
-        public readonly F8DBContext db;
-        public TestAdminController(F8DBContext db)
+        public readonly OLSContext db;
+        public TestAdminController(OLSContext db)
         {
             this.db = db;
         }

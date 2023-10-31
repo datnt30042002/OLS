@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using OLS.Models;
+using OLS.Repositories.Implementations;
+using OLS.Repositories.Interface;
 //using OLS.Repositories.Interface;
 //using OLS.Repositories.Object;
 
@@ -8,7 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 // config dbcontext - ms sql server
-builder.Services.AddDbContext<F8DBContext>(options =>
+builder.Services.AddDbContext<OLSContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddAutoMapper(typeof(Program));
@@ -20,6 +22,11 @@ builder.Services.AddAutoMapper(typeof(Program));
 //builder.Services.AddTransient<SignInManager<User>, SignInManager<User>>();
 //builder.Services.AddTransient<RoleManager<Userrole>, RoleManager<Userrole>>();
 //builder.Services.AddTransient<IUserRepository, UserRepository>();
+
+// Config Repositories
+builder.Services.AddScoped<ICourseRepository, CourseRepository>();
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddScoped<IBlogRepository, BlogRepository>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

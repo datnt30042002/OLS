@@ -11,7 +11,7 @@ namespace OLS.Models
         }
 
         public int AskId { get; set; }
-        public string? AskDetail { get; set; }
+        public string? AskContent { get; set; }
         public int DicussDicussId { get; set; }
 
         public virtual Dicuss DicussDicuss { get; set; } = null!;

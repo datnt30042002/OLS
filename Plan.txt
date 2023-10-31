@@ -1,0 +1,47 @@
+====================================
++ Database: OLS
+====================================
+
+===== Viết API Home ================
++ HomePage
+-- Api cho HomePage cần 
+- Search 
+- list 10 khóa học mất phí
+- list 15 khóa học miễn phí 
+- list gthieu các lộ trình
+- list 10 blogs mới nhất
+
+===============================
+
+======= Viết API Admin =============
++
+-
+
+===============================
+
+
+========= Giao diện ===========
+--- Note ---
+- (Bản demo trong file Interfaces.doc)
+- màu chủ đạo: trắng, xanh(blue)
+
+--- Home ---
++ HomePage
+-- Giao diện cho Home
+- 1 NavBar cùng thanh header
+- sẽ không làm SideBar
+
+
+--- Admin ---
++
+-
+
+
+===============================
+
+========= Công nghệ ===========
+- .Net core 6.0
+- React
+- MS SQLServer
+
+===============================

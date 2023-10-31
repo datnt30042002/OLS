@@ -7,16 +7,16 @@ namespace OLS.Models
     {
         public Lesson()
         {
-            LessonDetails = new HashSet<LessonDetail>();
-            Quizzes = new HashSet<Quiz>();
+            Dicusses = new HashSet<Dicuss>();
         }
 
         public int LessonId { get; set; }
-        public string? Name { get; set; }
-        public int CourseCourseId { get; set; }
+        public string? Title { get; set; }
+        public string? Video { get; set; }
+        public TimeSpan? Time { get; set; }
+        public int ChapterChapterId { get; set; }
 
-        public virtual Course CourseCourse { get; set; } = null!;
-        public virtual ICollection<LessonDetail> LessonDetails { get; set; }
-        public virtual ICollection<Quiz> Quizzes { get; set; }
+        public virtual Chapter ChapterChapter { get; set; } = null!;
+        public virtual ICollection<Dicuss> Dicusses { get; set; }
     }
 }
