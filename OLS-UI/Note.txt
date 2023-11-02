@@ -1,0 +1,4 @@
++ Tạo và cấu hình 
+- .env.local: môi trường cho react app - port config: 3003
+- prettierrc: cấu hình định dạng thống nhất code 
+- 
