@@ -1,5 +1,6 @@
 ===== Viết API Home ================
-+ HomePage
+++ Task
++ HomePage - Kiên
 -- Api cho HomePage cần
 - Search courses và blogs
 - list 10 khóa học mất phí
@@ -7,7 +8,7 @@
 - list gthieu các lộ trình
 - list 10 blogs mới nhất
 
-+ LearningPaths
++ LearningPaths - Kiên
 - list ra tất cả LearningPaths cho chức năng show và filter
 - list ra các khóa học đi theo LearningPaths theo LearningPathID
 
