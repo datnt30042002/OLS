@@ -11,6 +11,7 @@ import { Wrapper as PopperWrapper } from '~/components/Popper';
 import AccountItem from '~/components/AccountItem';
 import 'tippy.js/dist/tippy.css'; // optional - cho việc hiển thị tooltip
 import { SearchIcon } from '~/components/Icons';
+import { useDebounce } from '~/hooks';
 
 const cx = classNames.bind(styles);
 
@@ -19,16 +20,33 @@ const Search = () => {
     const [searchResult, setSearchResult] = useState([]);
     // show khu vuực kết quả Search lên với 2 ddkien, có ký tự và phải đc focus
     const [showResult, setShowResult] = useState(true);
+    const [loading, setLoading] = useState(false);
+
+    // 1: '' lần đầu tiên component này chạy là 1 chuỗi rỗng
+    // 2: 'h'
+    const debounced = useDebounce(searchValue, 500);
 
     const inputRef = useRef();
 
+    // get api
     useEffect(() => {
-        setTimeout(() => {
-            // để hiển thị ra popper các accountitems
-            setSearchResult([1, 1, 1]);
-            //setSearchResult([]);
-        }, 0);
-    }, []);
+        if (!debounced.trim()) {
+            setSearchResult([]);
+            return;
+        }
+
+        setLoading(true);
+
+        fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(debounced)}&type=less`)
+            .then((res) => res.json())
+            .then((res) => {
+                setSearchResult(res.data);
+                setLoading(false);
+            })
+            .catch(() => {
+                setLoading(false);
+            });
+    }, [debounced]);
 
     const handleClear = () => {
         // text input
@@ -53,9 +71,9 @@ const Search = () => {
                 <PopperWrapper>
                     <div className={cx('search-result')} tabIndex="-1" {...attrs}>
                         <h4 className={cx('search-title')}>Accounts</h4>
-                        <AccountItem />
-                        <AccountItem />
-                        <AccountItem />
+                        {searchResult.map((result) => (
+                            <AccountItem key={result.id} data={result} />
+                        ))}
                     </div>
                 </PopperWrapper>
             )}
@@ -73,17 +91,16 @@ const Search = () => {
                     onFocus={() => setShowResult(true)}
                 />
                 {/* khi có searchValue thì hiển thị button clear */}
-                {!!searchValue && (
-                    /* button clear -> x */
+                {!!searchValue && !loading && (
+                    //button clear -> x
                     <button className={cx('clear')} onClick={handleClear}>
                         <FontAwesomeIcon icon={faCircleXmark} />
                     </button>
                 )}
 
                 {/* button loading */}
-                {/* <button className={cx('loading')}>
-                    <FontAwesomeIcon icon={faSpinner} />
-                </button> */}
+                {loading && <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />}
+
                 {/* button search */}
                 <button className={cx('search-btn')}>
                     <SearchIcon />
