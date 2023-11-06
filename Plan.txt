@@ -20,6 +20,17 @@
 
 ====================================
 
+========= Viết giao diện - OLS-UI ================
+++ Task
++ Home
+--- HomePage - Kiên
+- Giao diện HomePage - Đang hoàn thiện - 02/11/2023
+
+
++ Admin
+
+==================================================
+
 ========= Giao diện ================
 --- Note ---
 - Bản demo giao diện trong file Interfaces.doc

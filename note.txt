@@ -19,3 +19,6 @@
 - sử dụng session như chức năng giỏ hàng?
 - nếu chưa đky -> đến trang đky khóa học + trả tiền(qr pay) -> nếu xong ok -> insert CourseEnrolled
 - course -> chapter -> lesson
+
++ 02/11/2023
+- config ols-ui - reactapp
