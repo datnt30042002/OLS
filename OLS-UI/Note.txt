@@ -1,4 +1,16 @@
 + Tạo và cấu hình 
 - .env.local: môi trường cho react app - port config: 3003
 - prettierrc: cấu hình định dạng thống nhất code 
-- 
+- routes để config link dẫn đến pages sau đó sử dụng map sang App.js để có thể sử dụng 
+- Tippy: hỗ trợ hiển thị hiển thị khung list khi hover - tooltip
+
++ Phần chính duy nhất App.js, index.js 
+
++ note khi làm 
+- dùng route để chuyển trang theo link
+- Home, Learning Paths
+- làm routes sx1
+- chia lam 2 const Public va Private
+- search 
+- button login, register 
++ 67

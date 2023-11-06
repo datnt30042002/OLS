@@ -1,0 +1,43 @@
+@import 'normalize.css';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500&display=swap');
+
+:root {
+    // đặt biến dùng chung
+    --primary: #0056d2;
+    --black: #000;
+    --white: #fff;
+    --text-color: #333;
+
+    // Default layout
+    --default-layout-header-height: 60px;
+    --default-layout-header-width: 1150px;
+    --default-layout-header-horizontal-spacer: 24px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+}
+
+body {
+    font-family: 'Montserrat', 'sans-serif';
+    font-size: 1.6rem;
+    line-height: 1.5;
+    text-rendering: optimizeSpeed;
+    color: var(--text-color);
+}
+
+button, input, [tabindex] {
+    outline: none;
+    border: none;
+}
+
+a[href] {
+    color: var(--text-color);
+    text-decoration: none; // bỏ gạch chân của thẻ href
+}
