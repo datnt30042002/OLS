@@ -46,4 +46,8 @@ style={{
 - cho phần search
 
 + 71
-- 
+- fetch tới api
+
++ 72
+- khắc phục nhiều request api 
+- debounce: sẽ lấy hành động cuối dùng khi dừng lại
