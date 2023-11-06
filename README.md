@@ -1,4 +1,5 @@
 # OLS
 Online Learning System
-# Use ReactJs - npm
+# .NET core api
+# ReactJs - npm
 - npm start to run project
