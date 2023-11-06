@@ -19,7 +19,11 @@ const cx = classNames.bind(styles);
 const AccountItem = () => {
     return (
         <div className={cx('wrapper')}>
-            <img className={cx('avatar')} src="https://avatars.githubusercontent.com/u/108357953?v=4" alt="Kien" />
+            <img
+                className={cx('avatar')}
+                src="https://avatars.githubusercontent.com/u/108357953?v=4"
+                alt="Bui Van Kien"
+            />
             <div className={cx('info')}>
                 <h4 className={cx('name')}>
                     <span>Bui Van Kien</span>

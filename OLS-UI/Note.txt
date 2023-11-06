@@ -14,3 +14,21 @@
 - search 
 - button login, register 
 + 67
+- children - submenu
+- cho menuitems ... dọc logic menu list nhiều lớp 
++ 68
+- slice(): Trong React, slice() không phải là một phương thức mà là một phương thức thuộc về JavaScript Array object. 
+Phương thức slice() trong React và JavaScript được sử dụng để tạo một bản sao của một mảng hoặc lấy một phần của mảng ban đầu mà không làm thay đổi mảng gốc. 
+Phương thức này có công dụng cắt ra một phần của mảng dựa trên các chỉ số bắt đầu và kết thúc.
+- tooltip
+- sau khi login: - chuông tbao, đổi ngôn ngữ, avatar
+- css inline 
+style={{
+    width: '50px', // Thay đổi kích thước ảnh
+     height: '50px', // Thay đổi kích thước ảnh
+    borderRadius: '50%', // Làm tròn (nếu ảnh vuông)
+}}
+- dùng tippy cho tooltip
+- import tippy css
+- Tippy github: https://github.com/atomiks/tippyjs-react
+- trigger theo click 

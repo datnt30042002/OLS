@@ -1,7 +1,8 @@
 // libs
 import React, { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
-import Tippy from '@tippyjs/react/headless';
+import Tippy from '@tippyjs/react';
+import HeadlessTippy from '@tippyjs/react/headless';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 // components
@@ -15,32 +16,56 @@ import {
     faCircleQuestion,
     faKeyboard,
     faEllipsisVertical,
+    faCloudUpload,
+    faBell,
+    faCoins,
+    faGear,
+    faUser,
+    faSignOut,
 } from '@fortawesome/free-solid-svg-icons';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import AccountItem from '~/components/AccountItem';
 import Button from '~/components/Button';
 import Menu from '~/components/Popper/Menu';
+import 'tippy.js/dist/tippy.css'; // optional - cho việc hiển thị tooltip
 
 const cx = classNames.bind(styles);
 
 const MENU_ITEMS = [
     {
         icon: <FontAwesomeIcon icon={faEarthAsia} />,
-        tilte: 'English',
+        title: 'English',
+        children: {
+            title: 'Language',
+            data: [
+                {
+                    type: 'language',
+                    code: 'ev',
+                    title: 'English',
+                },
+                {
+                    type: 'language',
+                    code: 'vi',
+                    title: 'Vietnamese',
+                },
+            ],
+        },
     },
     {
         icon: <FontAwesomeIcon icon={faCircleQuestion} />,
-        tilte: 'learningpaths',
+        title: 'learningpaths',
         to: '/learningpaths',
     },
     {
         icon: <FontAwesomeIcon icon={faKeyboard} />,
-        tilte: 'longtesttesttesttest',
+        title: 'longtesttesttesttest',
     },
 ];
 
 const Header = () => {
     const [searchResult, setSearchResult] = useState([]);
+    // current User
+    const currentUser = true;
 
     useEffect(() => {
         setTimeout(() => {
@@ -50,6 +75,44 @@ const Header = () => {
         }, 0);
     }, []);
 
+    // handle menu change - handle logic
+    const handleMenuChange = (menuItem) => {
+        // check console log menu item -> language level 2
+        //console.log(menuItem);
+
+        switch (menuItem.type) {
+            case 'language':
+                // chandle change language
+                break;
+            default:
+        }
+    };
+
+    const userMenu = [
+        {
+            icon: <FontAwesomeIcon icon={faUser} />,
+            title: 'View profile',
+            to: '/buivankien',
+        },
+        {
+            icon: <FontAwesomeIcon icon={faCoins} />,
+            title: 'Get coins',
+            to: '/coins',
+        },
+        {
+            icon: <FontAwesomeIcon icon={faGear} />,
+            title: 'Settings',
+            to: '/settings',
+        },
+        ...MENU_ITEMS,
+        {
+            icon: <FontAwesomeIcon icon={faSignOut} />,
+            title: 'Logout',
+            to: '/logout',
+            separate: true,
+        },
+    ];
+
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
@@ -58,7 +121,7 @@ const Header = () => {
                 </div>
                 {/* search */}
                 {/* Tippy: hỗ trợ hiển thị hiển thị khung list khi hover - tooltip */}
-                <Tippy
+                <HeadlessTippy
                     // điều kiện để hiển thị danh sách kết quả tìm kiếm
                     visible={searchResult.length > 0}
                     interactive={true}
@@ -88,21 +151,48 @@ const Header = () => {
                             <FontAwesomeIcon icon={faMagnifyingGlass} />
                         </button>
                     </div>
-                </Tippy>
+                </HeadlessTippy>
 
                 {/* Actions */}
                 <div className={cx('actions')}>
-                    {/* Register */}
-                    <Button text>Register</Button>
+                    {currentUser ? (
+                        <>
+                            {/* tool tip */}
+                            <Tippy delay={[0, 200]} content="Upload video" placement="bottom">
+                                <button className={cx('action-btn')}>
+                                    <FontAwesomeIcon icon={faCloudUpload} />
+                                </button>
+                            </Tippy>
 
-                    {/* Login */}
-                    <Button primary>Login</Button>
+                            <Tippy content="Notifications" placement="bottom">
+                                <button className={cx('action-btn')}>
+                                    <FontAwesomeIcon icon={faBell} />
+                                </button>
+                            </Tippy>
+                        </>
+                    ) : (
+                        <>
+                            {/* Register */}
+                            <Button text>Register</Button>
 
-                    {/* nút ... dọc*/}
-                    <Menu items={MENU_ITEMS}>
-                        <button className={cx('more-btn')}>
-                            <FontAwesomeIcon icon={faEllipsisVertical} />
-                        </button>
+                            {/* Login */}
+                            <Button primary>Login</Button>
+                        </>
+                    )}
+
+                    {/* menu - nút ... dọc*/}
+                    <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
+                        {currentUser ? (
+                            <img
+                                className={cx('user-avatar')}
+                                src="https://avatars.githubusercontent.com/u/108357953?v=4"
+                                alt="Bui Van Kien"
+                            />
+                        ) : (
+                            <button className={cx('more-btn')}>
+                                <FontAwesomeIcon icon={faEllipsisVertical} />
+                            </button>
+                        )}
                     </Menu>
                 </div>
             </div>

@@ -94,8 +94,14 @@
     }
 
     &:active {
-        background-color: rgba(186, 187, 195, 0.136);
+        background-color: #babbc323;
     }
+}
+
+// Actions 
+.actions {
+    display: flex;
+    align-items: center;
 }
 
 .more-btn {
@@ -104,4 +110,20 @@
     padding: 4px 15px;
     cursor: pointer;
     background: transparent;
+}
+
+.action-btn {
+    font-size: 1.3rem;
+    background-color: transparent;
+    padding: 4px 12px;
+    cursor: pointer;
+}
+
+.user-avatar {
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-left: 12px;
+    cursor: pointer;
 }
