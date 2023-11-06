@@ -32,3 +32,18 @@ style={{
 - import tippy css
 - Tippy github: https://github.com/atomiks/tippyjs-react
 - trigger theo click 
+
++ 69
+- Conver svg icon và sử dụng
+- Tạo component img để khi không có ảnh thì có 1 img default là no image 
+- forwardRef cho Image -> để ra đc img -> có thể sử dụng được Tippy từ Menu(img)
+- placeholder image online web để lấy hình ảnh tự custome ở đây lấy là (no image)
+- https://tinypng.com/ : gairm dung lượng ảnh khi tải về
+- png khác svg nên svg phải có đuôi( .default )
+
++ 70
+- làm logic
+- cho phần search
+
++ 71
+- 

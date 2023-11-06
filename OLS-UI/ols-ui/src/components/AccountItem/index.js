@@ -6,6 +6,7 @@ import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 
 // components
 import styles from './AccountItem.module.scss';
+import Image from '~/components/Image';
 
 // account item là những Account items được xuất hiện trong list gợi ý của Popper
 /*
@@ -19,7 +20,7 @@ const cx = classNames.bind(styles);
 const AccountItem = () => {
     return (
         <div className={cx('wrapper')}>
-            <img
+            <Image
                 className={cx('avatar')}
                 src="https://avatars.githubusercontent.com/u/108357953?v=4"
                 alt="Bui Van Kien"
