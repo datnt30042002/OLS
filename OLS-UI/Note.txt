@@ -49,5 +49,11 @@ style={{
 - fetch tới api
 
 + 72
-- khắc phục nhiều request api 
+- khắc phục nhiều request api khi nhập thông tin search 
 - debounce: sẽ lấy hành động cuối dùng khi dừng lại
+
++ 73
+- axios
+npm i axios -S
+- tạo utils: công cụ -> thực hiện requets 
+- làm việc với api https - xml - axios - XMLHttpRequest
