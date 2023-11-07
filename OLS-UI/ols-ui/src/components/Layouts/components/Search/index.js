@@ -61,52 +61,64 @@ const Search = () => {
         setShowResult(false);
     };
 
+    // ko đc bắt đầu bằng space
+    const handleChange = (e) => {
+        const searchValue = e.target.value;
+        if (!searchValue.startsWith(' ')) {
+            setSearchValue(searchValue);
+        }
+    };
+
     return (
-        // Tippy: hỗ trợ hiển thị hiển thị khung list khi hover - tooltip
-        <HeadlessTippy
-            // điều kiện để hiển thị danh sách kết quả tìm kiếm searchResult.length > 0
-            interactive
-            visible={showResult && searchResult.length > 0}
-            render={(attrs) => (
-                <PopperWrapper>
-                    <div className={cx('search-result')} tabIndex="-1" {...attrs}>
-                        <h4 className={cx('search-title')}>Accounts</h4>
-                        {searchResult.map((result) => (
-                            <AccountItem key={result.id} data={result} />
-                        ))}
-                    </div>
-                </PopperWrapper>
-            )}
-            // đọc doc của Tippy
-            // onclickOutSide: bấm ra ngoài khu vực Tippy
-            onClickOutside={handleHideResult}
-        >
-            <div className={cx('search')}>
-                <input
-                    ref={inputRef} //?
-                    value={searchValue}
-                    placeholder="Search courses and blogs"
-                    spellCheck={false}
-                    onChange={(e) => setSearchValue(e.target.value)}
-                    onFocus={() => setShowResult(true)}
-                />
-                {/* khi có searchValue thì hiển thị button clear */}
-                {!!searchValue && !loading && (
-                    //button clear -> x
-                    <button className={cx('clear')} onClick={handleClear}>
-                        <FontAwesomeIcon icon={faCircleXmark} />
-                    </button>
+        // Using a wrapper <div> or <span> tag around the reference element solves this by creating a new parentNode context. Specifying `appendTo: document.body` silences this warning, but it assumes you are using a focus management solution to handle keyboard navigation.
+        <div>
+            {/* Tippy: hỗ trợ hiển thị hiển thị khung list khi hover - tooltip */}
+            <HeadlessTippy
+                // điều kiện để hiển thị danh sách kết quả tìm kiếm searchResult.length > 0
+                interactive
+                //appendTo={() => document.body}
+                visible={showResult && searchResult.length > 0}
+                render={(attrs) => (
+                    <PopperWrapper>
+                        <div className={cx('search-result')} tabIndex="-1" {...attrs}>
+                            <h4 className={cx('search-title')}>Accounts</h4>
+                            {searchResult.map((result) => (
+                                <AccountItem key={result.id} data={result} />
+                            ))}
+                        </div>
+                    </PopperWrapper>
                 )}
+                // đọc doc của Tippy
+                // onclickOutSide: bấm ra ngoài khu vực Tippy
+                onClickOutside={handleHideResult}
+            >
+                <div className={cx('search')}>
+                    <input
+                        ref={inputRef} //?
+                        value={searchValue}
+                        placeholder="Search courses and blogs"
+                        spellCheck={false}
+                        onChange={handleChange}
+                        onFocus={() => setShowResult(true)}
+                    />
+                    {/* khi có searchValue thì hiển thị button clear */}
+                    {!!searchValue && !loading && (
+                        //button clear -> x
+                        <button className={cx('clear')} onClick={handleClear}>
+                            <FontAwesomeIcon icon={faCircleXmark} />
+                        </button>
+                    )}
 
-                {/* button loading */}
-                {loading && <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />}
+                    {/* button loading */}
+                    {loading && <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />}
 
-                {/* button search */}
-                <button className={cx('search-btn')}>
-                    <SearchIcon />
-                </button>
-            </div>
-        </HeadlessTippy>
+                    {/* button search */}
+                    <button className={cx('search-btn')} onMouseDown={(e) => e.preventDefault()}>
+                        <SearchIcon />
+                    </button>
+                </div>
+            </HeadlessTippy>
+        </div>
     );
 };
 
