@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import Tippy from '@tippyjs/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { BrowserRouter as Router, Link } from 'react-router-dom';
 
 // components
 import styles from './Header.module.scss';
@@ -23,6 +24,7 @@ import 'tippy.js/dist/tippy.css'; // optional - cho việc hiển thị tooltip
 import { UploadIcon, NotificationIcon } from '~/components/Icons';
 import Image from '~/components/Image';
 import Search from '~/components/Layouts/components/Search';
+import routesConfig from '~/config/routes';
 
 const cx = classNames.bind(styles);
 
@@ -102,9 +104,11 @@ const Header = () => {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <div className={cx('logo')}>
+                {/* Logo */}
+                <Link to={routesConfig.home} className={cx('logo-link')}>
                     <img src={images.logo} alt="OLS" />
-                </div>
+                </Link>
+
                 {/* Search */}
                 <Search />
 

@@ -13,7 +13,7 @@ const cx = classNames.bind(styles);
 
 const defaultFunction = () => {};
 
-const Menu = ({ children, items = [], onChange = defaultFunction }) => {
+const Menu = ({ children, items = [], hideOnClick = false, onChange = defaultFunction, ...passProps }) => {
     // lấy ra trang nhất có nghĩa lấy ra phần tử cuối của mảng
     const [history, setHistory] = useState([{ data: items }]);
     // phần tử hiện tại - phần tử cuối
@@ -47,7 +47,8 @@ const Menu = ({ children, items = [], onChange = defaultFunction }) => {
             //visible //nếu chọn visible thì có thể hiện mặc định
             interactive
             delay={[0, 700]}
-            offset={[30, 14]} // lech: chieu ngang, chieu cao
+            offset={[30, 14]} // căn độ lệch cho menu avatar - chieu ngang, chieu cao
+            hideOnClick={hideOnClick} // ẩn khi click - ở đây là menu của avtar
             placement="bottom-end"
             render={(attrs) => (
                 <div className={cx('menu-list')} tabIndex="-1" {...attrs}>
@@ -61,7 +62,7 @@ const Menu = ({ children, items = [], onChange = defaultFunction }) => {
                                 }}
                             />
                         )}
-                        {renderItems()}
+                        <div className={cx('menu-body')}>{renderItems()}</div>
                     </PopperWrapper>
                 </div>
             )}

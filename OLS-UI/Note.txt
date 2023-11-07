@@ -57,3 +57,17 @@ style={{
 npm i axios -S
 - tạo utils: công cụ -> thực hiện requets 
 - làm việc với api https - xml - axios - XMLHttpRequest
+
++ 74
+- giữ phím alt + mũi tên lên -> sẽ move 1 lelect
+- *profile
+- config routes
+- không được phép nhập space đầu tiên khi search 
+- bỏ focus khi nhấn search khi không có gì 
+- hideOnClick={hideOnClick} // ẩn khi click - ở đây là menu của avtar
+
++ 75
+- thanh cuộn menu level cao - scrollbar 
+- find in folder khi chuột phải vào project 
+- sửa title ReactApp -> OLS - public - index.html
+- fix tippy warning
