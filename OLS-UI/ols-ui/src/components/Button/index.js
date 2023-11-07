@@ -2,8 +2,9 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-// layouts
+// components
 import styles from './Button.module.scss';
 
 /*
@@ -85,6 +86,30 @@ const Button = ({
             {rightIcon && <span className={cx('icon')}>{rightIcon}</span>}
         </Component>
     );
+};
+
+// Button.propTypes = {
+//     // Anything that can be rendered: numbers, strings, elements or an array
+//     // (or fragment) containing these types.
+//     children: PropTypes.node.isRequired,
+// };
+
+Button.propTypes = {
+    to: PropTypes.string,
+    href: PropTypes.string,
+    primary: PropTypes.bool,
+    outline: PropTypes.bool,
+    text: PropTypes.bool,
+    rounded: PropTypes.bool,
+    disable: PropTypes.bool,
+    small: PropTypes.bool,
+    large: PropTypes.bool,
+    // Failed prop type: The prop `children` is marked as required in `Button`, but its value is `undefined`.
+    children: PropTypes.node,
+    className: PropTypes.string,
+    leftIcon: PropTypes.node,
+    rightIcon: PropTypes.node,
+    onClick: PropTypes.func,
 };
 
 export default Button;

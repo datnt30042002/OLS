@@ -3,7 +3,8 @@ import React from 'react';
 import axios from 'axios';
 
 // cài biến môi trường - lấy api
-console.log(process.env);
+// test log
+//console.log(process.env);
 
 const httpRequest = axios.create({
     baseURL: process.env.REACT_APP_BASE_URL,

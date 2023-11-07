@@ -1,6 +1,7 @@
 // libs
 import React from 'react';
 import classNames from 'classnames/bind';
+import PropTypes from 'prop-types';
 
 // components and layouts
 import styles from './Menu.module.scss';
@@ -17,6 +18,11 @@ const MenuItems = ({ data, onClick }) => {
             {data.title}
         </Button>
     );
+};
+
+MenuItems.propTypes = {
+    data: PropTypes.object.isRequired,
+    onClick: PropTypes.func,
 };
 
 export default MenuItems;

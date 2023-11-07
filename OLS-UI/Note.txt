@@ -93,3 +93,14 @@ WDS_SOCKET_PORT: undefined
 [[Prototype]]: Object
 
 - .env.production : tạo ra chưa xài tới, chỉ là để hiểu 
+
++ 77
+- Áp dụng thư viện PropTypes: thư viện giúp kiểm tra các props validate kiểu dữ liệu của các props - ktra trong chuong trình chạy
+https://legacy.reactjs.org/docs/typechecking-with-proptypes.html
+
++ 78
+- ctrl + alt + mũi -> chọn nhiều 
+- propstypes 
+- đọc doc: https://legacy.reactjs.org/docs/typechecking-with-proptypes.html
+- list ra các proptypes hay dùng
+- ôn lại 
