@@ -71,3 +71,25 @@ npm i axios -S
 - find in folder khi chuột phải vào project 
 - sửa title ReactApp -> OLS - public - index.html
 - fix tippy warning
+
++ 76
+- tối ưu code - đặt tên thư mục
+- apiServies -> services
+- chuyển Layouts -> src/layouts  
+- routes config -> routes
+- utils -> httpRequest
+- file môi trường env : .local, .development, .production -> sẽ có sự ưu tiên khác nhau 
+- không dùng tránh ảnh hưởng members khác -> gitignore
+- tạo file .env.development : biển môi trường này sẽ được webpack tải khi build - start server
+- thông tin khi biến môi trường development chạy ra 
+{NODE_ENV: 'development', PUBLIC_URL: '', WDS_SOCKET_HOST: undefined, WDS_SOCKET_PATH: undefined, WDS_SOCKET_PORT: undefined, …}
+FAST_REFRESH: true
+NODE_ENV: "development"
+PUBLIC_URL: ""
+REACT_APP_BASE_URL: "https://tiktok.fullstack.edu.vn/api"
+WDS_SOCKET_HOST: undefined
+WDS_SOCKET_PATH: undefined
+WDS_SOCKET_PORT: undefined
+[[Prototype]]: Object
+
+- .env.production : tạo ra chưa xài tới, chỉ là để hiểu 

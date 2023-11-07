@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 // components
 import { publicRoutes } from '~/routes';
-import { DefaultLayout } from '~/components/Layouts';
+import { DefaultLayout } from '~/layouts';
 
 function App() {
     return (

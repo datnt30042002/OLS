@@ -23,8 +23,8 @@ import Menu from '~/components/Popper/Menu';
 import 'tippy.js/dist/tippy.css'; // optional - cho việc hiển thị tooltip
 import { UploadIcon, NotificationIcon } from '~/components/Icons';
 import Image from '~/components/Image';
-import Search from '~/components/Layouts/components/Search';
-import routesConfig from '~/config/routes';
+import Search from '~/layouts/components/Search';
+import config from '~/config';
 
 const cx = classNames.bind(styles);
 
@@ -105,7 +105,7 @@ const Header = () => {
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
                 {/* Logo */}
-                <Link to={routesConfig.home} className={cx('logo-link')}>
+                <Link to={config.routes.home} className={cx('logo-link')}>
                     <img src={images.logo} alt="OLS" />
                 </Link>
 

@@ -1,8 +1,8 @@
 // routes config
-import routesConfig from '~/config/routes';
+import config from '~/config';
 
 // componenets
-import HeaderOnly from '~/components/Layouts/HeaderOnly';
+import HeaderOnly from '~/layouts/HeaderOnly';
 
 // pages
 import Home from '~/pages/Home';
@@ -13,9 +13,9 @@ import Search from '~/pages/Search';
 
 // public Routes: những routes công khaim ko đăng nhặp cũng xem được
 const publicRoutes = [
-    { path: routesConfig.home, component: Home },
-    { path: routesConfig.learningpaths, component: LearningPaths },
-    { path: routesConfig.search, component: Search },
+    { path: config.routes.home, component: Home },
+    { path: config.routes.learningpaths, component: LearningPaths },
+    { path: config.routes.search, component: Search },
 ];
 
 // private Routes: routes yêu cầu đăng nhập
