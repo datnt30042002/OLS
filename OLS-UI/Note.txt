@@ -114,3 +114,21 @@ https://legacy.reactjs.org/docs/typechecking-with-proptypes.html
 - potimize - tối ưu các components 
 - clean code
 - useCallback cho việc tối ưu(optimize)
+
++ 81
+- sửa fixed search giữa header 
+- làm side bar
+- điều chỉnh components -> đặt thư mục sao cho hớp lý, ví dụ component chung -> src/components || conponents riêng thì đặt riêng
+- navigation: thành phần điều hướng 
+- ctrl + shift + L: chọn nhiều select trùng nhau 
+- fill="currentColor": sẽ lấy màu được css bên nhận import dùng icons
+- 26:53 : active navlink
+- https://www.youtube.com/watch?v=I6DWZWkAhhY&list=PL_-VfJajZj0UXjlKfBwFX73usByw3Ph9Q&index=81
+- navlink sẽ hỗ trợ nhận active, vđe k active được dù đã nhận bởi vì đang style css module -> navlink ko thể nhận claaname mã hóa -> tìm cách để navlink lấy được name mã hóa đóa -> có thể active 
+-> navlink, truyền className dưới dạng funtion rồi return classname mong muốn
+-> className={() => cx('menu-item')}
+-> từ đó có thể chủ động custome các trường hợp active 
+- icon: solid, regular
+- thành phần của isActive icon, bỏ comment nếu nuốn sử dụng 
+- thay thế icon cho cớ chết hoạt động ngon
+- hiện tại default
