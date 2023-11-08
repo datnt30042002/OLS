@@ -109,3 +109,8 @@ https://legacy.reactjs.org/docs/typechecking-with-proptypes.html
 - khấc phục nhiều file .index
 - sửa tên 
 - tạo 1 file index.js cho việc export 
+
++ 80 
+- potimize - tối ưu các components 
+- clean code
+- useCallback cho việc tối ưu(optimize)
