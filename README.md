@@ -1,5 +1,7 @@
 # OLS
 Online Learning System
 # .NET core api
+- OLS
 # ReactJs - npm
-- npm start to run project
+- OLS-UI
+- npm start to run the ui project
