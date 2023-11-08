@@ -104,3 +104,8 @@ https://legacy.reactjs.org/docs/typechecking-with-proptypes.html
 - đọc doc: https://legacy.reactjs.org/docs/typechecking-with-proptypes.html
 - list ra các proptypes hay dùng
 - ôn lại 
+
++ 79
+- khấc phục nhiều file .index
+- sửa tên 
+- tạo 1 file index.js cho việc export 
