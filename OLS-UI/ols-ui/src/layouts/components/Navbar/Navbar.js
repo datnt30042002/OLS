@@ -4,7 +4,7 @@ import classNames from 'classnames/bind';
 import config from '~/config';
 
 // layouts
-import styles from './Sidebar.module.scss';
+import styles from './Navbar.module.scss';
 import Menu, { MenuItem } from './Menu';
 // đọc sang phần comment của icon bên menuitem -> lý do k thể trực tiếp đưa vào icon được
 // vì homeicon hiện tại đang là component của bảng(chưa hiểu rõ)
@@ -14,18 +14,21 @@ const cx = classNames.bind(styles);
 
 const Sidebar = () => {
     return (
-        <aside className={cx('wrapper')}>
+        <nav className={cx('wrapper')}>
             <Menu>
                 {/* <MenuItem title="Home" to={config.routes.home} icon={<HomeIcon />} activeIcon={<NotificationIcon />} /> */}
-                <MenuItem title="Home" to={config.routes.home} icon={<HomeIcon />} />
+                {/* <MenuItem title="Home" to={config.routes.home} icon={<HomeIcon />} /> */}
+                <MenuItem title="Home" to={config.routes.home} />
                 {/* <MenuItem
                     title="Learning paths"
                     to={config.routes.learningpaths}
                     icon={<LearningPathsIcon />}
                     activeIcon={<SearchIcon />} */}
-                <MenuItem title="Learning paths" to={config.routes.learningpaths} icon={<LearningPathsIcon />} />
+                {/* <MenuItem title="Learning paths" to={config.routes.learningpaths} icon={<LearningPathsIcon />} /> */}
+                <MenuItem title="Learning paths" to={config.routes.learningpaths} />
+                <MenuItem title="Search" to={config.routes.search} />
             </Menu>
-        </aside>
+        </nav>
     );
 };
 

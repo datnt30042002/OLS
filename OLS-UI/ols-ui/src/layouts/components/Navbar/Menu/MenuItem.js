@@ -15,7 +15,6 @@ const MenuItem = ({ title, to, icon, activeIcon }) => {
             {/* node -> có thể render được  */}
             {/* <span className={cx('icon')}>{icon}</span>
             <span className={cx('active-icon')}>{activeIcon}</span>  */}
-            {icon}
             <span className={cx('title')}>{title}</span>
         </NavLink>
     );
@@ -24,8 +23,10 @@ const MenuItem = ({ title, to, icon, activeIcon }) => {
 MenuItem.propTypes = {
     title: PropTypes.string.isRequired,
     to: PropTypes.string.isRequired,
-    icon: PropTypes.node.isRequired,
-    activeIcon: PropTypes.node.isRequired,
+    // isRequired
+    icon: PropTypes.node,
+    // isRequired
+    activeIcon: PropTypes.node,
 };
 
 export default MenuItem;
