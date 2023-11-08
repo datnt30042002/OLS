@@ -61,7 +61,9 @@ const MENU_ITEMS = [
 
 const Header = () => {
     // current User
+    // User status -> if logged in or not
     const currentUser = true;
+    //const currentUser = false;
 
     // handle menu change - handle logic
     const handleMenuChange = (menuItem) => {
@@ -108,8 +110,6 @@ const Header = () => {
                 <Link to={config.routes.home} className={cx('logo-link')}>
                     <img src={images.logo} alt="OLS" />
                 </Link>
-
-                <Button></Button>
 
                 {/* Search */}
                 <Search />

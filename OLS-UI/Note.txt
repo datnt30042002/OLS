@@ -132,3 +132,12 @@ https://legacy.reactjs.org/docs/typechecking-with-proptypes.html
 - thành phần của isActive icon, bỏ comment nếu nuốn sử dụng 
 - thay thế icon cho cớ chết hoạt động ngon
 - hiện tại default
+end
+
+++
+- bỏ sidebar -> thành navbar -> sửa tên
+- sắp xếp css theo thứ tự dưới đây
+posistion - vi tri
+display - trinh bay
+box model - cac model boxes
+
