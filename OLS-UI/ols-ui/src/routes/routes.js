@@ -12,6 +12,7 @@ import Search from '~/pages/Search';
 // chia lam 2 const Public va Private
 
 // public Routes: những routes công khaim ko đăng nhặp cũng xem được
+// lấy routes từ App.js -> lặp qua mảng này -> mặc định lấy Home đầu tiên -> lý do lấy được Home
 const publicRoutes = [
     { path: config.routes.home, component: Home },
     { path: config.routes.learningpaths, component: LearningPaths },
