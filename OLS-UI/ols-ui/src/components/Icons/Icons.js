@@ -1,3 +1,4 @@
+// ctrl + shift + L: chọn nhiều select trùng nhau
 export const UploadIcon = ({ width = '3.2rem', height = '3.2rem', className }) => (
     <svg
         /*
@@ -47,7 +48,7 @@ export const UploadIcon = ({ width = '3.2rem', height = '3.2rem', className }) =
     </svg>
 );
 
-export const NotificationIcon = () => (
+export const NotificationIcon = ({ width = '', height = '', className }) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         height="24"
@@ -83,7 +84,7 @@ export const NotificationIcon = () => (
     </svg>
 );
 
-export const SearchIcon = () => (
+export const SearchIcon = ({ width = '', height = '', className }) => (
     <svg width="24" data-e2e="" height="24" viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
             fillRule="evenodd"
@@ -93,6 +94,34 @@ export const SearchIcon = () => (
     </svg>
 );
 
+// Header
 // loading icon
-
 // clear icon
+
+// Sidebar
+export const HomeIcon = ({ width = '27px', height = '27px', className }) => (
+    <svg
+        className={className}
+        width={width}
+        height={height}
+        fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 100 100"
+    >
+        <path d="M50 8 L20 40 L20 75 L80 75 L80 40 Z" fill="none" stroke="#000" strokeWidth="4" />
+    </svg>
+);
+
+export const LearningPathsIcon = ({ width = '27px', height = '27px', className }) => (
+    <svg
+        className={className}
+        width={width}
+        height={height}
+        fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 100 100"
+    >
+        <rect x="20" y="10" width="60" height="80" rx="8" ry="8" fill="none" stroke="#000" strokeWidth="4" />
+        <line x1="20" y1="10" x2="50" y2="40" stroke="#000" strokeWidth="4" />
+    </svg>
+);
