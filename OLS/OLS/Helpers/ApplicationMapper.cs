@@ -8,6 +8,8 @@ namespace OLS.Helpers
     {
         public ApplicationMapper()
         {
+            // Source -> Destination
+            // Nguồn -> Đích đến 
             CreateMap<LoginByEmailRequest, User>()
                 .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Email))
                 .ForMember(dest => dest.Password, opt => opt.MapFrom(src => src.Password))

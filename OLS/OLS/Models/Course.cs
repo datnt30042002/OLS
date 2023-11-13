@@ -21,7 +21,7 @@ namespace OLS.Models
         public string? Image { get; set; }
         public string? VideoIntro { get; set; }
         public int? Fee { get; set; }
-        public int? Status { get; set; }
+        public int Status { get; set; }
         public int LearningPathLearningPathId { get; set; }
         public int UserUserId { get; set; }
 

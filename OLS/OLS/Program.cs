@@ -1,7 +1,9 @@
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using OLS.Models;
-using OLS.Repositories.Implementations;
-using OLS.Repositories.Interface;
+using OLS.Repositories.Implementations.Admin;
+using OLS.Repositories.Implementations.Home;
+using OLS.Repositories.Interface.Admin;
+using OLS.Repositories.Interface.Home;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,10 +14,26 @@ builder.Services.AddDbContext<OLSContext>(options =>
 
 builder.Services.AddAutoMapper(typeof(Program));
 
+// <Admin>
+builder.Services.AddScoped<IUserManagerRepository, UserManagerRepository>();
+builder.Services.AddScoped<ICourseManagerRepository, CourseManagerRepository>();
+builder.Services.AddScoped<IChapterManagerRepository, ChapterManagerRepository>();
+builder.Services.AddScoped<ILessonManagerRepository, LessonManagerRepository>();
+// <Admin>
+
+// <Home>
 // Config Repositories
 builder.Services.AddScoped<ICourseRepository, CourseRepository>();
 builder.Services.AddScoped<ILearningPathRepository, LearningPathRepository>();
 builder.Services.AddScoped<IBlogRepository, BlogRepository>();
+// <Home>
+
+// Config Automapper
+// <Summary>
+//dòng code này có ý nghĩa là bạn đang thêm dịch vụ của AutoMapper vào ứng dụng ASP.NET Core của mình
+//và cấu hình nó để tự động ánh xạ giữa các đối tượng trong ứng dụng mà không cần phải viết mã ánh xạ chi tiết.
+// <Summary>
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 //builder.Services.AddIdentity<User, Userrole>()
 //       .AddDefaultTokenProviders();

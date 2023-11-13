@@ -1,10 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using OLS.Models;
-using OLS.DTO;
-using OLS.Helpers;
-using OLS.Repositories;
-using OLS.Repositories.Interface;
+﻿using Microsoft.AspNetCore.Mvc;
+using OLS.DTO.LearningPaths.Home;
+using OLS.Repositories.Interface.Home;
 
 namespace OLS._2.Home.Controllers
 {
@@ -18,11 +14,11 @@ namespace OLS._2.Home.Controllers
             this.learningPathRepo = learningPathRepo;
         }
 
-        // get all learningPaths
+        // Get all learningPaths
         [HttpGet("/getAllLearningPaths_LearningPaths")]
-        public ActionResult<IEnumerable<LearningPathDTO>> GetAllLearningPaths()
+        public async Task<ActionResult<LearningPathReadHomeDTO>> GetAllLearningPaths()
         {
-            var learningPaths = learningPathRepo.GetAllLearningPaths();
+            var learningPaths = await learningPathRepo.GetAllLearningPaths();
             return Ok(learningPaths);
         }
 

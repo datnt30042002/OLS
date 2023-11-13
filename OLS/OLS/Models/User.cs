@@ -25,7 +25,7 @@ namespace OLS.Models
         public string? Phone { get; set; }
         public string? Password { get; set; }
         public string? FullName { get; set; }
-        public DateTime? Dob { get; set; }
+        public DateTime Dob { get; set; }
         public string? Address { get; set; }
         public string? Bio { get; set; }
         public string? Image { get; set; }
@@ -33,7 +33,7 @@ namespace OLS.Models
         public string? GmailId { get; set; }
         public string? FacebookId { get; set; }
         public string? GithubId { get; set; }
-        public int? Status { get; set; }
+        public int Status { get; set; }
         public string? CodeVerify { get; set; }
         public int UserRoleRoleId { get; set; }
 

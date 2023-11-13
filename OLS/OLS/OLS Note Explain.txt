@@ -1,0 +1,63 @@
++ OLS Explain
+- Giải thích Tiếng việt
+
+- Tên method đặt theo chuẩn CamelCase, ví dụ: GetAllCourses
+- Comment tên hàm hoặc những thứ khác phải bắt đầu bằng chữ hoa
+
+- Routes - hay còn gọi là các Http
+- Ví dụ: [HttpGet("/get10CoursesWithFee")] /get10CoursesWithFee
+- phải thống nhất với nhau đặt tên snake_case hay đặt theo camelCase
+
+- Phải đặt tên quy ước theo chuẩn CRUD - Create Read Update Delete
+
+- Documentation automapper:
+- Naming convention: quy ước đặt tên
+https://docs.automapper.org/en/stable/Configuration.html#naming-conventions
+- Github: 
+https://github.com/AutoMapper/AutoMapper
+
+|-- /Controllers
+|-- /DTOs
+|-- /Models
+|-- /Profiles
+|-- /Services
+|-- /Extensions
+|-- /Utilities
+|-- /Tests
+
+- Youtube: 
+https://www.youtube.com/watch?v=lUGZrrx6fHI
+
+--- Controllers
+- Admin
+- Home
+
+--- Models
+-- Data model là folder Models
+-- View model là DTO(Data Tranfer Objects) 
+- Bên trong DTO sẽ có các DTOs con để phục vụ cho việc mapping(ánh xạ)
+
+--- Helpers - phải đổi tên thành Profiles hoặc Mappers
+- Phải đặt tên theo mục đích đúng để rõ ràng hơn
+- Helpers là để sử dụng những func helps khác ví dụ như tính age by bỉthdate....
+
+--- Repositories - phải đổi tên thành Services
+- Sử dụng để thực thi các implementations, khi đó controllers sẽ gọi các method từ repositories đê thực hiện các request 
+
+--- HelperFunctions - để sử dụng những functions hỗ trợ như tính Age by BirthDate,...
+
+--- Chia folder rõ ràng cho Admin và Home
+-- Chia folder cho các thành phần dưới đây:
+- DTO
+- Repositories(phải đổi thành Services)
+- Helpers(Phải đổi tên thành Profiles hoặc Mappers)
+
+--- Chia rõ ràng vì sẽ có nhiều vấn đề xảy ra trong tương lai không thể lường trước 
+--- Hiện tại vẫn còn đang nhỏ và ít nên chưa nhìn ra vấn đề mới
+
+*chưa tính đến check null, try catch, các điều kiện, tối ưu code...
+- Để là user ko rõ nghĩa -> phải đổi thành customer 
+
+- Thống nhất đặt tên cho routes vì có thể sẽ bị trùng routes
+
+- git branch -m master main : đổi lại branch

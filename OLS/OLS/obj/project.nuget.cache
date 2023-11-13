@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "xLXAuTKTejE88cb3gNDOLZ9PO9+veAuslHU+qxEOPZxDllcrdSiUibD4Df09TWjRvKlywhdoQ8r1pgHGL1CAIg==",
+  "dgSpecHash": "aCr5ZwfF1xjFIxuXpnJHmEBZFCZ/qHZ+WYYXiB4JQT41cvoa9yQks2Ec+Q15BuRJ+/vYsXUQZXliyd2e/N0cGA==",
   "success": true,
   "projectFilePath": "D:\\Ky_6_OJT_Fall_2023\\WorkSpace_ojt\\.NET\\Project_OJT\\Online_Learning_System\\OLS_Project\\OLS\\OLS\\OLS\\OLS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\fluentassertions\\6.12.0\\fluentassertions.6.12.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",

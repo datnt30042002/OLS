@@ -14,7 +14,7 @@ namespace OLS._2.Home.Controllers
             this.db = db;
         }
 
-        // test user vì user có chứa date, và để chắc chắn k có bug cho việc thực hiện quản lý
+        // Test user vì user có chứa date, và để chắc chắn k có bug cho việc thực hiện quản lý
         [HttpGet("/GetAllUsers_HOME")]
         public ActionResult<IEnumerable<User>> GetAllUsers()
         {

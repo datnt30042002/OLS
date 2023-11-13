@@ -13,6 +13,7 @@ function App() {
             <div className="App">
                 <Routes>
                     {/* Viết map routes ở đây */}
+                    {/* route map để lấy children cho layout */}
                     {publicRoutes.map((route, index) => {
                         const Page = route.component;
                         // defualt layout
