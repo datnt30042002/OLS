@@ -1,10 +1,8 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using OLS.Models;
-using OLS.DTO;
-using OLS.Helpers;
-using OLS.Repositories;
-using OLS.Repositories.Interface;
+﻿using Microsoft.AspNetCore.Mvc;
+using OLS.DTO.Blogs.Home;
+using OLS.DTO.Courses;
+using OLS.DTO.LearningPaths.Home;
+using OLS.Repositories.Interface.Home;
 
 namespace OLS._2.Home.Controllers
 {
@@ -22,61 +20,61 @@ namespace OLS._2.Home.Controllers
             this.blogRepo = blogRepo;
         }
 
-        // get 10 courses with fee != 0
+        // Get 10 courses with fee != 0
         [HttpGet("/get10CoursesWithFee")]
-        public ActionResult<IEnumerable<CourseDTO>> Get10CoursesWithFee()
+        public async Task<ActionResult<IEnumerable<CourseReadHomeDTO>>> Get10CoursesWithFee()
         {
-            var courses = courseEepo.Get10CoursesWithFee();
+            var courses = await courseEepo.Get10CoursesWithFee();
             return Ok(courses);
         }
 
-        // get 10 courses with fee == 0
+        // Get 15 courses with fee == 0
         [HttpGet("/get15CoursesFree")]
-        public ActionResult<IEnumerable<CourseDTO>> Get15CoursesFree()
+        public async Task<ActionResult<IEnumerable<CourseReadHomeDTO>>> Get15CoursesFree()
         {
-            var courses = courseEepo.Get15CoursesFree();
+            var courses = await courseEepo.Get15CoursesFree();
             return Ok(courses);
         }
 
-        // get all learning paths
+        // Get all learning paths
         [HttpGet("/getAllLearningPaths_HomePage")]
-        public ActionResult<IEnumerable<LearningPathDTO>> GetAllLearningPaths()
+        public async Task<ActionResult<IEnumerable<LearningPathReadHomeDTO>>> GetAllLearningPaths()
         {
-            var learningPaths = learningPathRepo.GetAllLearningPaths();
+            var learningPaths = await learningPathRepo.GetAllLearningPaths();
             return Ok(learningPaths);
         }
 
-        // get 10 newest blogs
+        // Get 10 newest blogs
         [HttpGet("/get10NewestBlogs")]
-        public ActionResult<IEnumerable<BlogDTO>> Get10NewestBlogs()
+        public async Task<ActionResult<IEnumerable<BlogReadHomeDTO>>> Get10NewestBlogs()
         {
-            var blogs = blogRepo.Get10NewestBlogs();
+            var blogs = await blogRepo.Get10NewestBlogs();
             return Ok(blogs);
         }
 
-        // search courses by course name
+        // Search courses by course name
         [HttpGet("/searchCoursesByCourseName")]
-        public ActionResult<IEnumerable<CourseDTO>> SearchCoursesByCourseName([FromQuery] string keyword)
+        public async Task<ActionResult<IEnumerable<CourseReadHomeDTO>>> SearchCoursesByCourseName([FromQuery] string keyword)
         {
             if (string.IsNullOrEmpty(keyword))
             {
                 return BadRequest();
             }
 
-            var courses = courseEepo.SearchCoursesByCourseName(keyword);
+            var courses = await courseEepo.SearchCoursesByCourseName(keyword);
             return Ok(courses);
         }
 
-        // seach blogs by blog title
+        // Seach blogs by blog title
         [HttpGet("/searchBlogsByBlogTitle")]
-        public ActionResult<IEnumerable<BlogDTO>> SearchBlogsByBlogTitle([FromQuery] string keyword)
+        public async Task<ActionResult<IEnumerable<BlogReadHomeDTO>>> SearchBlogsByBlogTitle([FromQuery] string keyword)
         {
             if(string.IsNullOrEmpty(keyword))
             {
                 return BadRequest();
             }
 
-            var blogs = blogRepo.SearchBlogsByBlogTitle(keyword);
+            var blogs = await blogRepo.SearchBlogsByBlogTitle(keyword);
             return Ok(blogs);
         }
 
