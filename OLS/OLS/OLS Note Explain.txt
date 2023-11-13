@@ -2,11 +2,11 @@
 - Giải thích Tiếng việt
 
 - Tên method đặt theo chuẩn CamelCase, ví dụ: GetAllCourses
-- Comment tên hàm hoặc những thứ khác phải bắt đầu bằng chữ hoa
+- Comment tên hàm hoặc những thứ khác phải bắt đầu bằng chữ hoa // Ví dụ comment
 
-- Routes - hay còn gọi là các Http
+- Routes - hay còn gọi là các Https
+- Thống nhất đặt theo camelCase
 - Ví dụ: [HttpGet("/get10CoursesWithFee")] /get10CoursesWithFee
-- phải thống nhất với nhau đặt tên snake_case hay đặt theo camelCase
 
 - Phải đặt tên quy ước theo chuẩn CRUD - Create Read Update Delete
 
@@ -37,7 +37,7 @@ https://www.youtube.com/watch?v=lUGZrrx6fHI
 -- View model là DTO(Data Tranfer Objects) 
 - Bên trong DTO sẽ có các DTOs con để phục vụ cho việc mapping(ánh xạ)
 
---- Helpers - phải đổi tên thành Profiles hoặc Mappers
+--- Helpers - phải đổi tên thành Profiles
 - Phải đặt tên theo mục đích đúng để rõ ràng hơn
 - Helpers là để sử dụng những func helps khác ví dụ như tính age by bỉthdate....
 
@@ -50,7 +50,7 @@ https://www.youtube.com/watch?v=lUGZrrx6fHI
 -- Chia folder cho các thành phần dưới đây:
 - DTO
 - Repositories(phải đổi thành Services)
-- Helpers(Phải đổi tên thành Profiles hoặc Mappers)
+- Helpers(Phải đổi tên thành Profiles)
 
 --- Chia rõ ràng vì sẽ có nhiều vấn đề xảy ra trong tương lai không thể lường trước 
 --- Hiện tại vẫn còn đang nhỏ và ít nên chưa nhìn ra vấn đề mới
@@ -60,4 +60,10 @@ https://www.youtube.com/watch?v=lUGZrrx6fHI
 
 - Thống nhất đặt tên cho routes vì có thể sẽ bị trùng routes
 
-- git branch -m master main : đổi lại branch
+-- git branch -m main feature : đổi lại branch
+	- Trong đó main là branch hiện tại
+	- feature là branch để thực hiện code của developer
+	- Nếu chưa có branch feature có thể tự tạo
+- Học về git
+https://fullstack.edu.vn/learning/git?id=7c420061-29e7-47c0-b7ea-feacfc28dcdc
+https://fullstack.edu.vn/blog/bo-tui-21-lenh-git-co-ban-cach-nho-giup-newdev-lam-chu-git-quan-ly-tot-ma-ngu.html
