@@ -1,5 +1,4 @@
 // libs
-import React from 'react';
 import axios from 'axios';
 
 // cài biến môi trường - lấy api

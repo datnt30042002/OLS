@@ -16,7 +16,7 @@ function App() {
                     {/* route map để lấy children cho layout */}
                     {publicRoutes.map((route, index) => {
                         const Page = route.component;
-                        // defualt layout
+                        // default layout
                         let Layout = DefaultLayout;
                         if (route.layout) {
                             Layout = route.layout;

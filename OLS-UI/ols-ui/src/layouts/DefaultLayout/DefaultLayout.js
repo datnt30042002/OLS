@@ -7,9 +7,11 @@ import PropTypes from 'prop-types';
 import styles from './DefaultLayout.module.scss';
 import Header from '~/layouts/components/Header';
 import Navbar from '~/layouts/components/Navbar';
+import Footer from '~/layouts/components/Footer';
 
 const cx = classNames.bind(styles);
 
+// Nhận children từ App.js
 const DefaultLayout = ({ children }) => {
     return (
         <div className={cx('wrapper')}>
@@ -18,6 +20,7 @@ const DefaultLayout = ({ children }) => {
             <div className={cx('container')}>
                 <div className={cx('content')}>{children}</div>
             </div>
+            <Footer />
         </div>
     );
 };

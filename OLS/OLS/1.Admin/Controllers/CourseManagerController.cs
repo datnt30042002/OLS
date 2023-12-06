@@ -18,12 +18,12 @@ namespace OLS._1.Admin.Controllers
         }
 
         // Get all courses
-        [HttpGet("/getAllCourse")]
-        public async Task<ActionResult<IEnumerable<CourseReadAminDTO>>> GetAllCourse()
+        [HttpGet("/getAllCourses")]
+        public async Task<ActionResult<IEnumerable<CourseReadAminDTO>>> GetAllCourses()
         {
             try
             {
-                var courses = await courseManagerRepo.GetAllCourse();
+                var courses = await courseManagerRepo.GetAllCourses();
                 return Ok(courses);
             }
             catch (Exception ex)

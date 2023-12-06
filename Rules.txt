@@ -1,2 +1,7 @@
 + Cái này đễ note ra những nguyên tắc và những luật lệ bắt buộc khi làm việc nhóm
-- ví dụ như nguyên tắc đặt tên, comment,phải hoàn thành,...
+
++ Code front end phải đặt đúng quy ước cho JavaScript cu thể là RactJS 
++ Đặt tên theo camelCase -> ví dụ: getDataFromApi
++ Component phải đặt camelCase và viết hoa chữ cái đầu -> LearningPaths
++ Đặt constants viết hoa tất cả và dùng dấu gạch dưới -> MAX_NUMBER 
++ Đặt theo chuẩn CRUD -> Create, Read, Update, Delete - tuyệ đối không có add, remover, ... -> đồng nhất 

@@ -140,3 +140,39 @@ end
 posistion - vi tri
 display - trinh bay
 box model - cac model boxes
+
++ 4 - 5/12/2023
++ Cần hoàn thiện modules hóa -> tối ưu chung sau 
++ Cần fix: Chỉnh lại font chữ
++ Home:
+- modules hóa, viết riêng trước, tối ưu chung sau 
+
++ Luồng xử lý api để riêng
+- services, utils  
+
++ Đặt tên cho các class rõ ràng -> tránh bị ảnh hưởng khi không thông thạo scss code style 
+
++ đặt tên cho Component phải chuẩn viết camelCase và viết hoa chữ cái đầu -> ví dụ: LearningPaths
++ đặt tên trong JavaScript cụ thể là ReactJs phải đặt quy ước là camelCase -> ví dụ: getDataFromApi 
++ đặt tên theo chuẩn CRUD: Create, Read, Update, Delete - tuyệt đối không được Add, Remove, .... -> gây khó chịu và không đồng nhất cho các thành viên -> sửa mệt, code xấu, khó bảo trì  
++ Chưa có Responsive cho nhiều thiết bị
++ Component hóa cho thành phần của course
+https://by.com.vn/
+
++ 6/12/2023
+- Home 
+- Các phần Courses, Blogs, Paths 
+- Nếu module riêng + tái sử dụng chung -> tối ưu hơn 
+-> nếu chắc chắn về tầm nhìn dài của UI 
+- Course show check status 
+- Logic show more 
+
+-- Blog home 
+- avatar 
+- phút đưa về số phút 
+- ngày giờ đưa về ngày 
+
+- Banner 
+
++ 7/12/2023 
+- learning path -- 

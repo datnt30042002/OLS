@@ -2,6 +2,7 @@
 {
     public class BlogReadHomeDTO
     {
+        public int BlogId { get; set; }
         public string? BlogTitle { get; set; }
         public string? BlogImage { get; set; }
         public DateTime? PostDate { get; set; }

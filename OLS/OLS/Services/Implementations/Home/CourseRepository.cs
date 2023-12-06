@@ -27,7 +27,7 @@ namespace OLS.Repositories.Implementations.Home
         // Get 10 courses with Fee != 0
         public async Task<List<CourseReadHomeDTO>> Get10CoursesWithFee()
         {
-            var courses = await db.Courses.Where(c => c.Fee != 0).Take(10).ToListAsync();
+            var courses = await db.Courses.Include(courses => courses.LearningPathLearningPath).Where(c => c.Fee != 0).Take(10).ToListAsync();
             var CourseReadHomePageDTO = mapper.Map<List<CourseReadHomeDTO>>(courses);
 
             return CourseReadHomePageDTO;
@@ -48,7 +48,7 @@ namespace OLS.Repositories.Implementations.Home
         // Get 15 courses with Fee == 0
         public async Task<List<CourseReadHomeDTO>> Get15CoursesFree()
         {
-            var courses = await db.Courses.Where(c => c.Fee == 0).Take(15).ToListAsync();
+            var courses = await db.Courses.Include(courses => courses.LearningPathLearningPath).Where(c => c.Fee == 0).Take(15).ToListAsync();
             var CourseReadHomePageDTO = mapper.Map<List<CourseReadHomeDTO>>(courses);
 
             return CourseReadHomePageDTO;
