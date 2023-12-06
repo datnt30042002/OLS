@@ -4,5 +4,6 @@
     {
         public string? ChapterName { get; set; }
         public string? CourseName { get; set; }
+
     }
 }

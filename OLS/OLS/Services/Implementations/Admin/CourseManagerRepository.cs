@@ -18,7 +18,7 @@ namespace OLS.Repositories.Implementations.Admin
         }
 
         // Get all courses - Read
-        public async Task<List<CourseReadAminDTO>> GetAllCourse()
+        public async Task<List<CourseReadAminDTO>> GetAllCourses()
         {
             try
             {

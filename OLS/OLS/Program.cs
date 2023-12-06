@@ -28,6 +28,18 @@ builder.Services.AddScoped<ILearningPathRepository, LearningPathRepository>();
 builder.Services.AddScoped<IBlogRepository, BlogRepository>();
 // <Home>
 
+// Config Cors reactjs default port 3000
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(builder =>
+    {
+        builder.WithOrigins("http://localhost:3003")
+               .AllowAnyMethod()
+               .AllowAnyHeader()
+               .AllowCredentials(); // Allow credentials (cookies, authorization headers)
+    });
+});
+
 // Config Automapper
 // <Summary>
 //dòng code này có ý nghĩa là bạn đang thêm dịch vụ của AutoMapper vào ứng dụng ASP.NET Core của mình
@@ -56,6 +68,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+// CROS - Config Cors reactjs default port 3000
+app.UseCors();
 
 app.UseHttpsRedirection();
 

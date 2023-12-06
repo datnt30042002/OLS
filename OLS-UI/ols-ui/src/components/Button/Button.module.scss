@@ -56,18 +56,17 @@
 
     &:hover {
         border-color: var(--primary);
-        background: linear-gradient(0deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.06)),#00419e;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.06)),#00419e;
     }
 }
 
 .outline {
     color: var(--primary);
-    //border-color: var(--primary);
     border-color: currentColor; // ăn theo màu hiện tại
 
     &:hover {
         border-color: currentColor; // ăn theo màu hiện tại
-        background-color: rgba(254, 44, 85, 0.06);;
+        background-color: rgba(0, 86, 210, 0.05);
     }
 }
 

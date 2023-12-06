@@ -22,3 +22,23 @@
 
 + 02/11/2023
 - config ols-ui - reactapp
+
++ 07/12/2023
+-- Front-end
+- Khung LearningPaths - chưa xong - còn bug 
+- Xây cấu trúc UI dự án
+- Đồng bộ chạy cùng API
+- Xử lý memory leak khi API được request liên tục bằng useEffect
+- Bất đồng bộ async 
+- Khá hoàn thiện - còn 1 số bug HomePage
+
+-- Back-end 
+- Modified về phần readDTO phía HomePage 
+- Cors trong Program.cs để phía Front-end lấy được API
+- Khá hoàn thiện - còn 1 số bug
+
+-- Database 
+- Vấn đề trường dữ liệu quá nhỏ -> phải tăng lên 
+- Khó khăn cho việc làm tool lấy API tự động
+
+- Chưa nối FK từ discuss khóa học đến user 
