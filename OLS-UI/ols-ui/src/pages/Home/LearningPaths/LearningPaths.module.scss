@@ -55,69 +55,90 @@
     border-bottom-left-radius: 5px;
 }
 
-.learningPath-header__left-title {
+.learningPath-header__title {
+    align-items: center;
+    line-height: 138px;
+    margin-left: 40px;
+    font-size: 1.2rem;
+    color: var(--text-color);
+}
 
+.learningPath-header__logo-link {
+    align-items: center;
+    line-height: 138px;
+    margin-left: 40px;
+    margin-top: 25px;
 }
 
 .learningPath-header__content {
+    align-items: center;
+    margin-right: 50px;
+    margin-top: 25px;
+    font-size: 1.2rem;
+    color: var(--text-color);
 
-}
-
-.learningPath-header__right-title {
-
+    p {
+        margin-top: 8px;
+        line-height: 1.6rem;
+    }
 }
 
 .learningPath-item {
     width: 100%;
     height: 260px;
     background-color: transparent;
-    border-left: 1px solid rgba(204, 204, 204, 0.5);
+    border-left: 1px solid rgba(204, 204, 204, 1);
     margin-left: 10px;
 }
 
 .learningPath-item__link {
     display: flex;
+    text-decoration: none;
 }
 
 .learningPath-item__image {
-
-}
-
-.learningPath-item__image-custom {
-    width: 330px;
-    height: 224px;
-    // padding: 64px 104px;
+    width: 130px;
+    height: 130px;
+    margin-top: 50px;
+    margin-left: 160px;
+    border-radius: 5px;
 }
 
 .learningPath-item__content {
     width: 100%;
-    border-bottom: 1px solid rgba(204, 204, 204, 0.5);
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    text-align: center;
+    height: 224px;
+    border-bottom: 1px solid rgba(204, 204, 204, 1);
 }
 
-.learningPath-item__content__name {
+.learningPath-item__content-name {
     font-size: 2rem;
     display: block;
     width: 100%;
+    margin-top: 50px;
+    font-size: 2rem;
+    font-weight: 600;
 }
 
-.learningPath-item__content__description {
-    
+.learningPath-item__content-description {
+    margin-top: 24px;
+    font-size: 1.4rem;
+    color: var(--text-color);
+    font-weight: 500;
 }
 
-.learningPath-item__content__go {
-    
+.learningPath-item__content-course-amount {
+    margin-top: 4px;
+    font-size: 1.4rem;
+    color: var(--text-color);
 }
 
-.wrap {
-    display: flex;
+.learningPath-item__content-go {
+    margin-top: 50px;
+    font-size: 2rem;
+    font-weight: 600;
 }
 
-.test-2 {
-    width: 100%;
-    height: 100px;
-    background-color: #000;
+.learningPath-item__content-go-link {
+    color: #2a73cc;
+    text-decoration: none;
 }

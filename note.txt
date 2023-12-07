@@ -42,3 +42,6 @@
 - Khó khăn cho việc làm tool lấy API tự động
 
 - Chưa nối FK từ discuss khóa học đến user 
+
+- Hoàn thiện ui LearningPaths 
+- Chưa tối ưu hóa

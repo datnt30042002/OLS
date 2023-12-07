@@ -3,10 +3,13 @@ import React from 'react';
 import axios from 'axios';
 import classNames from 'classnames/bind';
 import { useState, useEffect } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 // components
 import styles from './LearningPaths.module.scss';
 import Image from '~/components/Image';
+import logo from '~/assets/images/logo.svg';
 
 // quy ước viết tắt của classNames
 const cx = classNames.bind(styles);
@@ -33,7 +36,7 @@ const LearningPaths = () => {
     };
 
     return (
-        <main>
+        <main className={cx('wrapper')}>
             {/* Grid */}
             <div className={cx('grid')}>
                 {/* Row */}
@@ -41,22 +44,25 @@ const LearningPaths = () => {
                     {/* Col */}
                     <div className={cx('col-12')}>
                         <div className={cx('learningPath-header')}>
-                            <div className={cx('learningPath-header__left-title')}>
-                                <h1>Project Coordinator</h1>
-                                <span>ENTRY LEVEL</span>
+                            <div className={cx('learningPath-header__title')}>
+                                <h1>All Learning Paths</h1>
+                            </div>
+
+                            <div className={cx('learningPath-header__logo')}>
+                                {/* Logo */}
+                                <Image src={logo} className={cx('learningPath-header__logo-link')} />
                             </div>
 
                             <div className={cx('learningPath-header__content')}>
+                                <h1>Content</h1>
                                 <p>
                                     Project Coordinators organize meetings, resources, equipment, and information for a
-                                    team, with the goal of improving efficiency and streamlining workflows and
-                                    processes.
+                                    team,
+                                    <br />
+                                    with the goal of improving efficiency and streamlining workflows and processes.
+                                    <br />
+                                    many skills.....
                                 </p>
-                            </div>
-
-                            <div className={cx('learningPath-header__right-title')}>
-                                <span>Key Skills to Learn</span>
-                                <span>Project management, Excel, Scheduling</span>
                             </div>
                         </div>
                     </div>
@@ -65,17 +71,37 @@ const LearningPaths = () => {
                 {/* Row */}
                 <div className={cx('row')}>
                     {/* Col */}
-                    <div className={cx('col-12')}>
-                        <div className={cx('wrap')}>
-                            <div className={cx('col-2-4')}>
-                                <img src="https://avatars.githubusercontent.com/u/108357953?v=4" alt="" />
-                            </div>
+                    {/* map */}
+                    {learningPaths.map((learningPath) => (
+                        <div key={learningPath.learningPathId} className={cx('col-12')}>
+                            <div className={cx('learningPath-item')}>
+                                <div className={cx('learningPath-item__link')}>
+                                    <div className={cx('col-2-4')}>
+                                        <Image src={learningPath.image} className={cx('learningPath-item__image')} />
+                                    </div>
 
-                            <div className={cx('col-2-8')}>
-                                <div className={cx('test-2')}></div>
+                                    <div className={cx('col-2-8')}>
+                                        <div className={cx('learningPath-item__content')}>
+                                            <div className={cx('learningPath-item__content-name')}>
+                                                {learningPath.learningPathName}
+                                            </div>
+                                            <div className={cx('learningPath-item__content-description')}>
+                                                {learningPath.description}
+                                            </div>
+                                            <div className={cx('learningPath-item__content-course-amount')}>
+                                                Course amount: 15 courses
+                                            </div>
+                                            <div className={cx('learningPath-item__content-go')}>
+                                                <a href="#" className={cx('learningPath-item__content-go-link')}>
+                                                    Go to Learning Path <FontAwesomeIcon icon={faArrowRight} />
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    ))}
                 </div>
 
                 {/* Row */}

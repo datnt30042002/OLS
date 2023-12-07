@@ -175,4 +175,5 @@ https://by.com.vn/
 - Banner 
 
 + 7/12/2023 
-- learning path -- 
+- Hoàn thiện ui LearningPaths 
+- Chưa tối ưu hóa
