@@ -3,7 +3,7 @@ import React from 'react';
 import classNames from 'classnames/bind';
 
 // components
-import styles from './Home.module.scss';
+import styles from './HomePage.module.scss';
 import CoursesHaveFee from './components/CoursesHaveFee';
 import CoursesFree from './components/CoursesFree';
 import NewestBlogs from './components/NewestBlogs';
@@ -11,7 +11,7 @@ import LearningPaths from './components/LearningPaths';
 
 const cx = classNames.bind(styles);
 
-const Home = () => {
+const HomePage = () => {
     return (
         <main className={cx('wrapper')}>
             {/* Grid */}
@@ -31,4 +31,4 @@ const Home = () => {
     );
 };
 
-export default Home;
+export default HomePage;
