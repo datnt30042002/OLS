@@ -29,13 +29,12 @@
     width: calc((100% / 12) * 12);
 }
 
-.learningPath-header {
+.learning-path-details-header {
     position: relative;
     width: 100%;
     height: 138px;
     display: flex;
-    justify-content: space-between;
-    background-color: rgba(112,160,230, 0.05);
+    background-color: var(--white);
     border: 1px solid rgba(204, 204, 204, 0.5);
     box-shadow: 0 1px 1px #ccc;
     margin-left: 10px;
@@ -43,7 +42,7 @@
     border-bottom-right-radius: 5px;
 }
 
-.learningPath-header::after {
+.learning-path-details-header::after {
     content: "";
     position: absolute;
     top: 0;
@@ -55,22 +54,28 @@
     border-bottom-left-radius: 5px;
 }
 
-.learningPath-header__title {
+.learning-path-details-header__image {
+    width: 100px;
+    height: 100px;
+    margin: 18px 20px 20px 20px;
+    border-radius: 5px;
+}
+
+.learning-path-details-header__title {
     align-items: center;
     line-height: 138px;
-    margin-left: 40px;
     font-size: 1.2rem;
     color: var(--text-color);
 }
 
-.learningPath-header__logo-link {
+.learning-path-details-header__logo-link {
     align-items: center;
     line-height: 138px;
     margin-left: 40px;
     margin-top: 25px;
 }
 
-.learningPath-header__content {
+.learning-path-details-header__content {
     align-items: center;
     margin-right: 50px;
     margin-top: 25px;
@@ -83,7 +88,7 @@
     }
 }
 
-.learningPath-item {
+.learning-path-details-item {
     width: 100%;
     height: 260px;
     background-color: transparent;
@@ -91,12 +96,12 @@
     margin-left: 10px;
 }
 
-.learningPath-item__link {
+.learning-path-details-item__link {
     display: flex;
     text-decoration: none;
 }
 
-.learningPath-item__image {
+.learning-path-details-item__image {
     width: 130px;
     height: 130px;
     margin-top: 50px;
@@ -104,13 +109,13 @@
     border-radius: 5px;
 }
 
-.learningPath-item__content {
+.learning-path-details-item__course {
     width: 100%;
     height: 224px;
     border-bottom: 1px solid rgba(204, 204, 204, 1);
 }
 
-.learningPath-item__content-name {
+.learning-path-details-item__course-name {
     font-size: 2rem;
     display: block;
     width: 100%;
@@ -119,26 +124,32 @@
     font-weight: 600;
 }
 
-.learningPath-item__content-description {
+.learning-path-details-item__course-description {
     margin-top: 24px;
     font-size: 1.4rem;
     color: var(--text-color);
     font-weight: 500;
 }
 
-.learningPath-item__content-course-amount {
+.learning-path-details-item__course-course-info {
     margin-top: 4px;
     font-size: 1.4rem;
     color: var(--text-color);
 }
 
-.learningPath-item__content-go {
+.learning-path-details-item__course-course-fee {
+    padding-top: 24px;
+    font-size: 1.4rem;
+    color: red;
+}
+
+.learning-path-details-item__course-go {
     margin-top: 50px;
     font-size: 2rem;
     font-weight: 600;
 }
 
-.learningPath-item__content-go-link {
+.learning-path-details-item__course-go-link {
     color: #2a73cc;
     text-decoration: none;
 }

@@ -18,7 +18,10 @@ const DefaultLayout = ({ children }) => {
             <Header />
             <Navbar />
             <div className={cx('container')}>
-                <div className={cx('content')}>{children}</div>
+                <div className={cx('content')}>
+                    {/* <h1>back</h1> */}
+                    {children}
+                </div>
             </div>
             <Footer />
         </div>

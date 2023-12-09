@@ -1,13 +1,15 @@
-// from react and libs
+// From react and libs
 import React from 'react';
 import classNames from 'classnames/bind';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
-// components
+// Components
 import styles from './CoursesFree.module.scss';
 import Image from '~/components/Image';
 import Button from '~/components/Button';
+import config from '~/config';
 
 const cx = classNames.bind(styles);
 
@@ -43,7 +45,7 @@ const CoursesFree = () => {
                     {courses.map((course) => (
                         <div key={course.courseId} className={cx('col-3')}>
                             <div className={cx('course-item')}>
-                                <a href="#" className={cx('course-item__link')}>
+                                <Link to={config.routes.courseinprogress} className={cx('course-item__link')}>
                                     <Image
                                         src={course.image}
                                         alt={course.courseName}
@@ -62,7 +64,7 @@ const CoursesFree = () => {
                                     <div className={cx('free')}>
                                         <span className={cx('free-title')}>Free</span>
                                     </div>
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     ))}

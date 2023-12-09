@@ -45,3 +45,25 @@
 
 - Hoàn thiện ui LearningPaths 
 - Chưa tối ưu hóa
+
++ 08/12/2023
+--- Home 
+- UI settings --> hoàn thiện
+- UI course detail --> hoàn thiện 
+- UI payment --> hoàn thiện 
+- UI CourseInProgress --> hoàn thiện
+    - Xử lý luồng chạy side bar --> ok
+
+==============
++ ĐẠT
+- UI blog
+- UI login 
+- UI register 
+==============
+
++ Default layout, HeaderOnly 
++ Viết hoa chữ cái đầu comment 
+
++ 09/12/2023
+--- Admin 
+- UI course manager --> 

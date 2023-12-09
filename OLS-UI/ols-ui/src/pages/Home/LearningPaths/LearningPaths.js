@@ -5,11 +5,13 @@ import classNames from 'classnames/bind';
 import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 // components
 import styles from './LearningPaths.module.scss';
 import Image from '~/components/Image';
 import logo from '~/assets/images/logo.svg';
+import config from '~/config';
 
 // quy ước viết tắt của classNames
 const cx = classNames.bind(styles);
@@ -92,9 +94,12 @@ const LearningPaths = () => {
                                                 Course amount: 15 courses
                                             </div>
                                             <div className={cx('learningPath-item__content-go')}>
-                                                <a href="#" className={cx('learningPath-item__content-go-link')}>
+                                                <Link
+                                                    to={config.routes.learningpathdetails}
+                                                    className={cx('learningPath-item__content-go-link')}
+                                                >
                                                     Go to Learning Path <FontAwesomeIcon icon={faArrowRight} />
-                                                </a>
+                                                </Link>
                                             </div>
                                         </div>
                                     </div>
