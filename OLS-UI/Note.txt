@@ -175,5 +175,34 @@ https://by.com.vn/
 - Banner 
 
 + 7/12/2023 
-- Hoàn thiện ui LearningPaths 
+- Hoàn thiện ui LearningPaths --> hoàn thiện  
 - Chưa tối ưu hóa
+- fix user select 
+
+- Hoàn thiện LearningPathDetails --> hoàn thiện 
+- Xử dụng cơ chế routes
+
+- UI user profile --> hoàn thiện  
+- back button - chưa 
+
++ 8/12/2023
+--- Home 
+- UI settings --> hoàn thiện
+- UI course detail --> hoàn thiện 
+- UI payment --> hoàn thiện 
+- UI CourseInProgress --> hoàn thiện
+    - Xử lý luồng chạy side bar --> ok
+
+==============
++ ĐẠT
+- UI blog
+- UI login 
+- UI register 
+==============
+
++ Default layout, HeaderOnly 
++ Viết hoa chữ cái đầu comment 
+
++ 9/12/2023
+--- Admin 
+- UI course manager --> 

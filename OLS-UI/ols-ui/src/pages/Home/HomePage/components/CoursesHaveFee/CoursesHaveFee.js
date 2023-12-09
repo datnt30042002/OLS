@@ -3,11 +3,13 @@ import React from 'react';
 import axios from 'axios';
 import classNames from 'classnames/bind';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 // components
 import styles from './CoursesHaveFee.module.scss';
 import Image from '~/components/Image';
 import Button from '~/components/Button';
+import config from '~/config';
 
 const cx = classNames.bind(styles);
 
@@ -45,7 +47,7 @@ const CoursesHaveFee = () => {
                     {courses.map((course) => (
                         <div key={course.courseId} className={cx('col-3')}>
                             <div className={cx('course-item')}>
-                                <a href="#" className={cx('course-item__link')}>
+                                <Link to={config.routes.coursedetails} className={cx('course-item__link')}>
                                     <Image
                                         src={course.image}
                                         alt={course.courseName}
@@ -61,7 +63,7 @@ const CoursesHaveFee = () => {
                                             <span className={cx('course-item__course-degree')}>Course / Degree</span>
                                         </div>
                                     </div>
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     ))}

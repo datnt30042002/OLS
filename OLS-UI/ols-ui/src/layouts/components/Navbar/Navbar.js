@@ -26,6 +26,8 @@ const Sidebar = () => {
                     activeIcon={<SearchIcon />} */}
                 {/* <MenuItem title="Learning paths" to={config.routes.learningpaths} icon={<LearningPathsIcon />} /> */}
                 <MenuItem title="Learning paths" to={config.routes.learningpaths} />
+                {/* Test */}
+                {/* <MenuItem title="User profile" to={config.routes.userprofile} /> */}
             </Menu>
         </nav>
     );

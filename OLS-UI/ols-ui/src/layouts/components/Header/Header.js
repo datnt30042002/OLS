@@ -82,19 +82,19 @@ const Header = () => {
         {
             icon: <FontAwesomeIcon icon={faUser} />,
             title: 'View profile',
-            to: '/buivankien',
+            to: '/user-profile',
         },
-        {
-            icon: <FontAwesomeIcon icon={faCoins} />,
-            title: 'Get coins',
-            to: '/coins',
-        },
+        // {
+        //     icon: <FontAwesomeIcon icon={faCoins} />,
+        //     title: 'Get coins',
+        //     to: '/coins',
+        // },
         {
             icon: <FontAwesomeIcon icon={faGear} />,
             title: 'Settings',
             to: '/settings',
         },
-        ...MENU_ITEMS,
+        // ...MENU_ITEMS,
         {
             icon: <FontAwesomeIcon icon={faSignOut} />,
             title: 'Logout',
@@ -119,11 +119,11 @@ const Header = () => {
                     {currentUser ? (
                         <>
                             {/* tool tip */}
-                            <Tippy delay={[0, 200]} content="Upload video" placement="bottom">
+                            {/* <Tippy delay={[0, 200]} content="Upload video" placement="bottom">
                                 <button className={cx('action-btn')}>
                                     <UploadIcon />
                                 </button>
-                            </Tippy>
+                            </Tippy> */}
 
                             <Tippy content="Notifications" placement="bottom">
                                 <button className={cx('action-btn')}>

@@ -1,9 +1,9 @@
-// libs
+// From react and libs
 import React from 'react';
 import { Fragment } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
-// components
+// Components
 import { publicRoutes } from '~/routes';
 import { DefaultLayout } from '~/layouts';
 
@@ -14,6 +14,7 @@ function App() {
                 <Routes>
                     {/* Viết map routes ở đây */}
                     {/* route map để lấy children cho layout */}
+                    {/* Check role when login */}
                     {publicRoutes.map((route, index) => {
                         const Page = route.component;
                         // default layout
