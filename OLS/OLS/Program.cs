@@ -1,9 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using OLS.Models;
 using OLS.Repositories.Implementations.Admin;
 using OLS.Repositories.Implementations.Home;
 using OLS.Repositories.Interface.Admin;
 using OLS.Repositories.Interface.Home;
+using OLS.Ultils;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +21,7 @@ builder.Services.AddScoped<IUserManagerRepository, UserManagerRepository>();
 builder.Services.AddScoped<ICourseManagerRepository, CourseManagerRepository>();
 builder.Services.AddScoped<IChapterManagerRepository, ChapterManagerRepository>();
 builder.Services.AddScoped<ILessonManagerRepository, LessonManagerRepository>();
+builder.Services.AddScoped<IBlogManagerRepository, BlogManagerRepository>();
 // <Admin>
 
 // <Home>
@@ -26,7 +29,12 @@ builder.Services.AddScoped<ILessonManagerRepository, LessonManagerRepository>();
 builder.Services.AddScoped<ICourseRepository, CourseRepository>();
 builder.Services.AddScoped<ILearningPathRepository, LearningPathRepository>();
 builder.Services.AddScoped<IBlogRepository, BlogRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 // <Home>
+
+builder.Services.AddScoped<HashPassMD5, HashPassMD5>();
+builder.Services.AddScoped<Mailer, Mailer>();
+builder.Services.AddScoped<Mapper, Mapper>();
 
 // Config Cors reactjs default port 3000
 builder.Services.AddCors(options =>
