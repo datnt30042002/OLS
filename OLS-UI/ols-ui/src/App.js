@@ -4,8 +4,9 @@ import { Fragment } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 // Components
-import { publicRoutes } from '~/routes';
+import { privateRoutes, publicRoutes, privateAdminRoutes } from '~/routes';
 import { DefaultLayout } from '~/layouts';
+import { ManagerLayout } from '~/layouts';
 
 function App() {
     return (
@@ -15,10 +16,48 @@ function App() {
                     {/* Viết map routes ở đây */}
                     {/* route map để lấy children cho layout */}
                     {/* Check role when login */}
-                    {publicRoutes.map((route, index) => {
+                    {/* Home */}
+                    {/* {publicRoutes.map((route, index) => {
                         const Page = route.component;
                         // default layout
-                        let Layout = DefaultLayout;
+                        let isAdmin = false;
+                        let Layout;
+                        if (isAdmin) {
+                            Layout = ManagerLayout; // ManagerLayout
+                        } else {
+                            Layout = DefaultLayout; // DefaultLayout
+                        }
+
+                        if (route.layout) {
+                            Layout = route.layout;
+                        } else if (route.layout === null) {
+                            Layout = Fragment;
+                        }
+                        return (
+                            <Route
+                                key={index}
+                                path={route.path}
+                                element={
+                                    <Layout>
+                                        <Page />
+                                    </Layout>
+                                }
+                            />
+                        );
+                    })} */}
+
+                    {/* Admin */}
+                    {privateAdminRoutes.map((route, index) => {
+                        const Page = route.component;
+                        // default layout
+                        let isAdmin = true;
+                        let Layout;
+                        if (isAdmin) {
+                            Layout = ManagerLayout; // ManagerLayout
+                        } else {
+                            Layout = DefaultLayout; // DefaultLayout
+                        }
+
                         if (route.layout) {
                             Layout = route.layout;
                         } else if (route.layout === null) {

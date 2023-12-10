@@ -1,5 +1,4 @@
-import React from 'react';
-
+// Home
 const routes = {
     // public routes
     home: '/',
@@ -11,6 +10,22 @@ const routes = {
     userprofile: '/user-profile',
     settings: '/settings',
     payment: '/payment',
+    login: '/login',
+    register: '/register',
+    forgotpassword: '/forgot-password',
+    resetpassword: '/reset-password',
+
+    // private routes
 };
 
-export default routes;
+// Admin
+const adminRoutes = {
+    dashboard: '/',
+    learningpathsmanager: '/learning-paths-manager',
+    chaptermanager: '/chapter-manager',
+    coursemanager: '/course-manager',
+    usermanager: '/user-manager',
+    blogmanager: '/blog-manager',
+};
+
+export { routes, adminRoutes };

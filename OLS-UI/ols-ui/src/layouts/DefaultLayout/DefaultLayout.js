@@ -1,20 +1,20 @@
-// libs
+// From react and libs
 import React from 'react';
 import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
 
-// components
+// Components
 import styles from './DefaultLayout.module.scss';
-import Header from '~/layouts/components/Header';
-import Navbar from '~/layouts/components/Navbar';
-import Footer from '~/layouts/components/Footer';
+import Header from '~/layouts/components/Default/Header';
+import Navbar from '~/layouts/components/Default/Navbar';
+import Footer from '~/layouts/components/Default/Footer';
 
 const cx = classNames.bind(styles);
 
 // Nhận children từ App.js
 const DefaultLayout = ({ children }) => {
     return (
-        <div className={cx('wrapper')}>
+        <main className={cx('wrapper')}>
             <Header />
             <Navbar />
             <div className={cx('container')}>
@@ -24,7 +24,7 @@ const DefaultLayout = ({ children }) => {
                 </div>
             </div>
             <Footer />
-        </div>
+        </main>
     );
 };
 
