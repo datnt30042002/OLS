@@ -1,4 +1,4 @@
-// from react and libs
+// From react and libs
 import React from 'react';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -10,7 +10,7 @@ import {
     faLinkedin,
 } from '@fortawesome/free-brands-svg-icons';
 
-// components
+// Components
 import styles from './Footer.module.scss';
 import Image from '~/components/Image';
 import GooglePlay from '~/assets/images/apps/google-play.png';

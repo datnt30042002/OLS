@@ -198,11 +198,32 @@ https://by.com.vn/
 - UI blog
 - UI login 
 - UI register 
-==============
+- Blog manager 
+============== 
 
 + Default layout, HeaderOnly 
 + Viết hoa chữ cái đầu comment 
 
 + 9/12/2023
 --- Admin 
++ ManagerLayout --> hoàn thiện 
+- isActive --> chưa 
+- Header --> hoàn thiện 
+- Sidebar --> 
+- Footer --> 
+- tag main cho components với default layout - check lại --> chưa 
+
++ Xử lý cơ chế chuyển layout theo role - check isAdmin --> hoàn thiện - chưa tối ưu 
+- Fix xử lý routes theo role --> hoàn thiện 
+- UI user manager --> 
+- UI learning path --> 
+- UI chapter manager --> 
 - UI course manager --> 
+- UI lesson manager --> 
+
++ 10/12/2023 
+- UI login --> hoàn thiện 
+- UI register --> hoàn thiện 
+- UI forgot password --> hoàn thiện 
+- UI reset password --> hoàn thiện 
+- Xử lý phần (...) dọc header --> chưa hoàn thiện 
