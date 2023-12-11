@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using OLS.DTO.Users;
 using OLS.DTO.Users.Home;
-using OLS.Repositories.Interface.Home;
+using OLS.Services.Interface.Home;
 
 namespace OLS._2.Home.Controllers
 {

@@ -2,8 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using OLS.DTO.Courses.Admin;
 using OLS.DTO.Users.Admin;
-using OLS.Repositories.Implementations.Admin;
-using OLS.Repositories.Interface.Admin;
+using OLS.Services.Implementations.Admin;
+using OLS.Services.Interface.Admin;
 
 namespace OLS._1.Admin.Controllers
 {

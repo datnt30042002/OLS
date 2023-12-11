@@ -1,6 +1,6 @@
 ﻿using OLS.DTO.Users.Home;
 
-namespace OLS.Repositories.Interface.Home
+namespace OLS.Services.Interface.Home
 {
     public interface IUserRepository
     {

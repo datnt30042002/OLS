@@ -1,11 +1,10 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using OLS.DTO.Chapters.Admin;
 using OLS.DTO.Lessons.Admin;
 using OLS.Models;
-using OLS.Repositories.Interface.Admin;
+using OLS.Services.Interface.Admin;
 
-namespace OLS.Repositories.Implementations.Admin
+namespace OLS.Services.Implementations.Admin
 {
     public class LessonManagerRepository : ILessonManagerRepository
     {

@@ -2,8 +2,8 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using OLS.DTO.Blogs.Admin.BlogManager;
-using OLS.Repositories.Interface.Admin;
-using OLS.Repositories.Interface.Home;
+using OLS.Services.Interface.Admin;
+using OLS.Services.Interface.Home;
 
 namespace OLS._1.Admin.Controllers
 {

@@ -1,6 +1,6 @@
 ﻿using OLS.DTO.Courses;
 
-namespace OLS.Repositories.Interface.Home
+namespace OLS.Services.Interface.Home
 {
     public interface ICourseRepository
     {

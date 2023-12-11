@@ -1,12 +1,10 @@
 ﻿using OLS.Models;
-using OLS.Helpers;
-using Microsoft.AspNetCore.Mvc;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using OLS.Repositories.Interface.Home;
 using OLS.DTO.LearningPaths.Home;
+using OLS.Services.Interface.Home;
 
-namespace OLS.Repositories.Implementations.Home
+namespace OLS.Services.Implementations.Home
 {
     public class LearningPathRepository : ILearningPathRepository
     {

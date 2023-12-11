@@ -1,11 +1,10 @@
 ﻿using OLS.Models;
-using OLS.DTO;
 using OLS.DTO.Courses;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using OLS.Repositories.Interface.Home;
+using OLS.Services.Interface.Home;
 
-namespace OLS.Repositories.Implementations.Home
+namespace OLS.Services.Implementations.Home
 {
     public class CourseRepository : ICourseRepository
     {
