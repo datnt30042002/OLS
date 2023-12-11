@@ -57,3 +57,27 @@
 - MS SQLServer: database OLS
 
 ===============================
+
++ 10/12/2023 
+
++++ Kế hoạch 
+- Hoàn thiện xử lý logic 
+- login theo role 
+- filter theo public và private 
+- user profile, settings
+- blog, post, comment, manager .... 
+
+- hỗ trợ nhau làm cách thanh toán khóa học - qr
+- Sau đó tìm cách làm tool lấy api + hosting - back end 
+
+- Tuần cuối demo 
+
+- Làm xong UI Login, Register, Forgot, Reset password 
+
+- Viết mô tả luồng chạy trong code front end phần cần xử lý logic - Xử lý từ App.js
+
++ authen 
++ sau login: public và private 
+- user pro , settings
+
+- Sau đó tìm cách làm tool lấy api + hosting - back end 

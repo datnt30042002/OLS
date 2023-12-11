@@ -12,9 +12,9 @@ using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
 using OLS.DTO.Users.Home;
-using OLS.Repositories.Interface.Home;
+using OLS.Services.Interface.Home;
 
-namespace OLS.Repositories.Implementations.Home
+namespace OLS.Services.Implementations.Home
 {
     public class UserRepository : IUserRepository
     {

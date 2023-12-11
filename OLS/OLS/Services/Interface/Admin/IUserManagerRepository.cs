@@ -1,8 +1,6 @@
-﻿
-using OLS.DTO.Courses;
-using OLS.DTO.Users.Admin;
+﻿using OLS.DTO.Users.Admin;
 
-namespace OLS.Repositories.Interface.Admin
+namespace OLS.Services.Interface.Admin
 {
     public interface IUserManagerRepository
     {

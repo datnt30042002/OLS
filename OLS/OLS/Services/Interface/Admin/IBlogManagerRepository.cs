@@ -1,6 +1,6 @@
 ﻿using OLS.DTO.Blogs.Admin.BlogManager;
 
-namespace OLS.Repositories.Interface.Admin
+namespace OLS.Services.Interface.Admin
 {
     public interface IBlogManagerRepository
     {

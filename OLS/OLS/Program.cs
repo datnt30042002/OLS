@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using OLS.Models;
-using OLS.Repositories.Implementations.Admin;
-using OLS.Repositories.Implementations.Home;
-using OLS.Repositories.Interface.Admin;
-using OLS.Repositories.Interface.Home;
+using OLS.Services.Implementations.Admin;
+using OLS.Services.Implementations.Home;
+using OLS.Services.Interface.Admin;
+using OLS.Services.Interface.Home;
 using OLS.Ultils;
 
 var builder = WebApplication.CreateBuilder(args);

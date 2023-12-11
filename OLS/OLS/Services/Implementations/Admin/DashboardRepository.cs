@@ -1,4 +1,4 @@
-﻿namespace OLS.Repositories.Implementations.Admin
+﻿namespace OLS.Services.Implementations.Admin
 {
     public class DashboardRepository
     {

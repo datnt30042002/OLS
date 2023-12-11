@@ -2,7 +2,7 @@
 using OLS.DTO.Blogs.Home;
 using OLS.DTO.Courses;
 using OLS.DTO.LearningPaths.Home;
-using OLS.Repositories.Interface.Home;
+using OLS.Services.Interface.Home;
 
 namespace OLS._2.Home.Controllers
 {

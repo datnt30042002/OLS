@@ -17,7 +17,7 @@ function App() {
                     {/* route map để lấy children cho layout */}
                     {/* Check role when login */}
                     {/* Home */}
-                    {/* {publicRoutes.map((route, index) => {
+                    {publicRoutes.map((route, index) => {
                         const Page = route.component;
                         // default layout
                         let isAdmin = false;
@@ -44,10 +44,10 @@ function App() {
                                 }
                             />
                         );
-                    })} */}
+                    })}
 
                     {/* Admin */}
-                    {privateAdminRoutes.map((route, index) => {
+                    {/* {privateAdminRoutes.map((route, index) => {
                         const Page = route.component;
                         // default layout
                         let isAdmin = true;
@@ -74,7 +74,7 @@ function App() {
                                 }
                             />
                         );
-                    })}
+                    })} */}
                 </Routes>
             </div>
         </Router>

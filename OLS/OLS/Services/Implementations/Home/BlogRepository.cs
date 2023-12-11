@@ -1,13 +1,10 @@
 ﻿using OLS.Models;
-using OLS.Helpers;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using AutoMapper;
-using OLS.DTO.Courses;
-using OLS.Repositories.Interface.Home;
 using OLS.DTO.Blogs.Home;
+using OLS.Services.Interface.Home;
 
-namespace OLS.Repositories.Implementations.Home
+namespace OLS.Services.Implementations.Home
 {
     public class BlogRepository : IBlogRepository
     {

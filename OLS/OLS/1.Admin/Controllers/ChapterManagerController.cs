@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using OLS.DTO.Chapters.Admin;
-using OLS.Repositories.Interface.Admin;
+using OLS.Services.Interface.Admin;
 
 namespace OLS._1.Admin.Controllers
 {

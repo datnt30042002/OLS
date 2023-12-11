@@ -2,7 +2,7 @@
 const routes = {
     // public routes
     home: '/',
-    learningpaths: '/learning-paths',
+    learningpaths: '/learning-paths', // snake-case
     learningpathdetails: '/learning-path-details',
     search: '/search',
     coursedetails: '/course-details',

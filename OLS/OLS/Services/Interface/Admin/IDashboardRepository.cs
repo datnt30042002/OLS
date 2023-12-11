@@ -1,4 +1,4 @@
-﻿namespace OLS.Repositories.Interface.Admin
+﻿namespace OLS.Services.Interface.Admin
 {
     public interface IDashboardRepository
     {

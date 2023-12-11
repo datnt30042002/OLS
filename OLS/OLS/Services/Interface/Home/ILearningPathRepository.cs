@@ -1,7 +1,7 @@
 ﻿using OLS.Models;
 using OLS.DTO.LearningPaths.Home;
 
-namespace OLS.Repositories.Interface.Home
+namespace OLS.Services.Interface.Home
 {
     public interface ILearningPathRepository
     {
