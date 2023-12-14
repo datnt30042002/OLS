@@ -12,5 +12,8 @@ namespace OLS.Services.Interface.Admin
         Task<bool> DeleteCourseByCourseId(int courseId);
         Task<List<CourseReadAminDTO>> SearchCoursesByCourseName(string keyword);
         Task<List<CourseReadAminDTO>> FilterCoursesByLearningPath(string learningPath);
+        Task<List<CourseReadAminDTO>> GetAllCoursesWithPagination(int pageIndex, int pageSize);
+        Task<List<CourseReadAminDTO>> GetNextPage(int pageIndex, int pageSize);
+        Task<List<CourseReadAminDTO>> GetPreviousPage(int pageIndex, int pageSize);
     }
 }

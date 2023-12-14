@@ -10,8 +10,8 @@ namespace OLS.Models
             Chapters = new HashSet<Chapter>();
             CourseEnrolleds = new HashSet<CourseEnrolled>();
             Feedbacks = new HashSet<Feedback>();
-            ReceiveNotifications = new HashSet<ReceiveNotification>();
-            SendNotifications = new HashSet<SendNotification>();
+            Notifications = new HashSet<Notification>();
+            RateStars = new HashSet<RateStar>();
         }
 
         public int CourseId { get; set; }
@@ -30,7 +30,7 @@ namespace OLS.Models
         public virtual ICollection<Chapter> Chapters { get; set; }
         public virtual ICollection<CourseEnrolled> CourseEnrolleds { get; set; }
         public virtual ICollection<Feedback> Feedbacks { get; set; }
-        public virtual ICollection<ReceiveNotification> ReceiveNotifications { get; set; }
-        public virtual ICollection<SendNotification> SendNotifications { get; set; }
+        public virtual ICollection<Notification> Notifications { get; set; }
+        public virtual ICollection<RateStar> RateStars { get; set; }
     }
 }

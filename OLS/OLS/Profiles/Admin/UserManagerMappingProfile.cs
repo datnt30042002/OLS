@@ -12,7 +12,7 @@ namespace OLS.Helpers.Admin
             // Read
             CreateMap<User, UserReadAdminDTO>()
                 .ForMember(dest => dest.UserRole, opt => opt.MapFrom(src => src.UserRoleRole.RoleName))
-                .ForMember(dest => dest.Age, opt => opt.MapFrom(src => src.Dob.GetCurrentAge()))
+                //.ForMember(dest => dest.Age, opt => opt.MapFrom(src => src.Dob.GetCurrentAge()))
                 .ForMember(dest => dest.Status, opt => opt.MapFrom(src => HelperFunctions.HelperFunctions.GetStatusString(src.Status)))
                 .ReverseMap(); // Reverse map có nghĩa là map ngược lại
 

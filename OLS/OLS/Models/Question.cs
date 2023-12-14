@@ -11,8 +11,8 @@ namespace OLS.Models
         }
 
         public int QuestionId { get; set; }
-        public string? CorrectAnswer { get; set; }
         public int QuizQuizId { get; set; }
+        public string? QuestionContent { get; set; }
 
         public virtual Quiz QuizQuiz { get; set; } = null!;
         public virtual ICollection<Answer> Answers { get; set; }

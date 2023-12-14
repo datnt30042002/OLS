@@ -7,7 +7,6 @@ namespace OLS.Models
     {
         public int FeedbackId { get; set; }
         public string? FeedbackContent { get; set; }
-        public int? RateStar { get; set; }
         public int UserUserId { get; set; }
         public int CourseCourseId { get; set; }
 

@@ -162,5 +162,72 @@ namespace OLS.Services.Implementations.Admin
         // Pagging
         // <Later function>
 
+        // Get all courses with pagination
+        public async Task<List<CourseReadAminDTO>> GetAllCoursesWithPagination(int pageIndex, int pageSize)
+        {
+            try
+            {
+                var courses = await db.Courses
+                    .Include(course => course.LearningPathLearningPath)
+                    .Skip((pageIndex - 1) * pageSize) // Skip the previous pages
+                    .Take(pageSize) // Take the number of courses for the current page
+                    .ToListAsync();
+
+                var courseReadAminDTO = mapper.Map<List<CourseReadAminDTO>>(courses);
+
+                return courseReadAminDTO;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        // Get next page of courses
+        public async Task<List<CourseReadAminDTO>> GetNextPage(int pageIndex, int pageSize)
+        {
+            try
+            {
+                var courses = await db.Courses
+                    .Include(course => course.LearningPathLearningPath)
+                    .Skip(pageIndex * pageSize) // Skip to the next page
+                    .Take(pageSize) // Take the number of courses for the current page
+                    .ToListAsync();
+
+                var courseReadAminDTO = mapper.Map<List<CourseReadAminDTO>>(courses);
+
+                return courseReadAminDTO;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        // Get previous page of courses
+        public async Task<List<CourseReadAminDTO>> GetPreviousPage(int pageIndex, int pageSize)
+        {
+            try
+            {
+                if (pageIndex > 1)
+                {
+                    pageIndex--; // Move to the previous page only if not on the first page
+                }
+
+                var courses = await db.Courses
+                    .Include(course => course.LearningPathLearningPath)
+                    .Skip((pageIndex - 1) * pageSize) // Skip to the previous page
+                    .Take(pageSize) // Take the number of courses for the current page
+                    .ToListAsync();
+
+                var courseReadAminDTO = mapper.Map<List<CourseReadAminDTO>>(courses);
+
+                return courseReadAminDTO;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }

@@ -10,12 +10,12 @@ namespace OLS._2.Home.Controllers
     [ApiController]
     public class HomePageController : ControllerBase
     {
-        private readonly ICourseRepository courseEepo;
+        private readonly ICourseRepository courseRepo;
         private readonly ILearningPathRepository learningPathRepo;
         private readonly IBlogRepository blogRepo;
         public HomePageController(ICourseRepository courseEepo, ILearningPathRepository learningPathRepo, IBlogRepository blogRepo)
         {
-            this.courseEepo = courseEepo;
+            this.courseRepo = courseEepo;
             this.learningPathRepo = learningPathRepo;
             this.blogRepo = blogRepo;
         }
@@ -24,7 +24,7 @@ namespace OLS._2.Home.Controllers
         [HttpGet("/get10CoursesWithFee")]
         public async Task<ActionResult<IEnumerable<CourseReadHomeDTO>>> Get10CoursesWithFee()
         {
-            var courses = await courseEepo.Get10CoursesWithFee();
+            var courses = await courseRepo.Get10CoursesWithFee();
             return Ok(courses);
         }
 
@@ -32,7 +32,7 @@ namespace OLS._2.Home.Controllers
         [HttpGet("/get15CoursesFree")]
         public async Task<ActionResult<IEnumerable<CourseReadHomeDTO>>> Get15CoursesFree()
         {
-            var courses = await courseEepo.Get15CoursesFree();
+            var courses = await courseRepo.Get15CoursesFree();
             return Ok(courses);
         }
 
@@ -61,7 +61,7 @@ namespace OLS._2.Home.Controllers
                 return BadRequest();
             }
 
-            var courses = await courseEepo.SearchCoursesByCourseName(keyword);
+            var courses = await courseRepo.SearchCoursesByCourseName(keyword);
             return Ok(courses);
         }
 

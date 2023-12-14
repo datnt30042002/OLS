@@ -16,27 +16,45 @@ builder.Services.AddDbContext<OLSContext>(options =>
 
 builder.Services.AddAutoMapper(typeof(Program));
 
+// Config Repositories
 // <Admin>
 builder.Services.AddScoped<IUserManagerRepository, UserManagerRepository>();
 builder.Services.AddScoped<ICourseManagerRepository, CourseManagerRepository>();
 builder.Services.AddScoped<IChapterManagerRepository, ChapterManagerRepository>();
 builder.Services.AddScoped<ILessonManagerRepository, LessonManagerRepository>();
 builder.Services.AddScoped<IBlogManagerRepository, BlogManagerRepository>();
+builder.Services.AddScoped<IQuizManagerRepository, QuizManagerRepository>();
+builder.Services.AddScoped<IQuestionManagerRepository, QuestionManagerRepository>();
+builder.Services.AddScoped<IAnswerManagerRepository,  AnswerManagerRepository>();
+builder.Services.AddScoped<IFeedbackManagerRepository, FeedbackManagerRepository>();
+builder.Services.AddScoped<INotificationManagerRepository, NotificationManagerRepository>();
+builder.Services.AddScoped<IRateStarManagerRepository,  RateStarManagerRepository>();
 // <Admin>
 
 // <Home>
-// Config Repositories
 builder.Services.AddScoped<ICourseRepository, CourseRepository>();
 builder.Services.AddScoped<ILearningPathRepository, LearningPathRepository>();
 builder.Services.AddScoped<IBlogRepository, BlogRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<ICourseEnrolledRepository, CourseEnrolledRepository>();
+builder.Services.AddScoped<IChapterRepository, ChapterRepository>();
+builder.Services.AddScoped<ILessonRepository, LessonRepository>();
+builder.Services.AddScoped<IDiscussRepository, DiscussRepository>();
+builder.Services.AddScoped<IAskRepository, AskRepository>();
+builder.Services.AddScoped<IReplyRepository, ReplyRepository>();
+builder.Services.AddScoped<INoteRepository, NoteRepository>();
+builder.Services.AddScoped<IQuizRepository, QuizRepository>();
+builder.Services.AddScoped<IQuestionRepository, QuestionRepository>();
+builder.Services.AddScoped<IAnswerRepository, AnswerRepository>();
+builder.Services.AddScoped<IFeedbackRepository, FeedbackRepository>();
+builder.Services.AddScoped<IRateStarRepository, RateStarRepository>();
 // <Home>
 
 builder.Services.AddScoped<HashPassMD5, HashPassMD5>();
 builder.Services.AddScoped<Mailer, Mailer>();
 builder.Services.AddScoped<Mapper, Mapper>();
 
-// Config Cors reactjs default port 3000
+// Config Cors ReactJS default port 3003
 builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(builder =>

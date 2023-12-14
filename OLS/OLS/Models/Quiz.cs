@@ -12,6 +12,7 @@ namespace OLS.Models
 
         public int QuizId { get; set; }
         public int ChapterChapterId { get; set; }
+        public string? QuizName { get; set; }
 
         public virtual Chapter ChapterChapter { get; set; } = null!;
         public virtual ICollection<Question> Questions { get; set; }

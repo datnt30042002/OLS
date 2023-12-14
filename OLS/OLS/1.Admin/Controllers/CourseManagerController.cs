@@ -122,5 +122,49 @@ namespace OLS._1.Admin.Controllers
             }
         }
 
+
+        // Get all courses with pagination
+        [HttpGet("/getAllCoursesWithPagination")]
+        public async Task<ActionResult<IEnumerable<CourseReadAminDTO>>> GetAllCoursesWithPagination(int pageIndex = 1, int pageSize = 3)
+        {
+            try
+            {
+                var courses = await courseManagerRepo.GetAllCoursesWithPagination(pageIndex, pageSize);
+                return Ok(courses);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpGet("/getNextPage")]
+        public async Task<ActionResult<IEnumerable<CourseReadAminDTO>>> GetNextPage(int pageIndex = 1, int pageSize = 3)
+        {
+            try
+            {
+                var courses = await courseManagerRepo.GetNextPage(pageIndex, pageSize);
+                return Ok(courses);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        // Get previous page of courses
+        [HttpGet("/getPreviousPage")]
+        public async Task<ActionResult<IEnumerable<CourseReadAminDTO>>> GetPreviousPage(int pageIndex = 1, int pageSize = 3)
+        {
+            try
+            {
+                var courses = await courseManagerRepo.GetPreviousPage(pageIndex, pageSize);
+                return Ok(courses);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }
