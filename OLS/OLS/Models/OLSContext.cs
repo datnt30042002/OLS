@@ -25,29 +25,29 @@ namespace OLS.Models
         public virtual DbSet<Chapter> Chapters { get; set; } = null!;
         public virtual DbSet<Course> Courses { get; set; } = null!;
         public virtual DbSet<CourseEnrolled> CourseEnrolleds { get; set; } = null!;
-        public virtual DbSet<Dicuss> Dicusses { get; set; } = null!;
+        public virtual DbSet<Discuss> Discusses { get; set; } = null!;
         public virtual DbSet<Feedback> Feedbacks { get; set; } = null!;
         public virtual DbSet<LearningPath> LearningPaths { get; set; } = null!;
         public virtual DbSet<Lesson> Lessons { get; set; } = null!;
         public virtual DbSet<LikeComment> LikeComments { get; set; } = null!;
         public virtual DbSet<Note> Notes { get; set; } = null!;
+        public virtual DbSet<Notification> Notifications { get; set; } = null!;
         public virtual DbSet<Question> Questions { get; set; } = null!;
         public virtual DbSet<Quiz> Quizzes { get; set; } = null!;
-        public virtual DbSet<ReceiveNotification> ReceiveNotifications { get; set; } = null!;
+        public virtual DbSet<RateStar> RateStars { get; set; } = null!;
         public virtual DbSet<Reply> Replies { get; set; } = null!;
         public virtual DbSet<SaveBlog> SaveBlogs { get; set; } = null!;
         public virtual DbSet<SaveLike> SaveLikes { get; set; } = null!;
-        public virtual DbSet<SendNotification> SendNotifications { get; set; } = null!;
         public virtual DbSet<User> Users { get; set; } = null!;
         public virtual DbSet<UserRole> UserRoles { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-//            if (!optionsBuilder.IsConfigured)
-//            {
-//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-//                optionsBuilder.UseSqlServer("server =ADMIN\\SQLEXPRESS; database = OLS;uid=sa;pwd=0212;");
-//            }
+            if (!optionsBuilder.IsConfigured)
+            {
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+                optionsBuilder.UseSqlServer("server =ADMIN\\SQLEXPRESS; database = OLS;uid=sa;pwd=0212;");
+            }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -77,13 +77,21 @@ namespace OLS.Models
 
                 entity.Property(e => e.AskContent).HasMaxLength(500);
 
-                entity.Property(e => e.DicussDicussId).HasColumnName("Dicuss_DicussID");
+                entity.Property(e => e.DiscussDiscussId).HasColumnName("Discuss_DiscussID");
 
-                entity.HasOne(d => d.DicussDicuss)
+                entity.Property(e => e.Image).HasMaxLength(2000);
+
+                entity.Property(e => e.UserUserId).HasColumnName("User_UserID");
+
+                entity.HasOne(d => d.DiscussDiscuss)
                     .WithMany(p => p.Asks)
-                    .HasForeignKey(d => d.DicussDicussId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Ask_Dicuss");
+                    .HasForeignKey(d => d.DiscussDiscussId)
+                    .HasConstraintName("FK_Ask_Discuss");
+
+                entity.HasOne(d => d.UserUser)
+                    .WithMany(p => p.Asks)
+                    .HasForeignKey(d => d.UserUserId)
+                    .HasConstraintName("FK_Ask_User");
             });
 
             modelBuilder.Entity<Blog>(entity =>
@@ -252,19 +260,19 @@ namespace OLS.Models
                     .HasConstraintName("FK_CourseEnrolled_User");
             });
 
-            modelBuilder.Entity<Dicuss>(entity =>
+            modelBuilder.Entity<Discuss>(entity =>
             {
-                entity.ToTable("Dicuss");
+                entity.ToTable("Discuss");
 
-                entity.Property(e => e.DicussId).HasColumnName("DicussID");
+                entity.Property(e => e.DiscussId).HasColumnName("DiscussID");
 
                 entity.Property(e => e.LessonLessonId).HasColumnName("Lesson_LessonID");
 
                 entity.HasOne(d => d.LessonLesson)
-                    .WithMany(p => p.Dicusses)
+                    .WithMany(p => p.Discusses)
                     .HasForeignKey(d => d.LessonLessonId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Dicuss_Lesson");
+                    .HasConstraintName("FK_Discuss_Lesson");
             });
 
             modelBuilder.Entity<Feedback>(entity =>
@@ -372,13 +380,38 @@ namespace OLS.Models
                     .HasConstraintName("FK_Note_User");
             });
 
+            modelBuilder.Entity<Notification>(entity =>
+            {
+                entity.ToTable("Notification");
+
+                entity.Property(e => e.NotificationId).HasColumnName("NotificationID");
+
+                entity.Property(e => e.CourseCourseId).HasColumnName("Course_CourseID");
+
+                entity.Property(e => e.NotificationContent).HasMaxLength(500);
+
+                entity.Property(e => e.UserUserId).HasColumnName("User_UserID");
+
+                entity.HasOne(d => d.CourseCourse)
+                    .WithMany(p => p.Notifications)
+                    .HasForeignKey(d => d.CourseCourseId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Notification_Course");
+
+                entity.HasOne(d => d.UserUser)
+                    .WithMany(p => p.Notifications)
+                    .HasForeignKey(d => d.UserUserId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Notification_User");
+            });
+
             modelBuilder.Entity<Question>(entity =>
             {
                 entity.ToTable("Question");
 
                 entity.Property(e => e.QuestionId).HasColumnName("QuestionID");
 
-                entity.Property(e => e.CorrectAnswer).HasMaxLength(2000);
+                entity.Property(e => e.QuestionContent).HasMaxLength(2000);
 
                 entity.Property(e => e.QuizQuizId).HasColumnName("Quiz_QuizID");
 
@@ -397,6 +430,8 @@ namespace OLS.Models
 
                 entity.Property(e => e.ChapterChapterId).HasColumnName("Chapter_ChapterID");
 
+                entity.Property(e => e.QuizName).HasMaxLength(500);
+
                 entity.HasOne(d => d.ChapterChapter)
                     .WithMany(p => p.Quizzes)
                     .HasForeignKey(d => d.ChapterChapterId)
@@ -404,35 +439,27 @@ namespace OLS.Models
                     .HasConstraintName("FK_Quiz_Chapter");
             });
 
-            modelBuilder.Entity<ReceiveNotification>(entity =>
+            modelBuilder.Entity<RateStar>(entity =>
             {
-                entity.ToTable("ReceiveNotification");
+                entity.ToTable("RateStar");
 
-                entity.Property(e => e.ReceiveNotificationId).HasColumnName("ReceiveNotificationID");
+                entity.Property(e => e.RateStarId).HasColumnName("RateStarID");
 
-                entity.Property(e => e.CourseCourseId).HasColumnName("Course_CourseID");
-
-                entity.Property(e => e.SendNotificationSendNotificationId).HasColumnName("SendNotification_SendNotificationID");
+                entity.Property(e => e.CourseCourseId).HasColumnName("Course_CourseId");
 
                 entity.Property(e => e.UserUserId).HasColumnName("User_UserID");
 
                 entity.HasOne(d => d.CourseCourse)
-                    .WithMany(p => p.ReceiveNotifications)
+                    .WithMany(p => p.RateStars)
                     .HasForeignKey(d => d.CourseCourseId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_ReceiveNotification_Course");
-
-                entity.HasOne(d => d.SendNotificationSendNotification)
-                    .WithMany(p => p.ReceiveNotifications)
-                    .HasForeignKey(d => d.SendNotificationSendNotificationId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_ReceiveNotification_SendNotification");
+                    .HasConstraintName("FK_RateStar_Course");
 
                 entity.HasOne(d => d.UserUser)
-                    .WithMany(p => p.ReceiveNotifications)
+                    .WithMany(p => p.RateStars)
                     .HasForeignKey(d => d.UserUserId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_ReceiveNotification_User");
+                    .HasConstraintName("FK_RateStar_User");
             });
 
             modelBuilder.Entity<Reply>(entity =>
@@ -443,12 +470,21 @@ namespace OLS.Models
 
                 entity.Property(e => e.AskAskId).HasColumnName("Ask_AskID");
 
+                entity.Property(e => e.Image).HasMaxLength(2000);
+
                 entity.Property(e => e.ReplyContent).HasMaxLength(2000);
+
+                entity.Property(e => e.UserUserId).HasColumnName("User_UserID");
 
                 entity.HasOne(d => d.AskAsk)
                     .WithMany(p => p.Replies)
                     .HasForeignKey(d => d.AskAskId)
                     .HasConstraintName("FK_Reply_Ask");
+
+                entity.HasOne(d => d.UserUser)
+                    .WithMany(p => p.Replies)
+                    .HasForeignKey(d => d.UserUserId)
+                    .HasConstraintName("FK_Reply_User");
             });
 
             modelBuilder.Entity<SaveBlog>(entity =>
@@ -497,29 +533,6 @@ namespace OLS.Models
                     .HasForeignKey(d => d.UserUserId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_SaveLike_User");
-            });
-
-            modelBuilder.Entity<SendNotification>(entity =>
-            {
-                entity.ToTable("SendNotification");
-
-                entity.Property(e => e.SendNotificationId).HasColumnName("SendNotificationID");
-
-                entity.Property(e => e.CourseCourseId).HasColumnName("Course_CourseID");
-
-                entity.Property(e => e.NotificationContent).HasMaxLength(1500);
-
-                entity.Property(e => e.UserUserId).HasColumnName("User_UserID");
-
-                entity.HasOne(d => d.CourseCourse)
-                    .WithMany(p => p.SendNotifications)
-                    .HasForeignKey(d => d.CourseCourseId)
-                    .HasConstraintName("FK_SendNotification_Course");
-
-                entity.HasOne(d => d.UserUser)
-                    .WithMany(p => p.SendNotifications)
-                    .HasForeignKey(d => d.UserUserId)
-                    .HasConstraintName("FK_SendNotification_User");
             });
 
             modelBuilder.Entity<User>(entity =>

@@ -7,7 +7,7 @@ namespace OLS.Models
     {
         public Lesson()
         {
-            Dicusses = new HashSet<Dicuss>();
+            Discusses = new HashSet<Discuss>();
         }
 
         public int LessonId { get; set; }
@@ -17,6 +17,6 @@ namespace OLS.Models
         public int ChapterChapterId { get; set; }
 
         public virtual Chapter ChapterChapter { get; set; } = null!;
-        public virtual ICollection<Dicuss> Dicusses { get; set; }
+        public virtual ICollection<Discuss> Discusses { get; set; }
     }
 }

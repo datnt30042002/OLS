@@ -12,9 +12,12 @@ namespace OLS.Models
 
         public int AskId { get; set; }
         public string? AskContent { get; set; }
-        public int DicussDicussId { get; set; }
+        public int? UserUserId { get; set; }
+        public string? Image { get; set; }
+        public int? DiscussDiscussId { get; set; }
 
-        public virtual Dicuss DicussDicuss { get; set; } = null!;
+        public virtual Discuss? DiscussDiscuss { get; set; }
+        public virtual User? UserUser { get; set; }
         public virtual ICollection<Reply> Replies { get; set; }
     }
 }

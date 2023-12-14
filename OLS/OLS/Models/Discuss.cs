@@ -3,14 +3,14 @@ using System.Collections.Generic;
 
 namespace OLS.Models
 {
-    public partial class Dicuss
+    public partial class Discuss
     {
-        public Dicuss()
+        public Discuss()
         {
             Asks = new HashSet<Ask>();
         }
 
-        public int DicussId { get; set; }
+        public int DiscussId { get; set; }
         public int LessonLessonId { get; set; }
 
         public virtual Lesson LessonLesson { get; set; } = null!;

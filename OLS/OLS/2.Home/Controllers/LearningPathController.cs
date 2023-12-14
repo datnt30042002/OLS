@@ -6,10 +6,10 @@ namespace OLS._2.Home.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class LearningPathsController : ControllerBase
+    public class LearningPathController : ControllerBase
     {
         private readonly ILearningPathRepository learningPathRepo;
-        public LearningPathsController(ILearningPathRepository learningPathRepo)
+        public LearningPathController(ILearningPathRepository learningPathRepo)
         {
             this.learningPathRepo = learningPathRepo;
         }
