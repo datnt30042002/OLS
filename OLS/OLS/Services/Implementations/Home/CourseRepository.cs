@@ -3,6 +3,7 @@ using OLS.DTO.Courses;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using OLS.Services.Interface.Home;
+using OLS.DTO.Courses.Admin;
 
 namespace OLS.Services.Implementations.Home
 {
@@ -60,6 +61,22 @@ namespace OLS.Services.Implementations.Home
             var CourseReadHomePageDTO = mapper.Map<List<CourseReadHomeDTO>>(courses);
 
             return CourseReadHomePageDTO;
+        }
+
+        // Get course by course id 
+        public async Task<CourseReadHomeDTO> GetCourseByCourseId(int courseId)
+        {
+            try
+            {
+                var course = await db.Courses.Where(course => course.CourseId == courseId).Include(course => course.LearningPathLearningPath).FirstOrDefaultAsync();
+                var courseReadHomeDTO = mapper.Map<CourseReadHomeDTO>(course);
+
+                return courseReadHomeDTO;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
     }
 }

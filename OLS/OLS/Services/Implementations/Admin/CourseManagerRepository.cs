@@ -17,7 +17,7 @@ namespace OLS.Services.Implementations.Admin
             this.mapper = mapper;
         }
 
-        // Get all courses - Read
+        // Get all courses
         public async Task<List<CourseReadAminDTO>> GetAllCourses()
         {
             try

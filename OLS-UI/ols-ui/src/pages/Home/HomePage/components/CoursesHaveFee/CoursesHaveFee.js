@@ -16,23 +16,59 @@ const cx = classNames.bind(styles);
 const CoursesHaveFee = () => {
     const [courses, setCourses] = useState([]);
 
-    // side effects
+    // // side effects
+    // useEffect(() => {
+    //     getDatafromApi();
+    // }, []);
+
+    // // async - xử lý bất đồng bộ
+    // const getDatafromApi = async () => {
+    //     try {
+    //         const response = await axios.get('https://localhost:7158/get10CoursesWithFee');
+
+    //         if (!response.status === 200) {
+    //             throw new Error('Network is not ok. Cannot connect to API.');
+    //         }
+
+    //         setCourses(response.data);
+    //     } catch (error) {
+    //         throw new Error(error);
+    //     }
+    // };
+
     useEffect(() => {
-        getDatafromApi();
+        fetchDataFromApi();
     }, []);
 
-    // async - xử lý bất đồng bộ
-    const getDatafromApi = async () => {
+    const isCourseEnrolled = async (courseId) => {
+        try {
+            const response = await axios.get(`https://localhost:7158/IsCourseEnrolled/${courseId}`);
+
+            return response.data; // Assuming the API returns true or false
+        } catch (error) {
+            console.error('Error checking course enrollment:', error.message);
+            return false;
+        }
+    };
+
+    const fetchDataFromApi = async () => {
         try {
             const response = await axios.get('https://localhost:7158/get10CoursesWithFee');
 
-            if (!response.status === 200) {
-                throw new Error('Network is not ok. Cannot connect to API.');
+            if (response.status !== 200) {
+                throw new Error('Network is not ok.');
             }
 
-            setCourses(response.data);
+            const coursesWithEnrollmentStatus = await Promise.all(
+                response.data.map(async (course) => {
+                    const isEnrolled = await isCourseEnrolled(course.courseId);
+                    return { ...course, isEnrolled };
+                }),
+            );
+
+            setCourses(coursesWithEnrollmentStatus);
         } catch (error) {
-            throw new Error(error);
+            console.error('Error fetching data from API:', error.message);
         }
     };
 
@@ -47,7 +83,14 @@ const CoursesHaveFee = () => {
                     {courses.map((course) => (
                         <div key={course.courseId} className={cx('col-3')}>
                             <div className={cx('course-item')}>
-                                <Link to={config.routes.coursedetails} className={cx('course-item__link')}>
+                                <Link
+                                    to={
+                                        course.isEnrolled
+                                            ? `${config.routes.courseinprogress}?courseId=${course.courseId}`
+                                            : `${config.routes.coursedetails}?courseId=${course.courseId}`
+                                    }
+                                    className={cx('course-item__link')}
+                                >
                                     <Image
                                         src={course.image}
                                         alt={course.courseName}

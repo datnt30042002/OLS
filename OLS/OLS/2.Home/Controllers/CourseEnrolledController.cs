@@ -18,18 +18,20 @@ namespace OLS._2.Home.Controllers
 
         // Check course is enrolled or not 
         [HttpGet("/IsCourseEnrolled/{courseId}")]
-        public async Task<ActionResult> IsCourseEnrolled(int courseId)
+        public async Task<ActionResult<bool?>> IsCourseEnrolled(int courseId)
         {
             try
             {
                 var isEnrolled = await registerRepo.IsCourseEnrolled(courseId);
-                if(isEnrolled == null)
+
+                if (isEnrolled == null)
                 {
-                    return StatusCode(StatusCodes.Status500InternalServerError, "Internal Server Error");
+                    return NotFound($"Course with ID {courseId} not found");
                 }
 
                 return Ok(isEnrolled);
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, $"Internal Server Error: {ex.Message}");
             }

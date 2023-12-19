@@ -16,12 +16,12 @@ namespace OLS._2.Home.Controllers
         }
 
         // Get all lessons by chapter id 
-        [HttpGet("/getAllLessonsByChapterId")]
-        public async Task<ActionResult<IEnumerable<LessonReadHomeDTO>>> GetAllLessonsByChapterIdInCourseId(int chapterId, int courseId)
+        [HttpGet("/getAllLessonsByChapterId/{chapterId}")]
+        public async Task<ActionResult<IEnumerable<LessonReadHomeDTO>>> GetAllLessonsByChapterIdInCourseId(int chapterId)
         {
             try
             {
-                var lessons = await lessonRepo.GetAllLessonsByChapterIdInCourseId(chapterId, courseId);
+                var lessons = await lessonRepo.GetAllLessonsByChapterIdInCourseId(chapterId);
                 return Ok(lessons);
             } catch (Exception ex)
             {
@@ -30,7 +30,7 @@ namespace OLS._2.Home.Controllers
         }
 
         // Get lesson by Id
-        [HttpGet("/getLessonById")]
+        [HttpGet("/getLessonById/{lessonId}")]
         public async Task<ActionResult<LessonReadHomeDTO>> GetLessonById(int lessonId)
         {
             try

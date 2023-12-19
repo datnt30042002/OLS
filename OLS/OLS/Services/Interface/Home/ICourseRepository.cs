@@ -8,5 +8,6 @@ namespace OLS.Services.Interface.Home
         Task<List<CourseReadHomeDTO>> Get10CoursesWithFee();
         Task<List<CourseReadHomeDTO>> Get15CoursesFree();
         Task<List<CourseReadHomeDTO>> SearchCoursesByCourseName(string keyword);
+        Task<CourseReadHomeDTO> GetCourseByCourseId(int courseId);
     }
 }

@@ -7,6 +7,5 @@
         public int? Status { get; set; }
         public int CourseCourseId { get; set; }
         public int UserUserId { get; set; }
-        public int? NotificationNotificationId { get; set; }
     }
 }

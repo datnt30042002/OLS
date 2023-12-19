@@ -19,12 +19,15 @@ import Login from '~/pages/Home/Login';
 import Register from '~/pages/Home/Register';
 import ForgotPassword from '~/pages/Home/ForgotPassword';
 import ResetPassword from '~/pages/Home/ResetPassword';
+import Blogs from '~/pages/Home/Blogs';
+import BlogDetails from '~/pages/Home/BlogDetails';
 
 // Admin
 import Dashboard from '~/pages/Admin/Dashboard';
 import LearningPathsManager from '~/pages/Admin/LearningPathsManager';
 import ChapterManager from '~/pages/Admin/ChapterManager';
 import CourseManager from '~/pages/Admin/CourseManager';
+import LessonManager from '~/pages/Admin/LessonManager';
 import UserManager from '~/pages/Admin/UserManager';
 import BlogManager from '~/pages/Admin/BlogManager';
 
@@ -42,6 +45,8 @@ const publicRoutes = [
     { path: config.routes.register, component: Register },
     { path: config.routes.forgotpassword, component: ForgotPassword },
     { path: config.routes.resetpassword, component: ResetPassword },
+    { path: config.routes.blogs, component: Blogs },
+    { path: config.routes.blogdetails, component: BlogDetails },
 
     // để mặc định -> sau xử lý login sẽ đưa nó về privateRoutes
     { path: config.routes.userprofile, component: UserProfile },
@@ -59,6 +64,7 @@ const privateAdminRoutes = [
     { path: config.adminRoutes.learningpathsmanager, component: LearningPathsManager },
     { path: config.adminRoutes.chaptermanager, component: ChapterManager },
     { path: config.adminRoutes.coursemanager, component: CourseManager },
+    { path: config.adminRoutes.lessonmanager, component: LessonManager },
     { path: config.adminRoutes.blogmanager, component: BlogManager },
     { path: config.routes.login, component: Login },
     { path: config.routes.register, component: Register },

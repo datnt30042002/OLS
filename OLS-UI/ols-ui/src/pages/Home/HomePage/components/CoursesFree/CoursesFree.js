@@ -20,6 +20,17 @@ const CoursesFree = () => {
         fetchDataFromApi();
     }, []);
 
+    const isCourseEnrolled = async (courseId) => {
+        try {
+            const response = await axios.get(`https://localhost:7158/IsCourseEnrolled/${courseId}`);
+
+            return response.data; // Assuming the API returns true or false
+        } catch (error) {
+            console.error('Error checking course enrollment:', error.message);
+            return false;
+        }
+    };
+
     const fetchDataFromApi = async () => {
         try {
             const response = await axios.get('https://localhost:7158/get15CoursesFree');
@@ -28,9 +39,16 @@ const CoursesFree = () => {
                 throw new Error('Network is not ok.');
             }
 
-            setCourses(response.data);
+            const coursesWithEnrollmentStatus = await Promise.all(
+                response.data.map(async (course) => {
+                    const isEnrolled = await isCourseEnrolled(course.courseId);
+                    return { ...course, isEnrolled };
+                }),
+            );
+
+            setCourses(coursesWithEnrollmentStatus);
         } catch (error) {
-            throw new Error(error.message);
+            console.error('Error fetching data from API:', error.message);
         }
     };
 
@@ -45,7 +63,14 @@ const CoursesFree = () => {
                     {courses.map((course) => (
                         <div key={course.courseId} className={cx('col-3')}>
                             <div className={cx('course-item')}>
-                                <Link to={config.routes.courseinprogress} className={cx('course-item__link')}>
+                                <Link
+                                    to={
+                                        course.isEnrolled
+                                            ? `${config.routes.courseinprogress}?courseId=${course.courseId}`
+                                            : `${config.routes.coursedetails}?courseId=${course.courseId}`
+                                    }
+                                    className={cx('course-item__link')}
+                                >
                                     <Image
                                         src={course.image}
                                         alt={course.courseName}

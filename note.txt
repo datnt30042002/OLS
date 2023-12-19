@@ -85,4 +85,67 @@
 - UI register --> hoàn thiện 
 - UI forgot password --> hoàn thiện 
 - UI reset password --> hoàn thiện 
-- Xử lý phần (...) dọc header --> chưa hoàn thiện 
+- Xử lý phần (...) dọc header --> chưa hoàn thiện s
+
++ 14/12/2023 
+- Xử lý logic đăng ký khóa học --> hoàn thiện 
+- Course details --> hoàn thiện 
+- Course inprogress --> đang hoàn thiện 
+
++ 17/12/2023 
+- CMS - UI 
+- Dashboard --> hoàn thiện
+- User manager --> hoàn thiện 
+- Learning paths manager --> hoàn thiện 
+- Course manager --> đang hoàn thiện 
+- Lesson manager --> đang hoàn thiện 
+
++ 18/12/2023
+- Tiếp tục hoàn thiện 
+
++ 19/12/2023 
+- Nhiệm vụ - Đạt 
+- Ý tưởng UI Blog + Blog manager --> đọc trong Interfaces.docx kéo xuống 
+- luông xử lý router đã hoàn thiện 
+
++ Làm Blog cho người dùng 
+- chọn pages
+- chọn Home 
+- trong Home có Blogs và BlogDetails --> làm giao diện vào đấy
+- viết scss trong module.scss 
+--> cần xử lý logic gọi API
+
++ Làm Blog manager 
+- chọn pages
+- chọn Admin 
+- chọn BlogManager 
+- viết scss trong module.scss 
+--> cần xử lý logic gọi API
+
++ UI phần Login, Register, Forgot, Reset password đã hoàn thiện 
+--> cần xử lý logic gọi API
+- chọn pages
+- chọn Home
+- trong Home sẽ có 
+
++ Logic chia role sau khi đăng nhập 
+- chọn App.js
+- nếu role = admin --> đưa đến {/* Admin */}
+- nếu role = customer --> đưa đến {/* Home */}
+
+--> cần xử lý đưa routes chức năng vào private routes
+- chọn routes dưới pages 
+--> xem 
+
+- chọn config
+--> xem 
+
++ User profile 
+- có thể tùy biến giao diện theo yêu cầu bài toán 
+--> cần xử lý logic gọi API
+
++ Settings 
+- có thể tùy biến giao diện theo yêu cầu bài toán 
+--> cần xử lý logic gọi API
+
++ Nhiệm vụ - Kiên - đang hoàn thiện các phần còn lại 

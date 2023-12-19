@@ -19,13 +19,12 @@ namespace OLS.Services.Implementations.Home
         }
 
         // Get all lessons by chapter id 
-        public async Task<List<LessonReadHomeDTO>> GetAllLessonsByChapterIdInCourseId(int chapterId, int courseId) 
+        public async Task<List<LessonReadHomeDTO>> GetAllLessonsByChapterIdInCourseId(int chapterId) 
         {
             try
             {
                 var lessons = await db.Lessons
                     .Where(lesson => lesson.ChapterChapterId == chapterId)
-                    .Where(lesson => lesson.ChapterChapter.CourseCourseId == courseId)
                     .ToListAsync();
                 var lessonReadHomeDTO = mapper.Map<List<LessonReadHomeDTO>>(lessons);
 
