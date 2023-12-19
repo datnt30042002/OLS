@@ -53,21 +53,23 @@
 }
 
 .course-details__info__name {
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: 600;
+    line-height: 3.2rem;
     color: rgba(0, 0, 0, 0.9);
 }
 
 .course-details__info__description {
-    font-size: 1.6rem;
+    font-size: 1.2rem;
+    line-height: 2.4rem;
     color: var(--text-color);
     padding-top: 34px;
 }
 
 .course-details__info__info {
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     color: var(--text-color);
-    padding-top: 8px;
+    padding-top: 18px;
 }
 
 .course-details__enroll {

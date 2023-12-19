@@ -28,7 +28,8 @@ namespace OLS.Services.Implementations.Home
                     .AnyAsync(courseEnrolled => courseEnrolled.CourseCourseId == courseId);
 
                 return isEnrolled;
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }

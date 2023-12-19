@@ -16,7 +16,7 @@ namespace OLS._2.Home.Controllers
         }
 
         // Get all chapters by course id
-        [HttpGet("/getAllChaptersByCourseId")]
+        [HttpGet("/getAllChaptersByCourseId/{courseId}")]
         public async Task<ActionResult<IEnumerable<ChapterReadHomeDTO>>> GetAllChaptersByCourseId(int courseId)
         {
             try

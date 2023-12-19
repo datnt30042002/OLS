@@ -227,3 +227,11 @@ https://by.com.vn/
 - UI forgot password --> hoàn thiện 
 - UI reset password --> hoàn thiện 
 - Xử lý phần (...) dọc header --> chưa hoàn thiện 
+
++ 17/12/2023 
+- CMS - UI 
+- Dashboard --> hoàn thiện
+- User manager --> hoàn thiện 
+- Learning paths manager --> hoàn thiện 
+- Course manager --> hoàn thiện 
+- Lesson manager --> hoàn thiện 

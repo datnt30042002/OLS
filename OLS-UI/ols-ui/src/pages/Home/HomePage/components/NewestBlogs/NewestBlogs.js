@@ -35,7 +35,7 @@ const NewestBlogs = () => {
         <div className={cx('wrapper')}>
             {/* Grid */}
             <div className={cx('grid')}>
-                <h1 className={cx('blog-heading')}>Courses Have Fee</h1>
+                <h1 className={cx('blog-heading')}>Newest Blogs</h1>
                 {/* Row */}
                 <div className={cx('row')}>
                     {/* Col */}

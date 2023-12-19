@@ -4,6 +4,7 @@
     height: 100%;
     padding-bottom: 500px;
     background-color: transparent;
+    overflow: hidden;
 }
 
 .grid {
@@ -47,13 +48,17 @@
     font-size: 1.4rem;
     font-weight: 600;
     color: var(--primary);
-    padding: 4px 0;
+    padding: 4px 8px 4px 0;
     cursor: pointer;
     user-select: none;
 }
 
 .action-menu:hover {
-    opacity: 0.8;
+    opacity: 0.5;
+}
+
+.action-next:hover {
+    opacity: 0.5;
 }
 
 .side-bar {
@@ -61,9 +66,7 @@
     width: 380px;
     height: 100%;
     transition: ease-in-out 0.2s;
-    z-index: 1;
     display: flex;
-    border-right: 1px solid rgba(204, 204, 204, 0.5);
 
     ul {
         width: 100%;
@@ -84,6 +87,9 @@ nav.menu-close {
     font-weight: 600;
     color: var(--black);
     margin: 16px 0 8px;
+    user-select: none;
+    color: var(--primary);
+    text-transform: uppercase;
 }
 
 .chapter-item__name {
@@ -91,6 +97,12 @@ nav.menu-close {
     font-weight: 600;
     color: var(--black);
     padding: 10px 0;
+    cursor: pointer;
+    user-select: none;
+}
+
+.chapter-item__name:hover {
+    color: var(--primary);
 }
 
 .lesson-item__wrap {
@@ -105,8 +117,10 @@ nav.menu-close {
     
     p {
         padding: 14px;
-        border: 1px solid  rgba(204, 204, 204, 0.5);
-        border-radius: 5px
+        border: 1px solid  rgba(204, 204, 204, 0.4);
+        border-radius: 5px;
+        margin: 4px;
+        cursor: pointer;
     }
 }
 
@@ -127,6 +141,10 @@ nav.menu-close {
 
 .content.menu-close {
     left: 0;
+}
+
+.discuss-wrap.menu-close {
+    right: 0;
 }
 
 .course-lesson {
@@ -162,13 +180,262 @@ nav.menu-close {
     font-weight: 600;
     color: var(--primary);
     cursor: pointer;
+    user-select: none;
 }
 
-.course-comment {
+.course-lesson__note-title:hover {
+    opacity: 0.5;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.user-name {
+    font-size: 1.4rem;
+    color: var(--black);
+    font-weight: 600;
+}
+
+.discuss {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 45%;
+    height: 100%;
+    border: 1px solid  rgba(204, 204, 204, 0.4);
+    box-shadow: 0 0 2px rgba(204, 204, 204, 1);
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 11;
+    background-color: var(--white);
+}
+
+.discuss-content-wrap {
+    width: 100%;
+    height: 100%;
+    padding-top: 40px;
+    padding-left: 40px;
+}
+
+.discuss-heading__count {
+    font-size: 1.4rem;
+    color: var(--black);
+    font-weight: 600;
+}
+
+.discuss-input {
+    display: flex;
+    flex-wrap: wrap;
+    padding-right: 40px;
+    margin-top: 24px;
+    margin-bottom: 40px;
+}
+
+.discuss-input__user-input {
+    width: 80%;
+    margin-left: 8px;
+    color: var(--text-color);
+    border-bottom: 1px solid rgba(204, 204, 204, 0.4);
+    color: var(--text-color);
+}
+
+.discuss-input__user-input-image {
+    padding: 8px;
+}
+
+.discuss-ask {
+    display: flex;
+}
+
+.discuss-ask__wrap {
+    margin-left: 8px;
+}
+
+.discuss-ask-content__wrap {
+    font-size: 1.4rem;
+    color: var(--text-color);
+    background-color: rgba(204, 204, 204, 0.2);
+    width: 500px;
+    line-height: 2.4rem;
+    border-radius: 20px;
+}
+
+.discuss-ask-content__image {
+    width: 500px;
+    height: auto;
+    object-fit: contain;
+    padding: 10px;
+}
+
+.discuss-ask-content__detail {
+    font-size: 1.4rem;
+    color: var(--text-color);
+    line-height: 2.4rem;
+    padding: 10px;
+}
+
+.discuss-ask__reply-title {
+    font-size: 1.2rem;
+    color: var(--primary);
+    margin-top: 8px;
+    cursor: pointer;
+}
+
+.discuss-reply {
+    padding-left: 40px;
+    padding-bottom: 40px;
+}
+
+.discuss-reply__input-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+
+.discuss-reply__input {
+    width: 80%;
+    margin-left: 8px;
+    margin-right: 40px;
+    border-bottom: 1px solid rgba(204, 204, 204, 0.4);
+    color: var(--text-color);
+}
+
+.discuss-reply__input-image {
+    padding: 8px;
+}
+
+.discuss-reply__content-wrap {
+    display: flex;
+}
+
+.discuss-reply__list {
+    margin-left: 8px;
+}
+
+.discuss-reply__user-tag {
+    color: var(--primary);
+}
+
+.discuss-reply__item {
+    font-size: 1.4rem;
+    color: var(--text-color);
+    background-color: rgba(204, 204, 204, 0.2);
+    width: 500px;
+    padding: 10px;
+    line-height: 2.4rem;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.course-discuss {
     position: fixed;
     bottom: 50px;
-    right: 50px;
-    font-size: 4rem;
+    right: 20px;
+    font-size: 3rem;
     color: var(--primary);
     cursor: pointer;
+    z-index: 12;
+}
+
+.course-discuss:hover {
+    opacity: 0.5;
+}
+
+.note {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60%;
+    border: 1px solid rgba(204, 204, 204, 0.4);
+    box-shadow: 0 0 2px rgba(204, 204, 204, 1);
+    background-color: var(--white);
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 12;
+}
+
+.note-wrap {
+    margin: 50px;
+}
+
+.note-close {
+    float: right;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+.note-close:hover {
+    opacity: 0.5;
+}
+
+.note-heading__title {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.note-content {
+    width: 100%;
+    border: 1px solid;
+    border-radius: 10px; 
+    margin-top: 24px;
+}
+
+.note-content__input {
+    width: 100%;
+    padding: 14px;
+    border-radius: 10px; 
+    font-size: 1.6rem;
+}
+
+.note-content-list {
+    margin-top: 40px;
+}
+
+.note-content-list__wrap {
+    display: flex;
+}
+
+.note-content-list__title {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.note-content-list__item {
+    font-size: 1.8rem;
+    padding: 24px;
+    margin: 14px 0;
+    color: var(--black);
+    background-color: rgba(204, 204, 204, 0.4);
+    border-radius: 10px;
+    width: 99%;
+}
+
+.note-content-list__item-icon {
+    font-size: 1.4rem;
+    margin-top: 18px;
+    margin-left: 8px;
+    text-align: center;
+}
+
+.note-content-list__item-icon__edit {
+    margin-top: 8px;
+    cursor: pointer;
+}
+
+.note-content-list__item-icon__delete {
+    margin-top: 8px;
+    cursor: pointer;
+}
+
+.note-content-list__item-icon__edit:hover {
+    opacity: 0.5;
+}
+
+.note-content-list__item-icon__delete:hover {
+    opacity: 0.5;
 }

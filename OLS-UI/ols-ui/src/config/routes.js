@@ -14,6 +14,8 @@ const routes = {
     register: '/register',
     forgotpassword: '/forgot-password',
     resetpassword: '/reset-password',
+    blogs: '/blogs',
+    blogdetails: '/blog-details',
 
     // private routes
 };
@@ -24,6 +26,7 @@ const adminRoutes = {
     learningpathsmanager: '/learning-paths-manager',
     chaptermanager: '/chapter-manager',
     coursemanager: '/course-manager',
+    lessonmanager: '/lesson-manager',
     usermanager: '/user-manager',
     blogmanager: '/blog-manager',
 };

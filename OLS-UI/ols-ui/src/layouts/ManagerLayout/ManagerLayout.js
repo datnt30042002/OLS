@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styles from './ManagerLayout.module.scss';
 import Header from '~/layouts/components/Manager/Header';
 import Footer from '~/layouts/components/Manager/Footer';
-import { faBars, faGauge, faUser, faBook, faBlog } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faGauge, faUsers, faBook, faBlog } from '@fortawesome/free-solid-svg-icons';
 import config from '~/config';
 
 const cx = classNames.bind(styles);
@@ -63,7 +63,7 @@ const ManagerLayout = ({ children }) => {
                                                 to={config.adminRoutes.usermanager}
                                                 className={cx('manager-item__link')}
                                             >
-                                                <FontAwesomeIcon icon={faUser} className={cx('manager-item__icon')} />
+                                                <FontAwesomeIcon icon={faUsers} className={cx('manager-item__icon')} />
                                                 <span className={cx('manager-item__title')}>Users</span>
                                             </Link>
                                         </li>
