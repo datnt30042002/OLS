@@ -489,7 +489,7 @@ namespace OLS.Models
 
             modelBuilder.Entity<SaveBlog>(entity =>
             {
-                entity.HasNoKey();
+                entity.HasKey(e => e.SaveBlogId);
 
                 entity.ToTable("SaveBlog");
 
