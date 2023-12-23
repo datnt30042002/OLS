@@ -1,7 +1,8 @@
 // From react and libs
-import React from 'react';
+import React, { useState } from 'react';
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 // Components
 import styles from './Register.module.scss';
@@ -13,6 +14,26 @@ import config from '~/config';
 const cx = classNames.bind(styles);
 
 const Register = () => {
+    const [fullName, setFullName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [verifyCode, setVerifyCode] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+  const handleRegister = async () => {
+    try {
+      const response = await axios.post('http://localhost:7158/api/User/registerbyemail', {
+        fullName,
+        email,
+        password
+      });
+      if (response.data.message) {
+      } else {
+        setErrorMessage(response.data);
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
     return (
         <div className={cx('wrapper')}>
             <div className={cx('grid')}>
@@ -32,6 +53,8 @@ const Register = () => {
                                         type="text"
                                         placeholder="Your Full Name"
                                         required
+                                        value={fullName}
+                                        onChange={(e) => setFullName(e.target.value)}
                                         className={cx('register-content__full-name-input')}
                                     />
                                 </div>
@@ -43,6 +66,8 @@ const Register = () => {
                                         type="email"
                                         placeholder="Your Email"
                                         required
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)}
                                         className={cx('register-content__email-input')}
                                     />
                                 </div>
@@ -54,6 +79,8 @@ const Register = () => {
                                         type="password"
                                         placeholder="You Password"
                                         required
+                                        value={password}
+                                        onChange={(e) => setPassword(e.target.value)}
                                         className={cx('register-content__password-input')}
                                     />
                                 </div>
@@ -77,7 +104,7 @@ const Register = () => {
                                 {/* Xử lý logic ở đây */}
                                 <div className={cx('register-content__login')}>
                                     <Link to={'#'}>
-                                        <Button large primary className={cx('register-content__register-button')}>
+                                        <Button large primary onClick={handleRegister} className={cx('register-content__register-button')}>
                                             <span className={cx('register-content__register-button__title')}>
                                                 Register
                                             </span>
