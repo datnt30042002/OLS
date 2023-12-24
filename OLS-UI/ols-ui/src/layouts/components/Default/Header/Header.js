@@ -62,7 +62,7 @@ const MENU_ITEMS = [
 const Header = () => {
     // current User
     // User status -> if logged in or not
-    const currentUser = true;
+    const currentUser = false;
     //const currentUser = false;
 
     // handle menu change - handle logic

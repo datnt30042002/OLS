@@ -17,7 +17,7 @@ namespace OLS._2.Home.Controllers
             _userRepository = userRepository;
         }
 
-        [HttpPost("loginbyemail")]
+        [HttpPost("/loginbyemail")]
         [AllowAnonymous]
         public async Task<IActionResult> LoginByEmail([FromForm] LoginByEmailRequest request)
         {
@@ -34,7 +34,7 @@ namespace OLS._2.Home.Controllers
 
         }
 
-        [HttpPost("registerbyemail")]
+        [HttpPost("/registerbyemail")]
         [AllowAnonymous]
         public async Task<IActionResult> RegisterByEmail([FromForm] RegisterByEmailRequest request)
         {

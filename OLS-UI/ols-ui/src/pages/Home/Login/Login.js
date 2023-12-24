@@ -19,27 +19,27 @@ const Login = () => {
     const [password, setPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
     const navigate = useNavigate();
-  const handleLogin = async () => {
-    try {
-      const response = await axios.post('http://localhost:7158/api/User/loginbyemail', { email, password });
+    const handleLogin = async () => {
+        try {
+            // const response = await axios.post('http://localhost:7158/api/User/loginbyemail', { email, password });
 
+            // API - Kiên
+            const response = await axios.post('https://localhost:7158/login2', { email, password });
 
-      if (response.data.message) {
+            if (response.data.message) {
+                localStorage.setItem('user', JSON.stringify(response.data.user));
 
-        localStorage.setItem('user', JSON.stringify(response.data.user));
+                navigate('/');
+            } else {
+                // Đăng nhập thất bại
+                setErrorMessage(response.data);
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            console.error('Error Response:', error.response);
+        }
+    };
 
-        navigate('/home');
-      } else {
-        // Đăng nhập thất bại
-        setErrorMessage(response.data);
-      }
-    } catch (error) {
-      console.error('Error:', error);
-      console.error('Error Response:', error.response);
-    }
-  };
-    
-    
     return (
         <div className={cx('wrapper')}>
             <div className={cx('grid')}>
@@ -59,7 +59,7 @@ const Login = () => {
                                         type="email"
                                         placeholder="Your Email"
                                         value={email}
-                                        onChange={(e)=>setEmail(e.target.value)}
+                                        onChange={(e) => setEmail(e.target.value)}
                                         required
                                         className={cx('login-content__email-input')}
                                     />
@@ -72,7 +72,7 @@ const Login = () => {
                                         type="password"
                                         placeholder="You Password"
                                         value={password}
-                                        onChange={(e)=>setPassword(e.target.value)}
+                                        onChange={(e) => setPassword(e.target.value)}
                                         required
                                         className={cx('login-content__password-input')}
                                     />
@@ -90,7 +90,12 @@ const Login = () => {
                                 {/* Xử lý logic ở đây */}
                                 <div className={cx('login-content__login')}>
                                     <Link to={'#'}>
-                                        <Button large primary onClick={handleLogin} className={cx('login-content__login-button')}>
+                                        <Button
+                                            large
+                                            primary
+                                            onClick={handleLogin}
+                                            className={cx('login-content__login-button')}
+                                        >
                                             <span className={cx('login-content__login-button__title')}>Login</span>
                                         </Button>
                                     </Link>
