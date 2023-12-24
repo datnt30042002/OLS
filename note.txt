@@ -149,3 +149,18 @@
 --> cần xử lý logic gọi API
 
 + Nhiệm vụ - Kiên - đang hoàn thiện các phần còn lại 
+
+
++ 24/12/2023 
+
+- Cá nhân nghĩ
+- hiện tại phía payload đưa về request đúng --> password đang so sánh với hashmap 
+- mà hashmap sinh ra là độc nhất 
++ đọc doc 
+MD5 là một thuật toán băm (hashing algorithm) tạo ra một chuỗi hash 
+cố định dựa trên dữ liệu đầu vào. Thuật toán này được thiết kế để tạo ra 
+một chuỗi hash độc nhất cho mỗi đầu vào duy nhất, 
+nhưng không phải là một chuỗi hash duy nhất trên toàn thế giới.
+
+--> phải xử lý hashmap phía frontend để so sánh với dât phần back end 
+--> có thể nghĩ cách khác hay không thì tùy.

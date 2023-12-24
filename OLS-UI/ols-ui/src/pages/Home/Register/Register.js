@@ -15,25 +15,25 @@ const cx = classNames.bind(styles);
 
 const Register = () => {
     const [fullName, setFullName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [verifyCode, setVerifyCode] = useState('');
-  const [errorMessage, setErrorMessage] = useState('');
-  const handleRegister = async () => {
-    try {
-      const response = await axios.post('http://localhost:7158/api/User/registerbyemail', {
-        fullName,
-        email,
-        password
-      });
-      if (response.data.message) {
-      } else {
-        setErrorMessage(response.data);
-      }
-    } catch (error) {
-      console.error('Error:', error);
-    }
-  };
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [verifyCode, setVerifyCode] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
+    const handleRegister = async () => {
+        try {
+            const response = await axios.post('http://localhost:7158/api/User/registerbyemail', {
+                fullName,
+                email,
+                password,
+            });
+            if (response.data.message) {
+            } else {
+                setErrorMessage(response.data);
+            }
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    };
     return (
         <div className={cx('wrapper')}>
             <div className={cx('grid')}>
@@ -85,7 +85,7 @@ const Register = () => {
                                     />
                                 </div>
                                 {/* Xử lý logic ở đây */}
-                                <div className={cx('register-content__verify-email')}>
+                                {/* <div className={cx('register-content__verify-email')}>
                                     <label className={cx('register-content__verify-email-title')}>
                                         Verify email <span className={cx('register-content__required')}>*</span>
                                     </label>
@@ -100,16 +100,19 @@ const Register = () => {
                                             Send code
                                         </Button>
                                     </div>
-                                </div>
+                                </div> */}
                                 {/* Xử lý logic ở đây */}
                                 <div className={cx('register-content__login')}>
-                                    <Link to={'#'}>
-                                        <Button large primary onClick={handleRegister} className={cx('register-content__register-button')}>
-                                            <span className={cx('register-content__register-button__title')}>
-                                                Register
-                                            </span>
-                                        </Button>
-                                    </Link>
+                                    {/* <Link to={'#'}> */}
+                                    <Button
+                                        large
+                                        primary
+                                        onClick={handleRegister}
+                                        className={cx('register-content__register-button')}
+                                    >
+                                        <span className={cx('register-content__register-button__title')}>Register</span>
+                                    </Button>
+                                    {/* </Link> */}
                                 </div>
                                 <div className={cx('register-content__register')}>
                                     Have an account?

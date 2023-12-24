@@ -48,6 +48,7 @@ builder.Services.AddScoped<IQuestionRepository, QuestionRepository>();
 builder.Services.AddScoped<IAnswerRepository, AnswerRepository>();
 builder.Services.AddScoped<IFeedbackRepository, FeedbackRepository>();
 builder.Services.AddScoped<IRateStarRepository, RateStarRepository>();
+builder.Services.AddScoped<IUser2Repository, User2Repository>();
 // <Home>
 
 builder.Services.AddScoped<HashPassMD5, HashPassMD5>();
