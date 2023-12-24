@@ -1,7 +1,9 @@
 // From react and libs
-import React from 'react';
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 // Components
 import styles from './Login.module.scss';
@@ -13,6 +15,31 @@ import config from '~/config';
 const cx = classNames.bind(styles);
 
 const Login = () => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
+    const navigate = useNavigate();
+  const handleLogin = async () => {
+    try {
+      const response = await axios.post('http://localhost:7158/api/User/loginbyemail', { email, password });
+
+
+      if (response.data.message) {
+
+        localStorage.setItem('user', JSON.stringify(response.data.user));
+
+        navigate('/home');
+      } else {
+        // Đăng nhập thất bại
+        setErrorMessage(response.data);
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      console.error('Error Response:', error.response);
+    }
+  };
+    
+    
     return (
         <div className={cx('wrapper')}>
             <div className={cx('grid')}>
@@ -31,6 +58,8 @@ const Login = () => {
                                     <input
                                         type="email"
                                         placeholder="Your Email"
+                                        value={email}
+                                        onChange={(e)=>setEmail(e.target.value)}
                                         required
                                         className={cx('login-content__email-input')}
                                     />
@@ -42,11 +71,14 @@ const Login = () => {
                                     <input
                                         type="password"
                                         placeholder="You Password"
+                                        value={password}
+                                        onChange={(e)=>setPassword(e.target.value)}
                                         required
                                         className={cx('login-content__password-input')}
                                     />
                                 </div>
                                 {/* Xử lý logic ở đây */}
+                                {errorMessage && <div>{errorMessage}</div>}
                                 <div className={cx('login-content__forgot-password')}>
                                     <Link
                                         to={config.routes.forgotpassword}
@@ -58,7 +90,7 @@ const Login = () => {
                                 {/* Xử lý logic ở đây */}
                                 <div className={cx('login-content__login')}>
                                     <Link to={'#'}>
-                                        <Button large primary className={cx('login-content__login-button')}>
+                                        <Button large primary onClick={handleLogin} className={cx('login-content__login-button')}>
                                             <span className={cx('login-content__login-button__title')}>Login</span>
                                         </Button>
                                     </Link>
