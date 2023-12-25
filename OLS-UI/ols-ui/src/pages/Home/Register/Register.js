@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import { saveUserToLocalStorage } from '~/utils/auth';
 
 // Components
 import styles from './Register.module.scss';
@@ -15,25 +17,32 @@ const cx = classNames.bind(styles);
 
 const Register = () => {
     const [fullName, setFullName] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [verifyCode, setVerifyCode] = useState('');
-    const [errorMessage, setErrorMessage] = useState('');
-    const handleRegister = async () => {
-        try {
-            const response = await axios.post('http://localhost:7158/api/User/registerbyemail', {
-                fullName,
-                email,
-                password,
-            });
-            if (response.data.message) {
-            } else {
-                setErrorMessage(response.data);
-            }
-        } catch (error) {
-            console.error('Error:', error);
-        }
-    };
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [verifyCode, setVerifyCode] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+  const navigate = useNavigate();
+  const handleRegister = async () => {
+    try {
+        if (!fullName || !email || !password) {
+            setErrorMessage('Please fill in all required fields.');
+            return;
+          }
+      const response = await axios.post('https://localhost:7158/api/User/registerbyemail', {
+        fullName,
+        email,
+        password
+      });
+      if (response.data.message) {
+        saveUserToLocalStorage(response.data.user, 3600);
+        navigate('/');
+      } else {
+        setErrorMessage(response.data);
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
     return (
         <div className={cx('wrapper')}>
             <div className={cx('grid')}>
@@ -84,35 +93,16 @@ const Register = () => {
                                         className={cx('register-content__password-input')}
                                     />
                                 </div>
-                                {/* Xử lý logic ở đây */}
-                                {/* <div className={cx('register-content__verify-email')}>
-                                    <label className={cx('register-content__verify-email-title')}>
-                                        Verify email <span className={cx('register-content__required')}>*</span>
-                                    </label>
-                                    <div className={cx('register-content__verify-email-input-wrap')}>
-                                        <input
-                                            type="number"
-                                            placeholder="Verify code"
-                                            required
-                                            className={cx('register-content__verify-email-input')}
-                                        />
-                                        <Button outline small className={cx('register-content__verify-email-button')}>
-                                            Send code
-                                        </Button>
-                                    </div>
-                                </div> */}
+                                {errorMessage && <div>{errorMessage}</div>}
                                 {/* Xử lý logic ở đây */}
                                 <div className={cx('register-content__login')}>
-                                    {/* <Link to={'#'}> */}
-                                    <Button
-                                        large
-                                        primary
-                                        onClick={handleRegister}
-                                        className={cx('register-content__register-button')}
-                                    >
-                                        <span className={cx('register-content__register-button__title')}>Register</span>
-                                    </Button>
-                                    {/* </Link> */}
+                                    <Link to={'#'}>
+                                        <Button large primary onClick={handleRegister} className={cx('register-content__register-button')}>
+                                            <span className={cx('register-content__register-button__title')}>
+                                                Register
+                                            </span>
+                                        </Button>
+                                    </Link>
                                 </div>
                                 <div className={cx('register-content__register')}>
                                     Have an account?

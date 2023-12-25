@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Ky_6_OJT_Fall_2023\\WorkSpace_ojt\\.NET\\Project_OJT\\Online_Learning_System\\OLS_Project\\OLS\\OLS\\OLS\\OLS.csproj": {}
+    "E:\\Part 6 FPT SE\\OJT202\\Real\\OLS Real chuản 5\\OLS\\OLS\\OLS.csproj": {}
   },
   "projects": {
-    "D:\\Ky_6_OJT_Fall_2023\\WorkSpace_ojt\\.NET\\Project_OJT\\Online_Learning_System\\OLS_Project\\OLS\\OLS\\OLS\\OLS.csproj": {
+    "E:\\Part 6 FPT SE\\OJT202\\Real\\OLS Real chuản 5\\OLS\\OLS\\OLS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Ky_6_OJT_Fall_2023\\WorkSpace_ojt\\.NET\\Project_OJT\\Online_Learning_System\\OLS_Project\\OLS\\OLS\\OLS\\OLS.csproj",
+        "projectUniqueName": "E:\\Part 6 FPT SE\\OJT202\\Real\\OLS Real chuản 5\\OLS\\OLS\\OLS.csproj",
         "projectName": "OLS",
-        "projectPath": "D:\\Ky_6_OJT_Fall_2023\\WorkSpace_ojt\\.NET\\Project_OJT\\Online_Learning_System\\OLS_Project\\OLS\\OLS\\OLS\\OLS.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\Ky_6_OJT_Fall_2023\\WorkSpace_ojt\\.NET\\Project_OJT\\Online_Learning_System\\OLS_Project\\OLS\\OLS\\OLS\\obj\\",
+        "projectPath": "E:\\Part 6 FPT SE\\OJT202\\Real\\OLS Real chuản 5\\OLS\\OLS\\OLS.csproj",
+        "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
+        "outputPath": "E:\\Part 6 FPT SE\\OJT202\\Real\\OLS Real chuản 5\\OLS\\OLS\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -108,7 +108,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.414\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }
