@@ -164,3 +164,8 @@ nhưng không phải là một chuỗi hash duy nhất trên toàn thế giới.
 
 --> phải xử lý hashmap phía frontend để so sánh với dât phần back end 
 --> có thể nghĩ cách khác hay không thì tùy.
+
++ 25/12/2023
+- 1 nơi lưu ảnh --> chỉ cần lấy link về đưa vào db
+- jwt
+- payment bank

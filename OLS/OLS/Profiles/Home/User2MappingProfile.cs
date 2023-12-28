@@ -9,7 +9,10 @@ namespace OLS.Profiles.Home
         public User2MappingProfile() 
         {
             CreateMap<User, UserLoginHomeDTO>()
-                    .ReverseMap();
+                 .ReverseMap();
+
+            CreateMap<User, UserReadHomeDTO>()
+                .ReverseMap();
         }
     }
 }

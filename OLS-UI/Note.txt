@@ -235,3 +235,30 @@ https://by.com.vn/
 - Learning paths manager --> hoàn thiện 
 - Course manager --> hoàn thiện 
 - Lesson manager --> hoàn thiện 
+
++ 25/12/2023 
+- Mục tiêu: xử lý xong toàn bộ logic + giao diện những cái hiện tại 
+- Tiếp tục từ course 
+
++ 26/12/2023
++ course
+-- discuss 
+- nếu ask image null -> hidden --> ok 
+- nhấn lần 2 --> [] hoặc null --> nó sẽ ẩn --> ok 
+- nhiều ảnh 1 lần?
+- thêm ảnh cho reply --> ok 
+- edit được ask và reply của mình --> 
+- logic thảo luận --> ok 
+
++ 27/12/2023
+- Đặt api ra ngoài --> 1 số cái, đang xem xét thế nào để rõ ràng và tối ưu hơn 
+- Doc: https://chat.openai.com/c/eb4f4f0e-990c-4435-9006-5b03967db815
+- path: lưu ảnh + lưu video --> khá khó --> chưa 
+
++ 28/12/2023
+- tiếp tục hoàn thiện
+- Update cho ask và reply --> done ask 
+- cho details hợp chung với update khi gọi --> chưa 
+- api hiển thị ở network đang không rõ ràng --> chưa 
+- bug: ask content null hoặc empty('') lại không thể delete --> đang xem
+- bug: khi nhấn chỉnh sửa đã gọi đưỢc theo id nhưng data chưa hiển thị đúng và chưa có api xóa current image

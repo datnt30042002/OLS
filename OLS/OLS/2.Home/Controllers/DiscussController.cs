@@ -16,7 +16,7 @@ namespace OLS._2.Home.Controllers
         }
 
         // Get discuss by lesson id 
-        [HttpGet("/getDiscussByLessonId")]
+        [HttpGet("/getDiscussByLessonId/{lessonId}")]
         public async Task<ActionResult<IEnumerable<DiscussReadHomeDTO>>> GetDiscussByLessonId(int lessonId)
         {
             try
