@@ -46,18 +46,30 @@ namespace OLS.Services.Implementations.Home
             return true;
         }
 
-        public async Task<string> LoginByEmail(LoginByEmailRequest request)
+        public async Task<LoginByEmailRequest> LoginByEmail(string email, string password)
         {
-            var userMap = _mapper.Map<User>(request);
-            var user = await _context.Users.FirstOrDefaultAsync(x => x.Email == userMap.Email);
-            if (user == null) { return null; }
-            string hashedPassword = await _md5.MD5Create(request.Password);
-            if (hashedPassword != user.Password)
+            try
             {
+                var user = await _context.Users
+                    .FirstOrDefaultAsync(u => u.Email == email);
+
+                if (user == null)
+                {
+                    return null;
+                }
+                string hashedPassword = await _md5.MD5Create(password);
+                if (user.Password == hashedPassword)
+                {
+                    var userLoginDTO = _mapper.Map<LoginByEmailRequest>(user);
+                    return userLoginDTO;
+                }
+
                 return null;
             }
-
-            return request.Email;
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
             //var roles = await _userManager.GetRolesAsync(user);
             //var claims = new[]
             //{

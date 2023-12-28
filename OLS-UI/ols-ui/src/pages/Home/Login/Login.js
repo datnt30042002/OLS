@@ -11,35 +11,50 @@ import Image from '~/components/Image';
 import OLSLogo from '~/assets/images/logo.svg';
 import Button from '~/components/Button';
 import config from '~/config';
+import { saveUserToLocalStorage } from '~/utils/auth';
 
 const cx = classNames.bind(styles);
 
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [emailError, setEmailError] = useState('');
+    const [passError, setPassError] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
     const navigate = useNavigate();
-    const handleLogin = async () => {
-        try {
-            // const response = await axios.post('http://localhost:7158/api/User/loginbyemail', { email, password });
 
-            // API - Kiên
-            const response = await axios.post('https://localhost:7158/login2', { email, password });
-
-            if (response.data.message) {
-                localStorage.setItem('user', JSON.stringify(response.data.user));
-
-                navigate('/');
-            } else {
-                // Đăng nhập thất bại
-                setErrorMessage(response.data);
+const handleLogin = async () => {
+    try {
+        // Kiểm tra xem email và password có được nhập hay không
+        if (!email || !password) {
+            setEmailError(!email ? 'Please enter your email.' : '');
+            setPassError(!password ? 'Please enter your password.' : '');
+            return;
+        } else {
+            // Kiểm tra định dạng của email
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                setEmailError('Please enter a valid email.');
+                return;
             }
-        } catch (error) {
-            console.error('Error:', error);
-            console.error('Error Response:', error.response);
         }
-    };
+        const response = await axios.post('https://localhost:7158/api/User/loginbyemail', { email, password });
 
+        if (response.data.message) {
+            saveUserToLocalStorage(response.data.user, 3600);
+            navigate('/');
+        } else {
+            setErrorMessage(response.data);
+            setEmailError(''); 
+            setPassError('');   
+        }
+        
+         
+    } catch (error) {
+        console.error('Error:', error);
+        console.error('Error Response:', error.response);
+    }
+};
     return (
         <div className={cx('wrapper')}>
             <div className={cx('grid')}>
@@ -59,11 +74,12 @@ const Login = () => {
                                         type="email"
                                         placeholder="Your Email"
                                         value={email}
-                                        onChange={(e) => setEmail(e.target.value)}
+                                        onChange={(e)=>setEmail(e.target.value)}
                                         required
                                         className={cx('login-content__email-input')}
                                     />
                                 </div>
+                                {emailError && <div className={cx('error-message', 'error-message-email')}>{emailError}</div>}
                                 <div className={cx('login-content__password')}>
                                     <label className={cx('login-content__password-title')}>
                                         Password <span className={cx('login-content__required')}>*</span>
@@ -72,13 +88,13 @@ const Login = () => {
                                         type="password"
                                         placeholder="You Password"
                                         value={password}
-                                        onChange={(e) => setPassword(e.target.value)}
+                                        onChange={(e)=>setPassword(e.target.value)}
                                         required
                                         className={cx('login-content__password-input')}
                                     />
                                 </div>
-                                {/* Xử lý logic ở đây */}
-                                {errorMessage && <div>{errorMessage}</div>}
+                                {passError && <div className={cx('error-message', 'error-message-password')}>{passError}</div>}
+                                {/* Xử lý logic ở đây */}     
                                 <div className={cx('login-content__forgot-password')}>
                                     <Link
                                         to={config.routes.forgotpassword}
@@ -87,15 +103,11 @@ const Login = () => {
                                         Forgot password?
                                     </Link>
                                 </div>
+                                {errorMessage && <div className={cx('error-message')}>{errorMessage}</div>}
                                 {/* Xử lý logic ở đây */}
                                 <div className={cx('login-content__login')}>
                                     <Link to={'#'}>
-                                        <Button
-                                            large
-                                            primary
-                                            onClick={handleLogin}
-                                            className={cx('login-content__login-button')}
-                                        >
+                                        <Button large primary onClick={handleLogin} className={cx('login-content__login-button')}>
                                             <span className={cx('login-content__login-button__title')}>Login</span>
                                         </Button>
                                     </Link>

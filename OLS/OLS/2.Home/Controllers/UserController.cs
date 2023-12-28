@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using OLS.DTO.Users;
@@ -16,27 +17,30 @@ namespace OLS._2.Home.Controllers
         {
             _userRepository = userRepository;
         }
-
-        [HttpPost("/loginbyemail")]
-        [AllowAnonymous]
-        public async Task<IActionResult> LoginByEmail([FromForm] LoginByEmailRequest request)
+        [HttpPost("loginbyemail")]
+        public async Task<IActionResult> LoginByEmail([FromBody] LoginByEmailRequest request)
         {
-            if (!ModelState.IsValid)
+            if (request == null || string.IsNullOrEmpty(request.Email) || string.IsNullOrEmpty(request.Password))
             {
-                return BadRequest(ModelState);
+                return BadRequest("Invalid request payload");
             }
-            var resultToken = await _userRepository.LoginByEmail(request);
-            if (resultToken == null)
+            var loggedInUser = await _userRepository.LoginByEmail(request.Email, request.Password);
+
+            if (loggedInUser != null)
             {
-                return BadRequest("Email and Password is not valid !!");
+                // Login successful, return success response
+                return Ok(new { Message = "Login successful", User = loggedInUser });
             }
-            return Ok(new { Message = "Login success !!" });
+            else
+            {
+                // Login failed, return unauthorized
+                return Unauthorized("Invalid email or password");
+            }
 
         }
 
-        [HttpPost("/registerbyemail")]
-        [AllowAnonymous]
-        public async Task<IActionResult> RegisterByEmail([FromForm] RegisterByEmailRequest request)
+        [HttpPost("registerbyemail")]
+        public async Task<IActionResult> RegisterByEmail([FromBody] RegisterByEmailRequest request)
         {
             if (!ModelState.IsValid)
             {
@@ -52,8 +56,7 @@ namespace OLS._2.Home.Controllers
         }
 
         [HttpPost("forgotbyemail")]
-        [AllowAnonymous]
-        public async Task<IActionResult> ForgotByEmail([FromForm] ForgotByEmailRequest request)
+        public async Task<IActionResult> ForgotByEmail([FromBody] ForgotByEmailRequest request)
         {
             if (!ModelState.IsValid)
             {
@@ -68,8 +71,7 @@ namespace OLS._2.Home.Controllers
         }
 
         [HttpPost("verifycode")]
-        [AllowAnonymous]
-        public async Task<IActionResult> VerifyCode([FromForm] VerifyCodeRequest request)
+        public async Task<IActionResult> VerifyCode([FromBody] VerifyCodeRequest request)
         {
             if (!ModelState.IsValid)
             {
