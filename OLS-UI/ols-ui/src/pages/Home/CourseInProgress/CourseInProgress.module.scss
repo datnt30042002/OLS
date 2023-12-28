@@ -226,6 +226,19 @@ nav.menu-close {
     font-weight: 600;
 }
 
+.discuss-heading__exit {
+    float: right;
+    margin-right: 35px;
+    padding: 0 5px;
+    font-size: 1.4rem;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.discuss-heading__exit:hover {
+    opacity: 0.5;
+}
+
 .discuss-input {
     display: flex;
     flex-wrap: wrap;
@@ -234,16 +247,72 @@ nav.menu-close {
     margin-bottom: 40px;
 }
 
-.discuss-input__user-input {
+.discuss-input__user-input__text {
     width: 80%;
-    margin-left: 8px;
+    margin: 0 8px;
     color: var(--text-color);
+    border: none;
     border-bottom: 1px solid rgba(204, 204, 204, 0.4);
-    color: var(--text-color);
 }
 
-.discuss-input__user-input-image {
-    padding: 8px;
+.custom-file-upload {
+    display: inline-block;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.custom-file-upload:hover {
+    opacity: 0.5;
+}
+
+.custom-file-upload input {
+    display: none;
+}
+
+.image-preview__icon-wrap {
+    margin-top: 10px;
+}
+
+.image-preview__icon {
+    padding: 4px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    background-color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.image-preview__icon:hover {
+    opacity: 0.5;
+}
+
+.image-preview {
+    width: 50%;
+    height: auto;
+    object-fit: contain;
+    padding: 10px;
+    background-color: rgba(204, 204, 204, 0.2);
+}
+
+.discuss-input__button {
+    margin-top: 10px;
+}
+
+.discuss-input__button-ask {
+    border-radius: 15px;
+}
+
+.discuss-input__button-reply {
+    border-radius: 15px;
+}
+
+.discuss-input__button-edit {
+    border-radius: 15px;
+}
+
+.discuss-input__button-cancel {
+    border-radius: 15px;
 }
 
 .discuss-ask {
@@ -257,17 +326,17 @@ nav.menu-close {
 .discuss-ask-content__wrap {
     font-size: 1.4rem;
     color: var(--text-color);
-    background-color: rgba(204, 204, 204, 0.2);
     width: 500px;
     line-height: 2.4rem;
     border-radius: 20px;
 }
 
 .discuss-ask-content__image {
-    width: 500px;
+    width: 50%;
     height: auto;
     object-fit: contain;
     padding: 10px;
+    background-color: rgba(204, 204, 204, 0.2);
 }
 
 .discuss-ask-content__detail {
@@ -275,31 +344,161 @@ nav.menu-close {
     color: var(--text-color);
     line-height: 2.4rem;
     padding: 10px;
+    background-color: rgba(204, 204, 204, 0.2);
+}
+
+.discuss-ask__reply-title-details-wrap {
+    margin-top: 8px;
 }
 
 .discuss-ask__reply-title {
     font-size: 1.2rem;
     color: var(--primary);
-    margin-top: 8px;
+    user-select: none;
     cursor: pointer;
+}
+
+.discuss-ask__reply-title:hover {
+    opacity: 0.5;
+}
+
+.discuss-ask__reply-content-details {
+    font-size: 1.2rem;
+    color: rgba(0, 0, 0, 0.7);
+    margin-left: 8px;
+    user-select: none;
+    cursor: pointer;
+}
+
+.discuss-ask__reply-content-details:hover {
+    opacity: 0.5;
+}
+
+.discuss-ask__reply-actions {
+    color: rgba(0, 0, 0, 0.7);
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.discuss-ask__reply-actions:hover {
+    opacity: 0.5;
+}
+
+.discuss-ask__reply-actions-details {
+    margin-top: 10px;
+    background-color: transparent;
+}
+
+.discuss-ask__reply-actions-details-content {
+    width: 150px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #ccc;
+    background-color: var(--white);
+    cursor: pointer;
+    // display: none;
+}
+
+.discuss-ask__reply-actions-details-icon-wrap {
+    display: flex;
+    padding: 10px;
+    border-radius: 5px;
+    transition: ease-in 0.2s;
+}
+
+.discuss-ask__reply-actions-details-icon-wrap:hover {
+    background-color: rgba(204, 204, 204, 0.4);
+}
+
+.discuss-ask__reply-actions-details-icon {
+    font-size: 1.2rem;  
+    color: var(--text-color);
+    user-select: none;
+}
+
+.discuss-ask__reply-actions-details-title {
+    width: 100%;
+    font-size: 1.2rem;
+    margin-left: 8px;
+    color: var(--text-color);
+    user-select: none;
+}
+
+.discuss-ask__actions-edit {
+    margin-top: 10px;
+}
+
+.discuss-ask__actions-delete {
+    background-color: transparent;
+}
+
+.delete {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: rgba(0, 0, 0, 0.1);
+    z-index: 11;
+}
+
+.delete-wrap {
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.delete-content {
+    padding: 24px;
+    background-color: var(--white);
+    border: 1px solid rgba(204, 204, 204, 0.5);
+    border-radius: 10px;
+}
+
+.delete-content__image {
+    width: 150px;
+    height: 150px;
+    width: 100%;
+    text-align: center;
+    object-fit: contain;
+}
+
+.delete-content__title {
+    font-size: 1.4rem;
+    color: var(--black);
+    text-align: center;
+    margin-bottom: 14px;
+}
+
+.delete-wrap__button-ban {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.delete-wrap__button-cancel {
+    font-size: 1.4rem;
+    font-weight: 600;
 }
 
 .discuss-reply {
     padding-left: 40px;
     padding-bottom: 40px;
+    margin-top: 10px;
 }
 
 .discuss-reply__input-wrap {
     display: flex;
     flex-wrap: wrap;
-    margin-top: 10px;
     margin-bottom: 40px;
 }
 
 .discuss-reply__input {
     width: 80%;
     margin-left: 8px;
-    margin-right: 40px;
     border-bottom: 1px solid rgba(204, 204, 204, 0.4);
     color: var(--text-color);
 }
@@ -316,19 +515,31 @@ nav.menu-close {
     margin-left: 8px;
 }
 
-.discuss-reply__user-tag {
-    color: var(--primary);
-}
-
 .discuss-reply__item {
     font-size: 1.4rem;
     color: var(--text-color);
-    background-color: rgba(204, 204, 204, 0.2);
+    // background-color: rgba(204, 204, 204, 0.2);
     width: 500px;
     padding: 10px;
     line-height: 2.4rem;
     border-radius: 10px;
     margin-bottom: 20px;
+}
+
+.discuss-reply__content-details {
+    font-size: 1.4rem;
+    color: var(--text-color);
+    line-height: 2.4rem;
+    padding: 10px;
+    background-color: rgba(204, 204, 204, 0.2);
+}
+
+.discuss-reply__user-tag {
+    color: var(--primary);
+}
+
+.discuss-reply__content {
+    color: var(--black);
 }
 
 .course-discuss {
@@ -338,7 +549,6 @@ nav.menu-close {
     font-size: 3rem;
     color: var(--primary);
     cursor: pointer;
-    z-index: 12;
 }
 
 .course-discuss:hover {

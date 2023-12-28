@@ -6,5 +6,8 @@ namespace OLS.Services.Interface.Home
     {
         Task<List<AskReadHomeDTO>> GetAllAsksByDiscussId(int discussId);
         Task<AskCreateHomeDTO> CreateAsk(AskCreateHomeDTO ask);
+        Task<AskReadHomeDTO> GetAskByAskId(int askId);
+        Task<AskUpdateHomeDTO> UpdateAskByAskID(int askId, AskUpdateHomeDTO updatedAsk);
+        Task<bool> DeleteAskByAskId(int askId);
     }
 }

@@ -2,7 +2,6 @@
 {
     public class ReplyCreateHomeDTO
     {
-        public int ReplyId { get; set; }
         public string? ReplyContent { get; set; }
         public int? AskAskId { get; set; }
         public int? UserUserId { get; set; }

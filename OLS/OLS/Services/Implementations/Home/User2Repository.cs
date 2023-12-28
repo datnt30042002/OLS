@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
+using OLS.DTO.Courses.Admin;
 using OLS.DTO.Users.Home;
 using OLS.Models;
 using OLS.Services.Interface.Home;
@@ -38,6 +39,21 @@ namespace OLS.Services.Implementations.Home
                 return null;
             }
             catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        // Get user by userId
+        public async Task<UserReadHomeDTO> GetUserByUserId(int userId)
+        {
+            try
+            {
+                var user = await db.Users.Where(user => user.UserId == userId).FirstOrDefaultAsync();
+                var userReadHomeDTO = mapper.Map<UserReadHomeDTO>(user);
+
+                return userReadHomeDTO;
+            } catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }

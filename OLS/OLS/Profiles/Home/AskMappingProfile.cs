@@ -18,6 +18,9 @@ namespace OLS.Profiles.Home
 
             CreateMap<Ask, AskCreateHomeDTO>()
                 .ReverseMap();
+
+            CreateMap<Ask, AskUpdateHomeDTO>()
+                .ReverseMap();
         }
     }
 }

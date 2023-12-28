@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using OLS.DTO.Asks.Home;
-using OLS.DTO.Courses.Admin;
-using OLS.DTO.Lessons.Home;
 using OLS.Services.Interface.Home;
 
 namespace OLS._2.Home.Controllers
@@ -18,7 +16,7 @@ namespace OLS._2.Home.Controllers
         }
 
         // Get all asks by discuss id 
-        [HttpGet("/getAllAskByDiscussId")]
+        [HttpGet("/getAllAskByDiscussId/{discussId}")]
         public async Task<ActionResult<IEnumerable<AskReadHomeDTO>>> GetAllAskByDiscussId(int discussId)
         {
             try
@@ -42,6 +40,48 @@ namespace OLS._2.Home.Controllers
                 return Ok(newAsk);
             }
             catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        // Get ask by askId
+        [HttpGet("/getAskByAskId/{askId}")]
+        public async Task<ActionResult<IEnumerable<AskReadHomeDTO>>> GetAskByAskId(int askId)
+        {
+            try
+            {
+                var ask = await askRepo.GetAskByAskId(askId); 
+                return Ok(ask);
+            } catch(Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        // Update ask by askId
+        [HttpPut("/updateAskByAskID/{askId}")] //UpdateAskByAskID(int askId, AskUpdateHomeDTO updatedAsk);
+        public async Task<ActionResult<IEnumerable<AskUpdateHomeDTO>>> UpdateAskByAskID(int askId, AskUpdateHomeDTO updatedAsk)
+        {
+            try
+            {
+                var existingAsk = await askRepo.UpdateAskByAskID(askId, updatedAsk);
+                return Ok(existingAsk);
+            } catch(Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        // Delete ask by askId
+        [HttpDelete("/deleteAskByAskId/{askId}")]
+        public async Task<ActionResult> DeleteAskByAskId(int askId)
+        {
+            try
+            {
+                var existingAsk = await askRepo.DeleteAskByAskId(askId);
+                return NoContent();
+            } catch (Exception ex)
             {
                 return BadRequest(ex.Message);
             }

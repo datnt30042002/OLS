@@ -109,7 +109,7 @@ namespace OLS.Services.Implementations.Admin
                 }
 
                 db.Courses.Remove(existingCourse);
-                db.SaveChangesAsync();
+                await db.SaveChangesAsync();
 
                 return true;
             }

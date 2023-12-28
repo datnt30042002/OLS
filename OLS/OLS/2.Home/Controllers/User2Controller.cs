@@ -47,5 +47,20 @@ namespace OLS._2.Home.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
+
+        // Get user by userId
+        [HttpGet("/getUserByUserId/{userId}")]
+        public async Task<ActionResult<IEnumerable<UserReadHomeDTO>>> GetUserByUserId(int userId)
+        {
+            try
+            {
+                var user = await user2Repo.GetUserByUserId(userId);
+                return Ok(user);
+            } catch(Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
     }
 }
