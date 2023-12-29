@@ -36,19 +36,19 @@ const Header = () => {
     };
 
     const userMenu = [
-        {
-            icon: <FontAwesomeIcon icon={faHome} />,
-            title: 'HOME',
-            to: '/',
-        },
+        // {
+        //     icon: <FontAwesomeIcon icon={faHome} />,
+        //     title: 'Về trang chủ',
+        //     to: '/',
+        // },
         {
             icon: <FontAwesomeIcon icon={faGear} />,
-            title: 'Settings',
+            title: 'Cài đặt',
             to: '/settings',
         },
         {
             icon: <FontAwesomeIcon icon={faSignOut} />,
-            title: 'Logout',
+            title: 'Đăng xuất',
             to: '/login',
             separate: true,
         },
@@ -66,7 +66,7 @@ const Header = () => {
                 <div className={cx('actions')}>
                     {currentUser ? (
                         <>
-                            <span className={cx('welcome-admin')}>Welcome Admin</span>
+                            <span className={cx('welcome-admin')}>Xin chào Admin</span>
                         </>
                     ) : (
                         <>
@@ -87,7 +87,7 @@ const Header = () => {
                         {currentUser ? (
                             <Image
                                 className={cx('user-avatar')}
-                                src="https://avatars.githubusercontent.com/u/108357953?v=4"
+                                src="https://gitlab.com/uploads/-/system/user/avatar/14507009/avatar.png?width=96"
                                 alt="Bui Van Kien"
                             />
                         ) : (

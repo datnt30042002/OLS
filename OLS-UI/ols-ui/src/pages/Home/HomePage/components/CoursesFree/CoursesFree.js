@@ -56,7 +56,7 @@ const CoursesFree = () => {
         <div className={cx('wrapper')}>
             {/* Grid */}
             <div className={cx('grid')}>
-                <h1 className={cx('course-heading')}>Courses Free</h1>
+                <h1 className={cx('course-heading')}>Các khóa học miễn phí</h1>
                 {/* Row */}
                 <div className={cx('row')}>
                     {/* Col */}
@@ -78,16 +78,22 @@ const CoursesFree = () => {
                                     />
                                     <div className={cx('course-item__info')}>
                                         <span className={cx('course-item__learningPath')}>
-                                            IMAGE + {course.learningPath}
+                                            <Image
+                                                src={course.learningPathImage}
+                                                className={cx('course-item__learningPath__image')}
+                                            />
+                                            {course.learningPath}
                                         </span>
                                         <span className={cx('course-item__name')}>{course.courseName}</span>
                                         <div className={cx('course-item__footer')}>
                                             <span className={cx('course-item__fee')}></span>
-                                            <span className={cx('course-item__course-degree')}>Course / Degree</span>
+                                            <span className={cx('course-item__course-degree')}>
+                                                Khóa học / Chứng chỉ
+                                            </span>
                                         </div>
                                     </div>
                                     <div className={cx('free')}>
-                                        <span className={cx('free-title')}>Free</span>
+                                        <span className={cx('free-title')}>Miễn phí</span>
                                     </div>
                                 </Link>
                             </div>
@@ -99,7 +105,7 @@ const CoursesFree = () => {
                 <div className={cx('row')}>
                     <div className={cx('show-more')}>
                         <Button outline small className={cx('btn-show-more')}>
-                            <span className={cx('btn-show-more__title')}>Show more</span>
+                            <span className={cx('btn-show-more__title')}>Hiển thị thêm</span>
                         </Button>
                     </div>
                 </div>

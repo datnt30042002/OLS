@@ -35,7 +35,7 @@ const NewestBlogs = () => {
         <div className={cx('wrapper')}>
             {/* Grid */}
             <div className={cx('grid')}>
-                <h1 className={cx('blog-heading')}>Newest Blogs</h1>
+                <h1 className={cx('blog-heading')}>Các bài viết mới nhất</h1>
                 {/* Row */}
                 <div className={cx('row')}>
                     {/* Col */}
@@ -49,20 +49,25 @@ const NewestBlogs = () => {
                                         className={cx('blog-item__image')}
                                     />
                                     <div className={cx('blog-item__info')}>
-                                        <span className={cx('blog-item__topic')}>IMAGE + Blog topic</span>
+                                        <span className={cx('blog-item__topic')}>Chủ đề: Lập trình cuộc sống</span>
                                         <span className={cx('blog-item__name')}>{blog.blogTitle}</span>
 
-                                        <span className={cx('blog-item__author')}>Avatar + {blog.fullName}</span>
+                                        <span className={cx('blog-item__author')}>
+                                            <Image src={blog.avatar} className={cx('blog-item__author__image')} />
+                                            {blog.fullName}
+                                        </span>
 
                                         <div className={cx('blog-item__date-read')}>
-                                            <span className={cx('blog-item__post-date')}>{blog.postDate}</span>
+                                            <span className={cx('blog-item__post-date')}>
+                                                Ngày đăng: {blog.postDate}
+                                            </span>
                                             <span className={cx('blog-item__author-read__time')}>
-                                                less than {blog.readTime} minutes
+                                                {blog.readTime} phút đọc
                                             </span>
                                         </div>
                                         <div className={cx('blog-item__footer')}>
                                             <span className={cx('blog-item__fragement')}></span>
-                                            <span className={cx('blog-item__blog-hashtag')}>Blog</span>
+                                            <span className={cx('blog-item__blog-hashtag')}>Bài viết</span>
                                         </div>
                                     </div>
                                 </a>
@@ -75,7 +80,7 @@ const NewestBlogs = () => {
                 <div className={cx('row')}>
                     <div className={cx('show-more')}>
                         <Button outline small className={cx('btn-show-more')}>
-                            <span className={cx('btn-show-more__title')}>Show more</span>
+                            <span className={cx('btn-show-more__title')}>Hiển thị thêm</span>
                         </Button>
                     </div>
                 </div>

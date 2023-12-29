@@ -12,20 +12,20 @@ import { HomeIcon, LearningPathsIcon, NotificationIcon, SearchIcon } from '~/com
 
 const cx = classNames.bind(styles);
 
-const Sidebar = () => {
+const Navbar = () => {
     return (
         <nav className={cx('wrapper')}>
             <Menu>
                 {/* <MenuItem title="Home" to={config.routes.home} icon={<HomeIcon />} activeIcon={<NotificationIcon />} /> */}
                 {/* <MenuItem title="Home" to={config.routes.home} icon={<HomeIcon />} /> */}
-                <MenuItem title="Home" to={config.routes.home} />
+                <MenuItem title="Trang chủ" to={config.routes.home} />
                 {/* <MenuItem
                     title="Learning paths"
                     to={config.routes.learningpaths}
                     icon={<LearningPathsIcon />}
                     activeIcon={<SearchIcon />} */}
                 {/* <MenuItem title="Learning paths" to={config.routes.learningpaths} icon={<LearningPathsIcon />} /> */}
-                <MenuItem title="Learning paths" to={config.routes.learningpaths} />
+                <MenuItem title="Các lộ trình" to={config.routes.learningpaths} />
                 {/* Test */}
                 {/* <MenuItem title="User profile" to={config.routes.userprofile} /> */}
             </Menu>
@@ -33,6 +33,6 @@ const Sidebar = () => {
     );
 };
 
-export default Sidebar;
+export default Navbar;
 
 // React.createElement... - javascript

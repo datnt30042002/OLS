@@ -616,8 +616,9 @@ nav.menu-close {
 }
 
 .note-content-list__item {
-    font-size: 1.8rem;
-    padding: 24px;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    padding: 10px;
     margin: 14px 0;
     color: var(--black);
     background-color: rgba(204, 204, 204, 0.4);
@@ -626,8 +627,8 @@ nav.menu-close {
 }
 
 .note-content-list__item-icon {
-    font-size: 1.4rem;
-    margin-top: 18px;
+    font-size: 1rem;
+    margin-top: 6px;
     margin-left: 8px;
     text-align: center;
 }

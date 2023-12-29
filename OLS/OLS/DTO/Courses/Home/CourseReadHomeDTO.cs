@@ -11,5 +11,6 @@
         public int? Fee { get; set; }
         public string? Status { get; set; }
         public string? LearningPath { get; set; }
+        public string? LearningPathImage { get; set; }
     }
 }

@@ -254,6 +254,7 @@ https://by.com.vn/
 - Đặt api ra ngoài --> 1 số cái, đang xem xét thế nào để rõ ràng và tối ưu hơn 
 - Doc: https://chat.openai.com/c/eb4f4f0e-990c-4435-9006-5b03967db815
 - path: lưu ảnh + lưu video --> khá khó --> chưa 
+- đang bị fakepath
 
 + 28/12/2023
 - tiếp tục hoàn thiện

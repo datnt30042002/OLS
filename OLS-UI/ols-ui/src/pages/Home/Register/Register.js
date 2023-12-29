@@ -17,32 +17,32 @@ const cx = classNames.bind(styles);
 
 const Register = () => {
     const [fullName, setFullName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [verifyCode, setVerifyCode] = useState('');
-  const [errorMessage, setErrorMessage] = useState('');
-  const navigate = useNavigate();
-  const handleRegister = async () => {
-    try {
-        if (!fullName || !email || !password) {
-            setErrorMessage('Please fill in all required fields.');
-            return;
-          }
-      const response = await axios.post('https://localhost:7158/api/User/registerbyemail', {
-        fullName,
-        email,
-        password
-      });
-      if (response.data.message) {
-        saveUserToLocalStorage(response.data.user, 3600);
-        navigate('/');
-      } else {
-        setErrorMessage(response.data);
-      }
-    } catch (error) {
-      console.error('Error:', error);
-    }
-  };
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [verifyCode, setVerifyCode] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
+    const navigate = useNavigate();
+    const handleRegister = async () => {
+        try {
+            if (!fullName || !email || !password) {
+                setErrorMessage('Please fill in all required fields.');
+                return;
+            }
+            const response = await axios.post('https://localhost:7158/api/User/registerbyemail', {
+                fullName,
+                email,
+                password,
+            });
+            if (response.data.message) {
+                saveUserToLocalStorage(response.data.user, 3600);
+                navigate('/');
+            } else {
+                setErrorMessage(response.data);
+            }
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    };
     return (
         <div className={cx('wrapper')}>
             <div className={cx('grid')}>
@@ -51,16 +51,16 @@ const Register = () => {
                         <div className={cx('register-wrap')}>
                             <div className={cx('register-header')}>
                                 <Image src={OLSLogo} className={cx('register-header__logo')} />
-                                <span className={cx('register-header__title')}>Register an account OLS</span>
+                                <span className={cx('register-header__title')}>Đăng ký tài khoản</span>
                             </div>
                             <div className={cx('register-content')}>
                                 <div className={cx('register-content__full-name')}>
                                     <label className={cx('register-content__full-name-title')}>
-                                        Full Name <span className={cx('register-content__required')}>*</span>
+                                        Họ tên <span className={cx('register-content__required')}>*</span>
                                     </label>
                                     <input
                                         type="text"
-                                        placeholder="Your Full Name"
+                                        placeholder="Nhập họ tên"
                                         required
                                         value={fullName}
                                         onChange={(e) => setFullName(e.target.value)}
@@ -69,11 +69,11 @@ const Register = () => {
                                 </div>
                                 <div className={cx('register-content__email')}>
                                     <label className={cx('register-content__email-title')}>
-                                        You Email <span className={cx('register-content__required')}>*</span>
+                                        Email <span className={cx('register-content__required')}>*</span>
                                     </label>
                                     <input
                                         type="email"
-                                        placeholder="Your Email"
+                                        placeholder="Nhập email"
                                         required
                                         value={email}
                                         onChange={(e) => setEmail(e.target.value)}
@@ -82,11 +82,11 @@ const Register = () => {
                                 </div>
                                 <div className={cx('register-content__password')}>
                                     <label className={cx('register-content__password-title')}>
-                                        Password <span className={cx('register-content__required')}>*</span>
+                                        Mật khẩu <span className={cx('register-content__required')}>*</span>
                                     </label>
                                     <input
                                         type="password"
-                                        placeholder="You Password"
+                                        placeholder="Nhập mật khẩu"
                                         required
                                         value={password}
                                         onChange={(e) => setPassword(e.target.value)}
@@ -97,17 +97,22 @@ const Register = () => {
                                 {/* Xử lý logic ở đây */}
                                 <div className={cx('register-content__login')}>
                                     <Link to={'#'}>
-                                        <Button large primary onClick={handleRegister} className={cx('register-content__register-button')}>
+                                        <Button
+                                            large
+                                            primary
+                                            onClick={handleRegister}
+                                            className={cx('register-content__register-button')}
+                                        >
                                             <span className={cx('register-content__register-button__title')}>
-                                                Register
+                                                Đăng ký
                                             </span>
                                         </Button>
                                     </Link>
                                 </div>
                                 <div className={cx('register-content__register')}>
-                                    Have an account?
+                                    Đã có tài khoản?
                                     <Link to={config.routes.login} className={cx('register-content__register-link')}>
-                                        Login
+                                        Đăng nhập
                                     </Link>
                                 </div>
                             </div>

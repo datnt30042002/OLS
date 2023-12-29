@@ -3,10 +3,12 @@ import React from 'react';
 import axios from 'axios';
 import classNames from 'classnames/bind';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 // components
 import styles from './LearningPaths.module.scss';
 import Image from '~/components/Image';
+import config from '~/config';
 
 const cx = classNames.bind(styles);
 
@@ -35,14 +37,14 @@ const LearningPaths = () => {
         <div className={cx('wrapper')}>
             {/* Grid */}
             <div className={cx('grid')}>
-                <h1 className={cx('learning-path-heading')}>Explore Learning Paths</h1>
+                <h1 className={cx('learning-path-heading')}>Khám phá các lộ trình học tập</h1>
                 {/* Row */}
                 <div className={cx('row')}>
                     {/* Col */}
                     {learningPaths.map((learningPath) => (
                         <div key={learningPath.learningPathId} className={cx('col-3')}>
                             <div className={cx('learning-path-item')}>
-                                <a href="#" className={cx('learning-path-item__link')}>
+                                <Link to={config.routes.learningpaths} className={cx('learning-path-item__link')}>
                                     <div className={cx('learning-path-item__image')}>
                                         <Image
                                             src={learningPath.image}
@@ -54,14 +56,11 @@ const LearningPaths = () => {
                                         <span className={cx('learning-path-item__content-name')}>
                                             {learningPath.learningPathName}
                                         </span>
-                                        <span className={cx('learning-path-item__content-description')}>
-                                            {learningPath.description}
-                                        </span>
                                         <span className={cx('learning-path-item__content-courses-amount')}>
-                                            100 courses
+                                            Hơn 25 khóa học
                                         </span>
                                     </div>
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     ))}

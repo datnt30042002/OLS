@@ -55,7 +55,7 @@ const ManagerLayout = ({ children }) => {
                                                 className={cx('manager-item__link')}
                                             >
                                                 <FontAwesomeIcon icon={faGauge} className={cx('manager-item__icon')} />
-                                                <span className={cx('manager-item__title')}>Dashboard</span>
+                                                <span className={cx('manager-item__title')}>Điều khiển</span>
                                             </Link>
                                         </li>
                                         <li className={cx('manager-item')}>
@@ -64,7 +64,7 @@ const ManagerLayout = ({ children }) => {
                                                 className={cx('manager-item__link')}
                                             >
                                                 <FontAwesomeIcon icon={faUsers} className={cx('manager-item__icon')} />
-                                                <span className={cx('manager-item__title')}>Users</span>
+                                                <span className={cx('manager-item__title')}>Người dùng</span>
                                             </Link>
                                         </li>
                                         <li className={cx('manager-item')}>
@@ -73,7 +73,7 @@ const ManagerLayout = ({ children }) => {
                                                 className={cx('manager-item__link')}
                                             >
                                                 <FontAwesomeIcon icon={faBook} className={cx('manager-item__icon')} />
-                                                <span className={cx('manager-item__title')}>Learning paths</span>
+                                                <span className={cx('manager-item__title')}>Lộ trình</span>
                                             </Link>
                                         </li>
                                         <li className={cx('manager-item')}>
@@ -82,7 +82,7 @@ const ManagerLayout = ({ children }) => {
                                                 className={cx('manager-item__link')}
                                             >
                                                 <FontAwesomeIcon icon={faBlog} className={cx('manager-item__icon')} />
-                                                <span className={cx('manager-item__title')}>Blogs</span>
+                                                <span className={cx('manager-item__title')}>Bài viết</span>
                                             </Link>
                                         </li>
                                     </ul>

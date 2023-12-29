@@ -47,7 +47,7 @@ const LearningPaths = () => {
                     <div className={cx('col-12')}>
                         <div className={cx('learningPath-header')}>
                             <div className={cx('learningPath-header__title')}>
-                                <h1>All Learning Paths</h1>
+                                <h1>Tất cả các lộ trình học tập</h1>
                             </div>
 
                             <div className={cx('learningPath-header__logo')}>
@@ -56,14 +56,11 @@ const LearningPaths = () => {
                             </div>
 
                             <div className={cx('learningPath-header__content')}>
-                                <h1>Content</h1>
+                                <h1>Chi tiết</h1>
                                 <p>
-                                    Project Coordinators organize meetings, resources, equipment, and information for a
-                                    team,
+                                    Các lộ trình học được chia theo nhiều hướng đi
                                     <br />
-                                    with the goal of improving efficiency and streamlining workflows and processes.
-                                    <br />
-                                    many skills.....
+                                    cho người học vạch ra con đường rõ ràng.
                                 </p>
                             </div>
                         </div>
@@ -91,14 +88,14 @@ const LearningPaths = () => {
                                                 {learningPath.description}
                                             </div>
                                             <div className={cx('learningPath-item__content-course-amount')}>
-                                                Course amount: 15 courses
+                                                Số lượng: 15 khóa học
                                             </div>
                                             <div className={cx('learningPath-item__content-go')}>
                                                 <Link
                                                     to={config.routes.learningpathdetails}
                                                     className={cx('learningPath-item__content-go-link')}
                                                 >
-                                                    Go to Learning Path <FontAwesomeIcon icon={faArrowRight} />
+                                                    Đi đến lộ trình <FontAwesomeIcon icon={faArrowRight} />
                                                 </Link>
                                             </div>
                                         </div>

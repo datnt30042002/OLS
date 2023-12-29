@@ -37,7 +37,7 @@ const LearningPathsManager = () => {
                 <div className={cx('row')}>
                     <div className={cx('col-12')}>
                         <div className={cx('user-manager-heading')}>
-                            <h1 className={cx('user-manager-heading__title')}>Learning Path List</h1>
+                            <h1 className={cx('user-manager-heading__title')}>Danh sách lộ trình</h1>
                         </div>
                     </div>
                 </div>
@@ -50,15 +50,13 @@ const LearningPathsManager = () => {
                                     <thead className={cx('user-manager-list__table-head')}>
                                         <tr className={cx('user-manager-list__table-head__content')}>
                                             <th className={cx('user-manager-list__table-head__content__item')}>STT</th>
+                                            <th className={cx('user-manager-list__table-head__content__item')}>Ảnh</th>
+                                            <th className={cx('user-manager-list__table-head__content__item')}>Tên</th>
                                             <th className={cx('user-manager-list__table-head__content__item')}>
-                                                Image
-                                            </th>
-                                            <th className={cx('user-manager-list__table-head__content__item')}>Name</th>
-                                            <th className={cx('user-manager-list__table-head__content__item')}>
-                                                Status
+                                                Trạng thái
                                             </th>
                                             <th className={cx('user-manager-list__table-head__content__item')}>
-                                                Action
+                                                Hành động
                                             </th>
                                         </tr>
                                     </thead>
@@ -73,7 +71,9 @@ const LearningPathsManager = () => {
                                             </th>
                                             <td className={cx('user-manager-list__table-body__content__item')}>
                                                 <Image
-                                                    src={'https://avatars.githubusercontent.com/u/108357953?v=4'}
+                                                    src={
+                                                        'https://files.fullstack.edu.vn/f8-prod/learning-paths/2/63b4642136f3e.png'
+                                                    }
                                                     className={cx(
                                                         'user-manager-list__table-body__content__item-user-avatar',
                                                     )}
@@ -83,7 +83,7 @@ const LearningPathsManager = () => {
                                                 <span
                                                     className={cx('user-manager-list__table-body__content__item-name')}
                                                 >
-                                                    Bui Van Kien
+                                                    Lộ trình học Front-end
                                                 </span>
                                             </td>
                                             <td className={cx('user-manager-list__table-body__content__item')}>
@@ -143,7 +143,9 @@ const LearningPathsManager = () => {
                                             </th>
                                             <td className={cx('user-manager-list__table-body__content__item')}>
                                                 <Image
-                                                    src={'https://imgupscaler.com/images/samples/animal-after.webp'}
+                                                    src={
+                                                        'https://files.fullstack.edu.vn/f8-prod/learning-paths/3/63b4641535b16.png'
+                                                    }
                                                     className={cx(
                                                         'user-manager-list__table-body__content__item-user-avatar',
                                                     )}
@@ -153,7 +155,7 @@ const LearningPathsManager = () => {
                                                 <span
                                                     className={cx('user-manager-list__table-body__content__item-name')}
                                                 >
-                                                    Nguyen Van A
+                                                    Lộ trình học Back-end
                                                 </span>
                                             </td>
                                             <td className={cx('user-manager-list__table-body__content__item')}>
@@ -419,12 +421,12 @@ const LearningPathsManager = () => {
                 <div className={cx('row')}>
                     <div className={cx('col-12')}>
                         <div className={cx('paginate')}>
-                            <span className={cx('paginate-prev')}>Prev</span>
+                            <span className={cx('paginate-prev')}>Trước</span>
                             <span className={cx('paginate-item', 'paginate-active')}>1</span>
                             <span className={cx('paginate-item')}>2</span>
                             <span className={cx('paginate-item')}>3</span>
                             <span className={cx('paginate-item')}>...</span>
-                            <span className={cx('paginate-next')}>Next</span>
+                            <span className={cx('paginate-next')}>Tiếp</span>
                         </div>
                     </div>
                 </div>

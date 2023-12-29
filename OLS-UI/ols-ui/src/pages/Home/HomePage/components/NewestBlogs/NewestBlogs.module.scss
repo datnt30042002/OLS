@@ -37,7 +37,7 @@
 
 .blog-item {
     width: 320px;
-    height: 350px;
+    height: 380px;
     background-color: var(--white);
     border-radius: 15px;
     border: 1px solid rgba(204, 204, 204, 0.5);
@@ -89,6 +89,15 @@
     font-size: 1.3rem;
     color: var(--black);
     margin-top: 24px;
+    display: flex;
+    align-items: center;
+}
+
+.blog-item__author__image {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin-right: 4px;
 }
 
 .blog-item__date-read {
@@ -98,7 +107,6 @@
     font-size: 1.2rem;
     display: flex;
     justify-content: space-between;
-    padding-bottom: 10px;
 }
 
 .blog-item__post-date {
@@ -134,7 +142,7 @@
 }
 
 .btn-show-more {
-    width: 110px;
+    width: 130px;
     height: 35px;
 }
 

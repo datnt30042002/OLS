@@ -34,7 +34,7 @@ const LearningPathDetails = () => {
                                 />
                             </div>
                             <div className={cx('learning-path-details-header__title')}>
-                                <h1>Learning Paths Name</h1>
+                                <h1>Full stack</h1>
                             </div>
                             {/* <span>Description</span> */}
                         </div>
@@ -58,12 +58,14 @@ const LearningPathDetails = () => {
 
                                 <div className={cx('col-2-8')}>
                                     <div className={cx('learning-path-details-item__course')}>
-                                        <div className={cx('learning-path-details-item__course-name')}>Course name</div>
+                                        <div className={cx('learning-path-details-item__course-name')}>
+                                            Python cơ bản
+                                        </div>
                                         <div className={cx('learning-path-details-item__course-description')}>
-                                            description
+                                            Mô tả
                                         </div>
                                         <div className={cx('learning-path-details-item__course-course-info')}>
-                                            courseInfomation
+                                            Thông tin khóa học
                                         </div>
                                         <div className={cx('learning-path-details-item__course-course-fee')}>
                                             1.499.000 VND
@@ -73,7 +75,7 @@ const LearningPathDetails = () => {
                                                 to={config.routes.learningpathdetails}
                                                 className={cx('learning-path-details-item__course-go-link')}
                                             >
-                                                View course <FontAwesomeIcon icon={faArrowRight} />
+                                                Xem khóa học <FontAwesomeIcon icon={faArrowRight} />
                                             </Link>
                                         </div>
                                     </div>

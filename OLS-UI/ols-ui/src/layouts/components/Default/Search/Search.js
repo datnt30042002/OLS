@@ -99,7 +99,7 @@ const Search = () => {
                     <input
                         ref={inputRef} //?
                         value={searchValue}
-                        placeholder="Search courses and blogs"
+                        placeholder="Tìm kiếm các khóa học và bài viết"
                         spellCheck={false}
                         onChange={handleChange}
                         onFocus={() => setShowResult(true)}

@@ -53,7 +53,7 @@ const ForgotPassword = () => {
     };
 
     useEffect(() => {
-        setSendCodeSuccess(false); 
+        setSendCodeSuccess(false);
     }, [email]);
 
     const handleVerifyCode = async () => {
@@ -65,21 +65,24 @@ const ForgotPassword = () => {
             setEmailError('');
         } else if (!validateEmail(email)) {
             setEmailError('Please enter a valid email.');
-            setVerifyCodeError(''); 
+            setVerifyCodeError('');
         } else {
-
-        try {
-            // Gửi yêu cầu API để xác nhận mã xác nhận
-            const response = await axios.post('https://localhost:7158/api/User/verifycode', { email, codeVerify: verifyCode });
-            if (response.data && response.data.Message === 'Mã xác thực hợp lệ') {
-                navigate(config.routes.resetpassword);
-            } else {
+            try {
+                // Gửi yêu cầu API để xác nhận mã xác nhận
+                const response = await axios.post('https://localhost:7158/api/User/verifycode', {
+                    email,
+                    codeVerify: verifyCode,
+                });
+                if (response.data && response.data.Message === 'Mã xác thực hợp lệ') {
+                    navigate(config.routes.resetpassword);
+                } else {
+                    setVerifyCodeError('Invalid verification code. Please try again.');
+                }
+            } catch (error) {
+                console.error(error);
                 setVerifyCodeError('Invalid verification code. Please try again.');
             }
-        } catch (error) {
-            console.error(error);
-            setVerifyCodeError('Invalid verification code. Please try again.');
-        }}
+        }
     };
 
     const validateEmail = (email) => {
@@ -99,16 +102,16 @@ const ForgotPassword = () => {
                         <div className={cx('forgot-password-wrap')}>
                             <div className={cx('forgot-password-header')}>
                                 <Image src={OLSLogo} className={cx('forgot-password-header__logo')} />
-                                <span className={cx('forgot-password-header__title')}>Forgot password</span>
+                                <span className={cx('forgot-password-header__title')}>Quên mật khẩu</span>
                             </div>
                             <div className={cx('forgot-password-content')}>
                                 <div className={cx('forgot-password-content__email')}>
                                     <label className={cx('forgot-password-content__email-title')}>
-                                        Your Email <span className={cx('forgot-password-content__required')}>*</span>
+                                        Email của bạn <span className={cx('forgot-password-content__required')}>*</span>
                                     </label>
                                     <input
                                         type="email"
-                                        placeholder="Your Email"
+                                        placeholder="Nhập email"
                                         value={email}
                                         onChange={handleEmailChange}
                                         onBlur={() => validateEmail(email)}
@@ -121,12 +124,12 @@ const ForgotPassword = () => {
                                 </div>
                                 <div className={cx('register-content__verify-email')}>
                                     <label className={cx('register-content__verify-email-title')}>
-                                        Verify email <span className={cx('register-content__required')}>*</span>
+                                        Xác thực email <span className={cx('register-content__required')}>*</span>
                                     </label>
                                     <div className={cx('register-content__verify-email-input-wrap')}>
                                         <input
                                             type="number"
-                                            placeholder="Verify code"
+                                            placeholder="Mã xác thực"
                                             value={verifyCode}
                                             onChange={handleVerifyCodeChange}
                                             required
@@ -135,12 +138,13 @@ const ForgotPassword = () => {
                                         <Button
                                             outline
                                             small
-                                            className={cx('register-content__verify-email-button', {'disabled': !validateEmail(email) || sendCodeSuccess})}
+                                            className={cx('register-content__verify-email-button', {
+                                                disabled: !validateEmail(email) || sendCodeSuccess,
+                                            })}
                                             onClick={handleSendCode}
                                             disabled={!validateEmail(email) || sendCodeSuccess}
-                                            
                                         >
-                                            Send code
+                                            Gửi mã
                                         </Button>
                                     </div>
                                     {verifyCodeError && <div className={cx('error-message')}>{verifyCodeError}</div>}
@@ -153,7 +157,7 @@ const ForgotPassword = () => {
                                         onClick={handleVerifyCode}
                                     >
                                         <span className={cx('forgot-password-content__forgot-password-button__title')}>
-                                            Verify
+                                            Xác thực
                                         </span>
                                     </Button>
                                 </div>

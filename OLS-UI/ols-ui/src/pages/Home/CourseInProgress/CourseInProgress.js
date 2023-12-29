@@ -497,11 +497,11 @@ const CourseInProgress = () => {
                         <div className={cx('side-bar-wrap')}>
                             <div className={cx('action-wrap')}>
                                 <div className={cx('action-menu')} onClick={handleToggleMenu}>
-                                    <FontAwesomeIcon icon={faBars} /> <span>Menu</span>
+                                    <FontAwesomeIcon icon={faBars} /> <span>Danh sách</span>
                                 </div>
 
                                 <div className={cx('action-next')}>
-                                    <span>Next</span> <FontAwesomeIcon icon={faArrowRight} />
+                                    <span>Bài tiếp theo</span> <FontAwesomeIcon icon={faArrowRight} />
                                 </div>
                             </div>
                             <nav
@@ -511,7 +511,7 @@ const CourseInProgress = () => {
                                 })}
                             >
                                 <ul className={cx('chapter-list')}>
-                                    <h1 className={cx('chapter-list__name')}>Chapters</h1>
+                                    <h1 className={cx('chapter-list__name')}>Các chương</h1>
                                     {chapters.map((chapter) => (
                                         <li
                                             key={chapter.chapterId}
@@ -550,9 +550,10 @@ const CourseInProgress = () => {
                                 {lessonDetails && lessonDetails.video ? (
                                     <iframe
                                         className={cx('course-lesson__video')}
-                                        src={lessonDetails.video}
+                                        src={`https://www.youtube.com/embed/${lessonDetails.video}`}
                                         frameBorder="0"
                                         allowFullScreen
+                                        name="video"
                                     ></iframe>
                                 ) : (
                                     <img
@@ -573,7 +574,7 @@ const CourseInProgress = () => {
                                     )}
 
                                     <span className={cx('course-lesson__note-title')} onClick={handleToggleNote}>
-                                        <FontAwesomeIcon icon={faPen} /> Save notes
+                                        <FontAwesomeIcon icon={faPen} /> Ghi chú
                                     </span>
                                 </div>
                             </div>
@@ -1140,20 +1141,66 @@ const CourseInProgress = () => {
                                     <FontAwesomeIcon icon={faX} />
                                 </span>
                                 <div className={cx('note-heading')}>
-                                    <span className={cx('note-heading__title')}>Them ghi chu</span>
+                                    <span className={cx('note-heading__title')}>Thêm ghi chú</span>
                                 </div>
                                 <div className={cx('note-content')}>
                                     <input
                                         type="text"
-                                        placeholder="Noi dung ghi chu..."
+                                        placeholder="Nội dung ghi chú"
                                         className={cx('note-content__input')}
                                     />
                                 </div>
                                 <div className={cx('note-content-list')}>
-                                    <span className={cx('note-content-list__title')}>Danh sach ghi chu</span>
+                                    <span className={cx('note-content-list__title')}>Danh sách ghi chú</span>
                                     <div className={cx('note-content-list__wrap')}>
                                         <br />
-                                        <p className={cx('note-content-list__item')}>+ Ghi chu thu nhat</p>
+                                        <p className={cx('note-content-list__item')}>
+                                            + OOP là object oriented programming
+                                        </p>
+                                        <div className={cx('note-content-list__item-icon')}>
+                                            <p className={cx('note-content-list__item-icon__edit')}>
+                                                <FontAwesomeIcon icon={faPen} />
+                                            </p>
+                                            <p className={cx('note-content-list__item-icon__delete')}>
+                                                <FontAwesomeIcon icon={faTrash} />
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div className={cx('note-content-list__wrap')}>
+                                        <br />
+                                        <p className={cx('note-content-list__item')}>+ HTML là ngôn ngữ đánh dấu</p>
+                                        <div className={cx('note-content-list__item-icon')}>
+                                            <p className={cx('note-content-list__item-icon__edit')}>
+                                                <FontAwesomeIcon icon={faPen} />
+                                            </p>
+                                            <p className={cx('note-content-list__item-icon__delete')}>
+                                                <FontAwesomeIcon icon={faTrash} />
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div className={cx('note-content-list__wrap')}>
+                                        <br />
+                                        <p className={cx('note-content-list__item')}>
+                                            + id là duy nhất, nên dùng class trong css
+                                        </p>
+                                        <div className={cx('note-content-list__item-icon')}>
+                                            <p className={cx('note-content-list__item-icon__edit')}>
+                                                <FontAwesomeIcon icon={faPen} />
+                                            </p>
+                                            <p className={cx('note-content-list__item-icon__delete')}>
+                                                <FontAwesomeIcon icon={faTrash} />
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div className={cx('note-content-list__wrap')}>
+                                        <br />
+                                        <p className={cx('note-content-list__item')}>
+                                            + Sử dụng scss module giúp không bị trùng Css và khi xóa đi theo component
+                                            không gây thừa CSS
+                                        </p>
                                         <div className={cx('note-content-list__item-icon')}>
                                             <p className={cx('note-content-list__item-icon__edit')}>
                                                 <FontAwesomeIcon icon={faPen} />
