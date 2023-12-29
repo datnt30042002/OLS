@@ -37,7 +37,7 @@ const LessonManager = () => {
                 <div className={cx('row')}>
                     <div className={cx('col-12')}>
                         <div className={cx('user-manager-heading')}>
-                            <h1 className={cx('user-manager-heading__title')}>Learning Path List</h1>
+                            <h1 className={cx('user-manager-heading__title')}>Danh sách bài học</h1>
                         </div>
                     </div>
                 </div>
@@ -50,15 +50,12 @@ const LessonManager = () => {
                                     <thead className={cx('user-manager-list__table-head')}>
                                         <tr className={cx('user-manager-list__table-head__content')}>
                                             <th className={cx('user-manager-list__table-head__content__item')}>STT</th>
+                                            <th className={cx('user-manager-list__table-head__content__item')}>Tên</th>
                                             <th className={cx('user-manager-list__table-head__content__item')}>
-                                                Image
-                                            </th>
-                                            <th className={cx('user-manager-list__table-head__content__item')}>Name</th>
-                                            <th className={cx('user-manager-list__table-head__content__item')}>
-                                                Status
+                                                Trạng thái
                                             </th>
                                             <th className={cx('user-manager-list__table-head__content__item')}>
-                                                Action
+                                                Hành động
                                             </th>
                                         </tr>
                                     </thead>
@@ -72,18 +69,10 @@ const LessonManager = () => {
                                                 </span>
                                             </th>
                                             <td className={cx('user-manager-list__table-body__content__item')}>
-                                                <Image
-                                                    src={'https://avatars.githubusercontent.com/u/108357953?v=4'}
-                                                    className={cx(
-                                                        'user-manager-list__table-body__content__item-user-avatar',
-                                                    )}
-                                                />
-                                            </td>
-                                            <td className={cx('user-manager-list__table-body__content__item')}>
                                                 <span
                                                     className={cx('user-manager-list__table-body__content__item-name')}
                                                 >
-                                                    Bui Van Kien
+                                                    Cấu trúc 1 file HTML
                                                 </span>
                                             </td>
                                             <td className={cx('user-manager-list__table-body__content__item')}>
@@ -142,36 +131,221 @@ const LessonManager = () => {
                                                 </span>
                                             </th>
                                             <td className={cx('user-manager-list__table-body__content__item')}>
-                                                <Image
-                                                    src={'https://imgupscaler.com/images/samples/animal-after.webp'}
+                                                <span
+                                                    className={cx('user-manager-list__table-body__content__item-name')}
+                                                >
+                                                    Comment trong HTML
+                                                </span>
+                                            </td>
+                                            <td className={cx('user-manager-list__table-body__content__item')}>
+                                                <span
                                                     className={cx(
-                                                        'user-manager-list__table-body__content__item-user-avatar',
+                                                        'user-manager-list__table-body__content__item-status',
                                                     )}
+                                                >
+                                                    Active
+                                                </span>
+                                            </td>
+                                            <td className={cx('user-manager-list__table-body__content__item')}>
+                                                <Link
+                                                    to={config.adminRoutes.lessonmanager}
+                                                    className={cx(
+                                                        'user-manager-list__table-body__content__item-icon-detail__link',
+                                                    )}
+                                                >
+                                                    <FontAwesomeIcon
+                                                        icon={faEye}
+                                                        className={cx(
+                                                            'user-manager-list__table-body__content__item-icon-detail',
+                                                        )}
+                                                    />
+                                                </Link>
+                                                <FontAwesomeIcon
+                                                    icon={faPen}
+                                                    className={cx(
+                                                        'user-manager-list__table-body__content__item-icon-edit',
+                                                    )}
+                                                    onClick={handleToggleEdit}
+                                                />
+                                                <FontAwesomeIcon
+                                                    icon={faBan}
+                                                    className={cx(
+                                                        'user-manager-list__table-body__content__item-icon-ban',
+                                                    )}
+                                                    onClick={handleToggleBan}
+                                                />
+                                                <FontAwesomeIcon
+                                                    icon={faTrash}
+                                                    className={cx(
+                                                        'user-manager-list__table-body__content__item-icon-delete',
+                                                    )}
+                                                    onClick={handleToggleDelete}
                                                 />
                                             </td>
+                                        </tr>
+
+                                        <tr className={cx('user-manager-list__table-body__content')}>
+                                            <th className={cx('user-manager-list__table-body__content__item')}>
+                                                <span
+                                                    className={cx('user-manager-list__table-body__content__item-stt')}
+                                                >
+                                                    3
+                                                </span>
+                                            </th>
                                             <td className={cx('user-manager-list__table-body__content__item')}>
                                                 <span
                                                     className={cx('user-manager-list__table-body__content__item-name')}
                                                 >
-                                                    Nguyen Van A
+                                                    Các thẻ HTML thông dụng
                                                 </span>
                                             </td>
                                             <td className={cx('user-manager-list__table-body__content__item')}>
                                                 <span
                                                     className={cx(
-                                                        'user-manager-list__table-body__content__item-status-inactive',
+                                                        'user-manager-list__table-body__content__item-status',
                                                     )}
                                                 >
-                                                    Inactive
+                                                    Active
                                                 </span>
                                             </td>
                                             <td className={cx('user-manager-list__table-body__content__item')}>
-                                                <FontAwesomeIcon
-                                                    icon={faEye}
+                                                <Link
+                                                    to={config.adminRoutes.lessonmanager}
                                                     className={cx(
-                                                        'user-manager-list__table-body__content__item-icon-detail',
+                                                        'user-manager-list__table-body__content__item-icon-detail__link',
                                                     )}
+                                                >
+                                                    <FontAwesomeIcon
+                                                        icon={faEye}
+                                                        className={cx(
+                                                            'user-manager-list__table-body__content__item-icon-detail',
+                                                        )}
+                                                    />
+                                                </Link>
+                                                <FontAwesomeIcon
+                                                    icon={faPen}
+                                                    className={cx(
+                                                        'user-manager-list__table-body__content__item-icon-edit',
+                                                    )}
+                                                    onClick={handleToggleEdit}
                                                 />
+                                                <FontAwesomeIcon
+                                                    icon={faBan}
+                                                    className={cx(
+                                                        'user-manager-list__table-body__content__item-icon-ban',
+                                                    )}
+                                                    onClick={handleToggleBan}
+                                                />
+                                                <FontAwesomeIcon
+                                                    icon={faTrash}
+                                                    className={cx(
+                                                        'user-manager-list__table-body__content__item-icon-delete',
+                                                    )}
+                                                    onClick={handleToggleDelete}
+                                                />
+                                            </td>
+                                        </tr>
+
+                                        <tr className={cx('user-manager-list__table-body__content')}>
+                                            <th className={cx('user-manager-list__table-body__content__item')}>
+                                                <span
+                                                    className={cx('user-manager-list__table-body__content__item-stt')}
+                                                >
+                                                    4
+                                                </span>
+                                            </th>
+                                            <td className={cx('user-manager-list__table-body__content__item')}>
+                                                <span
+                                                    className={cx('user-manager-list__table-body__content__item-name')}
+                                                >
+                                                    Attribute trong THML là gì?
+                                                </span>
+                                            </td>
+                                            <td className={cx('user-manager-list__table-body__content__item')}>
+                                                <span
+                                                    className={cx(
+                                                        'user-manager-list__table-body__content__item-status',
+                                                    )}
+                                                >
+                                                    Active
+                                                </span>
+                                            </td>
+                                            <td className={cx('user-manager-list__table-body__content__item')}>
+                                                <Link
+                                                    to={config.adminRoutes.lessonmanager}
+                                                    className={cx(
+                                                        'user-manager-list__table-body__content__item-icon-detail__link',
+                                                    )}
+                                                >
+                                                    <FontAwesomeIcon
+                                                        icon={faEye}
+                                                        className={cx(
+                                                            'user-manager-list__table-body__content__item-icon-detail',
+                                                        )}
+                                                    />
+                                                </Link>
+                                                <FontAwesomeIcon
+                                                    icon={faPen}
+                                                    className={cx(
+                                                        'user-manager-list__table-body__content__item-icon-edit',
+                                                    )}
+                                                    onClick={handleToggleEdit}
+                                                />
+                                                <FontAwesomeIcon
+                                                    icon={faBan}
+                                                    className={cx(
+                                                        'user-manager-list__table-body__content__item-icon-ban',
+                                                    )}
+                                                    onClick={handleToggleBan}
+                                                />
+                                                <FontAwesomeIcon
+                                                    icon={faTrash}
+                                                    className={cx(
+                                                        'user-manager-list__table-body__content__item-icon-delete',
+                                                    )}
+                                                    onClick={handleToggleDelete}
+                                                />
+                                            </td>
+                                        </tr>
+
+                                        <tr className={cx('user-manager-list__table-body__content')}>
+                                            <th className={cx('user-manager-list__table-body__content__item')}>
+                                                <span
+                                                    className={cx('user-manager-list__table-body__content__item-stt')}
+                                                >
+                                                    5
+                                                </span>
+                                            </th>
+                                            <td className={cx('user-manager-list__table-body__content__item')}>
+                                                <span
+                                                    className={cx('user-manager-list__table-body__content__item-name')}
+                                                >
+                                                    Cách quản lý thư mục dự án
+                                                </span>
+                                            </td>
+                                            <td className={cx('user-manager-list__table-body__content__item')}>
+                                                <span
+                                                    className={cx(
+                                                        'user-manager-list__table-body__content__item-status',
+                                                    )}
+                                                >
+                                                    Active
+                                                </span>
+                                            </td>
+                                            <td className={cx('user-manager-list__table-body__content__item')}>
+                                                <Link
+                                                    to={config.adminRoutes.lessonmanager}
+                                                    className={cx(
+                                                        'user-manager-list__table-body__content__item-icon-detail__link',
+                                                    )}
+                                                >
+                                                    <FontAwesomeIcon
+                                                        icon={faEye}
+                                                        className={cx(
+                                                            'user-manager-list__table-body__content__item-icon-detail',
+                                                        )}
+                                                    />
+                                                </Link>
                                                 <FontAwesomeIcon
                                                     icon={faPen}
                                                     className={cx(
@@ -419,12 +593,12 @@ const LessonManager = () => {
                 <div className={cx('row')}>
                     <div className={cx('col-12')}>
                         <div className={cx('paginate')}>
-                            <span className={cx('paginate-prev')}>Prev</span>
+                            <span className={cx('paginate-prev')}>Trước</span>
                             <span className={cx('paginate-item', 'paginate-active')}>1</span>
                             <span className={cx('paginate-item')}>2</span>
                             <span className={cx('paginate-item')}>3</span>
                             <span className={cx('paginate-item')}>...</span>
-                            <span className={cx('paginate-next')}>Next</span>
+                            <span className={cx('paginate-next')}>Tiếp</span>
                         </div>
                     </div>
                 </div>

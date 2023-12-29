@@ -14,16 +14,16 @@ const UserInfo = () => {
     return (
         <div className={cx('wrapper')}>
             <div className={cx('user-info')}>
-                <h1 className={cx('user-info__title')}>Personal details</h1>
+                <h1 className={cx('user-info__title')}>Thông tin cá nhân</h1>
                 <Image
-                    src={'https://avatars.githubusercontent.com/u/108357953?v=4'}
+                    src={'https://gitlab.com/uploads/-/system/user/avatar/14507009/avatar.png?width=96'}
                     className={cx('user-info__avatar')}
                 />
-                <h1 className={cx('user-info__full-name')}>Full name</h1>
+                <h1 className={cx('user-info__full-name')}>Bùi Văn Kiên</h1>
                 <br />
                 <div className={cx('user-info__update')}>
                     <a href="#" className={cx('user-info__update__link')}>
-                        Update profile
+                        Cập nhật
                     </a>
                 </div>
             </div>

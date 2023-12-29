@@ -7,6 +7,7 @@
         public string? BlogImage { get; set; }
         public DateTime? PostDate { get; set; }
         public TimeSpan? ReadTime { get; set; }
-        public string? FullName { get; set; } // add Username
+        public string? FullName { get; set; }
+        public string? Avatar { get; set; }
     }
 }

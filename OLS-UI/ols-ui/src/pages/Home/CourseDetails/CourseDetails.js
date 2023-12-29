@@ -1,10 +1,10 @@
-// from react and libs
+// From react and libs
 import React from 'react';
 import axios from 'axios';
 import classNames from 'classnames/bind';
 import { useState, useEffect } from 'react';
 
-// components
+// Components
 import styles from './CourseDetails.module.scss';
 import Button from '~/components/Button';
 import config from '~/config';
@@ -52,9 +52,9 @@ const CourseDetails = () => {
     const getCurrentDateString = () => {
         const now = new Date();
         const options = { month: 'short', day: 'numeric' };
-        const currentDateString = now.toLocaleDateString('en-US', options);
+        const currentDateString = now.toLocaleDateString('vn', options); //'en-US'
 
-        return `Starts ${currentDateString}`;
+        return `Bắt đầu ngày ${currentDateString}`;
     };
 
     const handleEnrollClick = async () => {
@@ -111,7 +111,7 @@ const CourseDetails = () => {
                                         className={cx('course-details__enroll-btn')}
                                         onClick={handleEnrollClick}
                                     >
-                                        Enroll <br /> {getCurrentDateString()}
+                                        Đăng ký <br /> {getCurrentDateString()}
                                     </Button>
                                 </div>
                             </div>
@@ -122,8 +122,13 @@ const CourseDetails = () => {
                                             {chapter.chapterName}
                                         </span>
                                         <br /> <br />
-                                        <span className={cx('course-details__chapters-time')}>1 hours</span>
-                                        <span className={cx('course-details__chapters-lessons')}>15 lessons</span>
+                                        <span className={cx('course-details__chapters-time')}>
+                                            Thời lượng: 18 tiếng
+                                        </span>
+                                        <span className={cx('course-details__chapters-lessons')}>
+                                            {' '}
+                                            với 31 bài giảng
+                                        </span>
                                     </div>
                                 ))}
                             </div>
@@ -137,9 +142,10 @@ const CourseDetails = () => {
                                 className={cx('course-details__video-intro-img')}
                                 width="560"
                                 height="315"
-                                src={courseDetails.videoIntro}
-                                frameBorder="0"
+                                src={`https://www.youtube.com/embed/${courseDetails.videoIntro}`}
                                 allowFullScreen
+                                title="videoIntro"
+                                name="videoIntro"
                             ></iframe>
                         </div>
                     </div>

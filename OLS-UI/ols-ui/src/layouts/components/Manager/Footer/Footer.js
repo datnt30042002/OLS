@@ -31,7 +31,8 @@ const Footer = () => {
                         <div className={cx('copy-right')}>
                             <div className={cx('copy-right__heading')}>
                                 <p className={cx('copy-right__heading-text')}>
-                                    © 2023 Coursera Inc. All rights reserved.
+                                    © 2023 Coursera Inc. All rights reserved. <br />© 2018 - 2023 F8. Nền tảng học lập
+                                    trình hàng đầu Việt Nam
                                 </p>
                             </div>
                             <div className={cx('brand-icon')}>

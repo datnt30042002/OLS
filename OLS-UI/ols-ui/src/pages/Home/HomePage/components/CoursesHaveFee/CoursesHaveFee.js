@@ -16,26 +16,7 @@ const cx = classNames.bind(styles);
 const CoursesHaveFee = () => {
     const [courses, setCourses] = useState([]);
 
-    // // side effects
-    // useEffect(() => {
-    //     getDatafromApi();
-    // }, []);
-
-    // // async - xử lý bất đồng bộ
-    // const getDatafromApi = async () => {
-    //     try {
-    //         const response = await axios.get('https://localhost:7158/get10CoursesWithFee');
-
-    //         if (!response.status === 200) {
-    //             throw new Error('Network is not ok. Cannot connect to API.');
-    //         }
-
-    //         setCourses(response.data);
-    //     } catch (error) {
-    //         throw new Error(error);
-    //     }
-    // };
-
+    // side effects
     useEffect(() => {
         fetchDataFromApi();
     }, []);
@@ -76,7 +57,7 @@ const CoursesHaveFee = () => {
         <div className={cx('wrapper')}>
             {/* Grid */}
             <div className={cx('grid')}>
-                <h1 className={cx('course-heading')}>Courses Have Fee</h1>
+                <h1 className={cx('course-heading')}>Các khóa học trả phí</h1>
                 {/* Row */}
                 <div className={cx('row')}>
                     {/* Col */}
@@ -98,12 +79,18 @@ const CoursesHaveFee = () => {
                                     />
                                     <div className={cx('course-item__info')}>
                                         <span className={cx('course-item__learningPath')}>
-                                            IMAGE + {course.learningPath}
+                                            <Image
+                                                src={course.learningPathImage}
+                                                className={cx('course-item__learningPath__image')}
+                                            />
+                                            {course.learningPath}
                                         </span>
                                         <span className={cx('course-item__name')}>{course.courseName}</span>
                                         <div className={cx('course-item__footer')}>
                                             <span className={cx('course-item__fee')}>{course.fee} VND</span>
-                                            <span className={cx('course-item__course-degree')}>Course / Degree</span>
+                                            <span className={cx('course-item__course-degree')}>
+                                                Khóa học / Chứng chỉ
+                                            </span>
                                         </div>
                                     </div>
                                 </Link>
@@ -116,7 +103,7 @@ const CoursesHaveFee = () => {
                 <div className={cx('row')}>
                     <div className={cx('show-more')}>
                         <Button outline small className={cx('btn-show-more')}>
-                            <span className={cx('btn-show-more__title')}>Show more</span>
+                            <span className={cx('btn-show-more__title')}>Hiển thị thêm</span>
                         </Button>
                     </div>
                 </div>

@@ -64,8 +64,16 @@
 .course-item__learningPath {
     font-size: 1.2rem;
     color: #6e6e6e;
+    display: flex;
+    align-items: center;
 }
 
+.course-item__learningPath__image {
+    width: 25px;
+    height: 25px;
+    border-radius: 10%;
+    margin-right: 4px;
+}
 
 .course-item__name {
     font-size: 1.7rem;
@@ -98,7 +106,7 @@
 }
 
 .btn-show-more {
-    width: 110px;
+    width: 130px;
     height: 35px;
 }
 

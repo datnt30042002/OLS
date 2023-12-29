@@ -9,7 +9,10 @@ namespace OLS.Helpers.Home
         public BlogMappingProfile()
         {
             // Source -> Destination
-            CreateMap<Blog, BlogReadHomeDTO>().ForMember(dest => dest.FullName, opt => opt.MapFrom(src => src.UserUser.FullName)).ReverseMap();
+            CreateMap<Blog, BlogReadHomeDTO>()
+                .ForMember(dest => dest.FullName, opt => opt.MapFrom(src => src.UserUser.FullName))
+                .ForMember(dest => dest.Avatar, opt => opt.MapFrom(src => src.UserUser.Image))
+                .ReverseMap();
         }
     }
 }

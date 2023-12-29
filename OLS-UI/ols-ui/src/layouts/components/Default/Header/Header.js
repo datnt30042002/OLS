@@ -81,7 +81,7 @@ const Header = () => {
     const userMenu = [
         {
             icon: <FontAwesomeIcon icon={faUser} />,
-            title: 'View profile',
+            title: 'Trang cá nhân',
             to: '/user-profile',
         },
         // {
@@ -91,13 +91,13 @@ const Header = () => {
         // },
         {
             icon: <FontAwesomeIcon icon={faGear} />,
-            title: 'Settings',
+            title: 'Cài đặt',
             to: '/settings',
         },
         // ...MENU_ITEMS,
         {
             icon: <FontAwesomeIcon icon={faSignOut} />,
-            title: 'Logout',
+            title: 'Đăng xuất',
             to: '/login',
             separate: true,
         },
@@ -125,7 +125,7 @@ const Header = () => {
                                 </button>
                             </Tippy> */}
 
-                            <Tippy content="Notifications" placement="bottom">
+                            <Tippy content="Thông báo" placement="bottom">
                                 <button className={cx('action-btn')}>
                                     <NotificationIcon />
                                 </button>
@@ -150,7 +150,7 @@ const Header = () => {
                         {currentUser ? (
                             <Image
                                 className={cx('user-avatar')}
-                                src="https://avatars.githubusercontent.com/u/108357953?v=4"
+                                src="https://gitlab.com/uploads/-/system/user/avatar/14507009/avatar.png?width=96"
                                 alt="Bui Van Kien"
                                 //fallback="https://gaslampfoundation.org/wp-content/uploads/Copy-of-Yellow-and-Brown-Neutral-Fall-Festival-Event-Poster-1-768x1024.jpg"
                             />

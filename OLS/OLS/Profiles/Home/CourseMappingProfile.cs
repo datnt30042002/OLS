@@ -13,6 +13,7 @@ namespace OLS.Helpers.Home
 
             CreateMap<Course, CourseReadHomeDTO>()
                 .ForMember(dest => dest.LearningPath, opt => opt.MapFrom(src => src.LearningPathLearningPath.LearningPathName))
+                .ForMember(dest => dest.LearningPathImage, opt => opt.MapFrom(src => src.LearningPathLearningPath.Image))
                 .ReverseMap();
         }
     }

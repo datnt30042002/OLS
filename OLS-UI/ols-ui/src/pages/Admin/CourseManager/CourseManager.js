@@ -37,7 +37,7 @@ const CourseManager = () => {
                 <div className={cx('row')}>
                     <div className={cx('col-12')}>
                         <div className={cx('user-manager-heading')}>
-                            <h1 className={cx('user-manager-heading__title')}>Learning Path List</h1>
+                            <h1 className={cx('user-manager-heading__title')}>Danh sách khóa học</h1>
                         </div>
                     </div>
                 </div>
@@ -50,15 +50,13 @@ const CourseManager = () => {
                                     <thead className={cx('user-manager-list__table-head')}>
                                         <tr className={cx('user-manager-list__table-head__content')}>
                                             <th className={cx('user-manager-list__table-head__content__item')}>STT</th>
+                                            <th className={cx('user-manager-list__table-head__content__item')}>Ảnh</th>
+                                            <th className={cx('user-manager-list__table-head__content__item')}>Tên</th>
                                             <th className={cx('user-manager-list__table-head__content__item')}>
-                                                Image
-                                            </th>
-                                            <th className={cx('user-manager-list__table-head__content__item')}>Name</th>
-                                            <th className={cx('user-manager-list__table-head__content__item')}>
-                                                Status
+                                                Trạng thái
                                             </th>
                                             <th className={cx('user-manager-list__table-head__content__item')}>
-                                                Action
+                                                Hành động
                                             </th>
                                         </tr>
                                     </thead>
@@ -73,7 +71,9 @@ const CourseManager = () => {
                                             </th>
                                             <td className={cx('user-manager-list__table-body__content__item')}>
                                                 <Image
-                                                    src={'https://avatars.githubusercontent.com/u/108357953?v=4'}
+                                                    src={
+                                                        'https://files.fullstack.edu.vn/f8-prod/courses/15/62f13d2424a47.png'
+                                                    }
                                                     className={cx(
                                                         'user-manager-list__table-body__content__item-user-avatar',
                                                     )}
@@ -83,7 +83,7 @@ const CourseManager = () => {
                                                 <span
                                                     className={cx('user-manager-list__table-body__content__item-name')}
                                                 >
-                                                    Bui Van Kien
+                                                    HTML, CSS Pro
                                                 </span>
                                             </td>
                                             <td className={cx('user-manager-list__table-body__content__item')}>
@@ -97,7 +97,7 @@ const CourseManager = () => {
                                             </td>
                                             <td className={cx('user-manager-list__table-body__content__item')}>
                                                 <Link
-                                                    to={config.adminRoutes.lessonmanager}
+                                                    to={config.adminRoutes.chaptermanager}
                                                     className={cx(
                                                         'user-manager-list__table-body__content__item-icon-detail__link',
                                                     )}
@@ -143,7 +143,7 @@ const CourseManager = () => {
                                             </th>
                                             <td className={cx('user-manager-list__table-body__content__item')}>
                                                 <Image
-                                                    src={'https://imgupscaler.com/images/samples/animal-after.webp'}
+                                                    src={'https://files.fullstack.edu.vn/f8-prod/courses/1.png'}
                                                     className={cx(
                                                         'user-manager-list__table-body__content__item-user-avatar',
                                                     )}
@@ -153,7 +153,7 @@ const CourseManager = () => {
                                                 <span
                                                     className={cx('user-manager-list__table-body__content__item-name')}
                                                 >
-                                                    Nguyen Van A
+                                                    Javascript cơ bản
                                                 </span>
                                             </td>
                                             <td className={cx('user-manager-list__table-body__content__item')}>
@@ -419,12 +419,12 @@ const CourseManager = () => {
                 <div className={cx('row')}>
                     <div className={cx('col-12')}>
                         <div className={cx('paginate')}>
-                            <span className={cx('paginate-prev')}>Prev</span>
+                            <span className={cx('paginate-prev')}>Trước</span>
                             <span className={cx('paginate-item', 'paginate-active')}>1</span>
                             <span className={cx('paginate-item')}>2</span>
                             <span className={cx('paginate-item')}>3</span>
                             <span className={cx('paginate-item')}>...</span>
-                            <span className={cx('paginate-next')}>Next</span>
+                            <span className={cx('paginate-next')}>Tiếp</span>
                         </div>
                     </div>
                 </div>

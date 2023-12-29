@@ -169,3 +169,9 @@ nhưng không phải là một chuỗi hash duy nhất trên toàn thế giới.
 - 1 nơi lưu ảnh --> chỉ cần lấy link về đưa vào db
 - jwt
 - payment bank
+
++ 29/12/2023
+- UI Update thành tiếng việt
+- Cập nhật 1 số chức năng
+- Add data mới vào database
+

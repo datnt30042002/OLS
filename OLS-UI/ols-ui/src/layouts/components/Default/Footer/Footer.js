@@ -29,61 +29,46 @@ const Footer = () => {
                     {/* Col */}
                     <div className={cx('col-3')}>
                         <div className={cx('footer-content')}>
-                            <h1 className={cx('footer-heading')}>Coursera</h1>
+                            <h1 className={cx('footer-heading')}>OLS</h1>
                             <ul className={cx('footer-list')}>
                                 <li className={cx('footer-item')}>
                                     <a href="#" className={cx('footer-item__link')}>
-                                        About
+                                        Về OLS
                                     </a>
                                 </li>
                                 <li className={cx('footer-item')}>
                                     <a href="#" className={cx('footer-item__link')}>
-                                        What We Offer
+                                        Những gì chúng tôi cung cấp
                                     </a>
                                 </li>
                                 <li className={cx('footer-item')}>
                                     <a href="#" className={cx('footer-item__link')}>
-                                        Leadership
+                                        Khả năng lãnh đạo
                                     </a>
                                 </li>
                                 <li className={cx('footer-item')}>
                                     <a href="#" className={cx('footer-item__link')}>
-                                        Careers
+                                        Nghề nghiệp
                                     </a>
                                 </li>
                                 <li className={cx('footer-item')}>
                                     <a href="#" className={cx('footer-item__link')}>
-                                        Catalog
+                                        Mục lục
                                     </a>
                                 </li>
                                 <li className={cx('footer-item')}>
                                     <a href="#" className={cx('footer-item__link')}>
-                                        Coursera Plus
+                                        Chứng chỉ chuyên môn
                                     </a>
                                 </li>
                                 <li className={cx('footer-item')}>
                                     <a href="#" className={cx('footer-item__link')}>
-                                        Professional Certificates
+                                        Chứng chỉ MasterTrack®
                                     </a>
                                 </li>
                                 <li className={cx('footer-item')}>
                                     <a href="#" className={cx('footer-item__link')}>
-                                        MasterTrack® Certificates
-                                    </a>
-                                </li>
-                                <li className={cx('footer-item')}>
-                                    <a href="#" className={cx('footer-item__link')}>
-                                        Degrees
-                                    </a>
-                                </li>
-                                <li className={cx('footer-item')}>
-                                    <a href="#" className={cx('footer-item__link')}>
-                                        For Enterprise
-                                    </a>
-                                </li>
-                                <li className={cx('footer-item')}>
-                                    <a href="#" className={cx('footer-item__link')}>
-                                        Coronavirus Response
+                                        Dành cho doanh nghiệp
                                     </a>
                                 </li>
                             </ul>
@@ -93,41 +78,41 @@ const Footer = () => {
                     {/* Col */}
                     <div className={cx('col-3')}>
                         <div className={cx('footer-content')}>
-                            <h1 className={cx('footer-heading')}>Community</h1>
+                            <h1 className={cx('footer-heading')}>Cộng đồng</h1>
                             <ul className={cx('footer-list')}>
                                 <li className={cx('footer-item')}>
                                     <a href="#" className={cx('footer-item__link')}>
-                                        Learners
+                                        Người học
                                     </a>
                                 </li>
                                 <li className={cx('footer-item')}>
                                     <a href="#" className={cx('footer-item__link')}>
-                                        Partners
+                                        Đối tác
                                     </a>
                                 </li>
                                 <li className={cx('footer-item')}>
                                     <a href="#" className={cx('footer-item__link')}>
-                                        Beta Testers
+                                        Người thử nghiệm beta
                                     </a>
                                 </li>
                                 <li className={cx('footer-item')}>
                                     <a href="#" className={cx('footer-item__link')}>
-                                        Translators
+                                        Người dịch
                                     </a>
                                 </li>
                                 <li className={cx('footer-item')}>
                                     <a href="#" className={cx('footer-item__link')}>
-                                        Blog
+                                        Bài viết
                                     </a>
                                 </li>
                                 <li className={cx('footer-item')}>
                                     <a href="#" className={cx('footer-item__link')}>
-                                        Tech Blog
+                                        Công nghệ
                                     </a>
                                 </li>
                                 <li className={cx('footer-item')}>
                                     <a href="#" className={cx('footer-item__link')}>
-                                        Teaching Center
+                                        Trung tâm giảng dạy
                                     </a>
                                 </li>
                             </ul>
@@ -137,51 +122,36 @@ const Footer = () => {
                     {/* Col */}
                     <div className={cx('col-3')}>
                         <div className={cx('footer-content')}>
-                            <h1 className={cx('footer-heading')}>More</h1>
+                            <h1 className={cx('footer-heading')}>Hơn nữa</h1>
                             <ul className={cx('footer-list')}>
                                 <li className={cx('footer-item')}>
                                     <a href="#" className={cx('footer-item__link')}>
-                                        Press
+                                        Nhà đầu tư
                                     </a>
                                 </li>
                                 <li className={cx('footer-item')}>
                                     <a href="#" className={cx('footer-item__link')}>
-                                        Investors
+                                        Điều kiện
                                     </a>
                                 </li>
                                 <li className={cx('footer-item')}>
                                     <a href="#" className={cx('footer-item__link')}>
-                                        Terms
+                                        Giúp đỡ
                                     </a>
                                 </li>
                                 <li className={cx('footer-item')}>
                                     <a href="#" className={cx('footer-item__link')}>
-                                        Privacy
+                                        Khả năng tiếp cận
                                     </a>
                                 </li>
                                 <li className={cx('footer-item')}>
                                     <a href="#" className={cx('footer-item__link')}>
-                                        Help
+                                        Chi nhánh
                                     </a>
                                 </li>
                                 <li className={cx('footer-item')}>
                                     <a href="#" className={cx('footer-item__link')}>
-                                        Accessibility
-                                    </a>
-                                </li>
-                                <li className={cx('footer-item')}>
-                                    <a href="#" className={cx('footer-item__link')}>
-                                        Affiliates
-                                    </a>
-                                </li>
-                                <li className={cx('footer-item')}>
-                                    <a href="#" className={cx('footer-item__link')}>
-                                        Modern Slavery Statement
-                                    </a>
-                                </li>
-                                <li className={cx('footer-item')}>
-                                    <a href="#" className={cx('footer-item__link')}>
-                                        Manage Cookie Preferences
+                                        Quản lý tùy chọn cookie
                                     </a>
                                 </li>
                             </ul>
@@ -217,7 +187,8 @@ const Footer = () => {
                         <div className={cx('copy-right')}>
                             <div className={cx('copy-right__heading')}>
                                 <p className={cx('copy-right__heading-text')}>
-                                    © 2023 Coursera Inc. All rights reserved.
+                                    © 2023 Coursera Inc. All rights reserved. <br />© 2018 - 2023 F8. Nền tảng học lập
+                                    trình hàng đầu Việt Nam
                                 </p>
                             </div>
                             <div className={cx('brand-icon')}>

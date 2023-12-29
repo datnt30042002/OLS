@@ -16,7 +16,7 @@ const Dashboard = () => {
                 <div className={cx('row')}>
                     <div className={cx('col-12')}>
                         <div className={cx('dashboard-heading')}>
-                            <h1 className={cx('dashboard-heading__title')}>Dashboard</h1>
+                            <h1 className={cx('dashboard-heading__title')}>Bảng điều khiển</h1>
                         </div>
                     </div>
                 </div>
@@ -30,7 +30,7 @@ const Dashboard = () => {
                                 />
                                 <div className={cx('dashboard-user-manager-content__wrap')}>
                                     <span className={cx('dashboard-user-manager-content__count')}>558</span>
-                                    <p className={cx('dashboard-user-manager-content__title')}>users</p>
+                                    <p className={cx('dashboard-user-manager-content__title')}>Người</p>
                                 </div>
                             </div>
                         </div>
@@ -45,7 +45,7 @@ const Dashboard = () => {
                                 />
                                 <div className={cx('dashboard-learning-path-manager-content__wrap')}>
                                     <span className={cx('dashboard-learning-path-manager-content__count')}>558</span>
-                                    <p className={cx('dashboard-learning-path-manager-content__title')}>paths</p>
+                                    <p className={cx('dashboard-learning-path-manager-content__title')}>Lộ trình</p>
                                 </div>
                             </div>
                         </div>
@@ -57,7 +57,7 @@ const Dashboard = () => {
                                 <FontAwesomeIcon icon={faBlog} className={cx('dashboard-blog-manager-content__icon')} />
                                 <div className={cx('dashboard-blog-manager-content__wrap')}>
                                     <span className={cx('dashboard-blog-manager-content__count')}>558</span>
-                                    <p className={cx('dashboard-blog-manager-content__title')}>blogs</p>
+                                    <p className={cx('dashboard-blog-manager-content__title')}>Bài viết</p>
                                 </div>
                             </div>
                         </div>
